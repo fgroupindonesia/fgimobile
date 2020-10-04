@@ -40,23 +40,10 @@
         </activity>
         <activity android:name="com.fgroupindonesia.fgimobile.HomeActivity" >
         </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.BuyVoucherActivity" >
-        </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.CheckStatusActivity" >
-        </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.RequestActivity" >
-        </activity>
         <activity android:name="com.fgroupindonesia.fgimobile.OptionActivity" >
-        </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.DataAbsensiActivity" >
-        </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.ConsultationActivity" >
         </activity>
         <activity android:name="com.fgroupindonesia.fgimobile.LoginActivity" >
         </activity>
-
-        <service android:name="com.fgroupindonesia.backgrounds.BroadcastServiceChecking" />
-        <service android:name="com.fgroupindonesia.backgrounds.BroadcastServiceConsultation" />
     </application>
 
 </manifest>

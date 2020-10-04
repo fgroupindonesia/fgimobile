@@ -83,60 +83,7 @@ public class OptionActivity extends Activity{
 	
 	private void setOnClickListener(Button komp){
     	
-    	komp.setOnClickListener(new View.OnClickListener() {
-            
-            public void onClick(View view) {
 
-            	// tampilkan dialog input 
-            	// get prompts.xml view
-				LayoutInflater li = LayoutInflater.from(contextNya);
-				View promptsView = li.inflate(R.layout.popup, null);
-
-				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-						OptionActivity.this);
-
-				// set prompts.xml to alertdialog builder
-				alertDialogBuilder.setView(promptsView);
-
-				final EditText userInput = (EditText) promptsView
-						.findViewById(R.id.editTextNewPassword);
-
-				// set dialog message
-				alertDialogBuilder
-					.setCancelable(false)
-					.setPositiveButton("OK",
-					  new DialogInterface.OnClickListener() {
-					    public void onClick(DialogInterface dialog,int id) {
-						// get user input and set it to result
-						// edit text
-					    passBaru  = userInput.getText().toString();
-					    
-						if(passBaru.length()>0){
-							changeMyPass();
-							ShowDialog.shortMessage(OptionActivity.this, "new password is '" + passBaru +"'");
-						}
-						
-					    }
-					  })
-					.setNegativeButton("Cancel",
-					  new DialogInterface.OnClickListener() {
-					    public void onClick(DialogInterface dialog,int id) {
-						dialog.cancel();
-					    }
-					  });
-
-				// create alert dialog
-				AlertDialog alertDialog = alertDialogBuilder.create();
-
-				// show the keyboard
-				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-	            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
-				
-				// show it
-				alertDialog.show();
-            	
-            }
-        });
     	
     }
 	

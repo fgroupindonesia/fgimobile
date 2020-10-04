@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\asus\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\8d12f6a7379c2b55af0a66ce6d8c87cb\\res\\values-v14\\values-v14.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15,21,22,23,26,27",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "E:\\apps\\installed\\AS-projects\\FGIMobile\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\values-v14\\styles.xml",
                     "from": {
                         "startLines": "7",
                         "startColumns": "4",

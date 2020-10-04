@@ -1,7 +1,7 @@
 # PREVIEW
 
 ### Interface :
-![Preview01](preview/fgi_mobile.png)
+![fgi_mobile](images/fgi_mobile.png)
 
 ## First Notice!
 

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "E:\\apps\\installed\\AS-projects\\FGIMobile\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "7",
                         "startColumns": "4",

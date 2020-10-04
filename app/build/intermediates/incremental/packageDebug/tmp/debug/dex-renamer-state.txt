@@ -1,13 +1,7 @@
-#Sun Aug 11 09:34:22 ICT 2019
-path.3=classes.dex
-path.2=classes.dex
+#Sun Oct 04 11:18:11 ICT 2020
+base.0=D\:\\java\\android\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 path.1=classes.dex
-path.0=classes.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
 renamed.1=classes2.dex
+path.0=classes.dex
 renamed.0=classes.dex
-base.3=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
-base.2=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
-base.1=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
-base.0=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+base.1=D\:\\java\\android\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
