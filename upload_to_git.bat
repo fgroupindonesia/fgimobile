@@ -1,4 +1,4 @@
 git add .
-git commit -m "updating splash screen with black hd wall"
+git commit -m "updating README"
 git push origin master
 git gc --prune
