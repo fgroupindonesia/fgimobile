@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.support.v4.app.ActivityCompat;
@@ -49,6 +50,16 @@ public class LoginActivity extends Activity implements WebCall  {
         textfieldPass = (EditText) findViewById(R.id.editTextPassword);
 
         requestPermission();
+        removeTitleBar();
+    }
+
+
+    private void removeTitleBar(){
+        try
+        {
+            this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        }
+        catch (NullPointerException e){}
 
     }
     

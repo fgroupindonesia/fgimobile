@@ -168,31 +168,16 @@
             ]
         },
         {
-            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-land_values-land.arsc.flat",
+            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-te-rIN_values-te-rIN.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,117,189,259,323,394",
-                        "endColumns": "61,71,69,63,70,67",
-                        "endOffsets": "112,184,254,318,389,457"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-lv_values-lv.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-te-rIN\\values-te-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,175,283,406,514,623,709,813,935,1017,1099,1184,1293,1405,1504,1615,1724,1829,1948,2047",
-                        "endColumns": "119,107,122,107,108,85,103,121,81,81,84,108,111,98,110,108,104,118,98,100",
-                        "endOffsets": "170,278,401,509,618,704,808,930,1012,1094,1179,1288,1400,1499,1610,1719,1824,1943,2042,2143"
+                        "startOffsets": "55,169,277,400,509,620,710,815,940,1022,1104,1189,1302,1410,1510,1621,1723,1840,1967,2068",
+                        "endColumns": "113,107,122,108,110,89,104,124,81,81,84,112,107,99,110,101,116,126,100,100",
+                        "endOffsets": "164,272,395,504,615,705,810,935,1017,1099,1184,1297,1405,1505,1616,1718,1835,1962,2063,2164"
                     }
                 }
             ]
@@ -213,16 +198,31 @@
             ]
         },
         {
-            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-te-rIN_values-te-rIN.arsc.flat",
+            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-lv_values-lv.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-te-rIN\\values-te-rIN.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,169,277,400,509,620,710,815,940,1022,1104,1189,1302,1410,1510,1621,1723,1840,1967,2068",
-                        "endColumns": "113,107,122,108,110,89,104,124,81,81,84,112,107,99,110,101,116,126,100,100",
-                        "endOffsets": "164,272,395,504,615,705,810,935,1017,1099,1184,1297,1405,1505,1616,1718,1835,1962,2063,2164"
+                        "startOffsets": "55,175,283,406,514,623,709,813,935,1017,1099,1184,1293,1405,1504,1615,1724,1829,1948,2047",
+                        "endColumns": "119,107,122,107,108,85,103,121,81,81,84,108,111,98,110,108,104,118,98,100",
+                        "endOffsets": "170,278,401,509,618,704,808,930,1012,1094,1179,1288,1400,1499,1610,1719,1824,1943,2042,2143"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\values-land_values-land.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,117,189,259,323,394",
+                        "endColumns": "61,71,69,63,70,67",
+                        "endOffsets": "112,184,254,318,389,457"
                     }
                 }
             ]

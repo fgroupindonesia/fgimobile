@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg_silver">
+    android:background="@drawable/bg_splashed">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -24,6 +24,6 @@
 
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#FF4500"/>
+        android:textColor="#ffffff"/>
 
 </RelativeLayout>

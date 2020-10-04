@@ -368,6 +368,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_splashed.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\bg_splashed.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\9a664c5f5c7861fb9184c4ade39bf565\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
