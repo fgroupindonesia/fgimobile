@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.fgroupindonesia.fgimobile.DataAbsensiActivity" >
+
+    <item
+        android:id="@+id/action_absen_idzin"
+        android:orderInCategory="100"
+        android:title="@string/text_menu_idzin"
+        />
+
+    <item
+        android:id="@+id/action_absen_jadwal"
+        android:orderInCategory="100"
+        android:title="@string/text_menu_jadwal"
+        />
+    
+
+</menu>

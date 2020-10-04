@@ -1,0 +1,4 @@
+#Sun Aug 11 09:34:20 ICT 2019
+base.0=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+path.0=classes.dex
+renamed.0=classes.dex

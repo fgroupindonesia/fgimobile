@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.fgroupindonesia.fgimobile.MainActivity" >
+
+    <item
+        android:id="@+id/menuBankDetail"
+        android:orderInCategory="98"
+        android:title="@string/text_menu_bank_details"
+        />
+    
+    <item
+        android:id="@+id/menuConfirmPayment"
+        android:orderInCategory="98"
+        android:title="@string/text_menu_confirm"
+        />
+    
+     <item
+        android:id="@+id/menuActiveRequests"
+        android:orderInCategory="98"
+        android:title="@string/text_menu_active_req"
+        />
+
+</menu>

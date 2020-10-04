@@ -1,0 +1,13 @@
+#Sun Aug 11 09:34:22 ICT 2019
+path.3=classes.dex
+path.2=classes.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.3=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+base.2=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+base.1=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+base.0=E\:\\apps\\installed\\AS-projects\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14

@@ -1,0 +1,20 @@
+FGI Mobile:
+
+- fitur History :
+	- pembayaran
+		- show all
+	- absen
+		- show all
+
+- fitur Options:
+	- change userprofile (username, pass, email)
+	- remember me
+
+- fitur Tagihan:
+	- show all (payment with status 'unpaid')
+	- upload bukti pembayaran
+
+- fitur Kelas:
+	- tanda tangan digital (hadir)
+	- timer bermula / stop
+	- sisa pertemuan
