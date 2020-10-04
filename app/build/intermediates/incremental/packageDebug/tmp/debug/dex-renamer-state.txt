@@ -1,4 +1,4 @@
-#Sun Oct 04 11:44:51 ICT 2020
+#Sun Oct 04 13:46:26 ICT 2020
 base.0=D\:\\java\\android\\FGIMobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
 path.1=classes.dex
 renamed.1=classes2.dex

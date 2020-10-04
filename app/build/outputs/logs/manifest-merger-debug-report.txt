@@ -129,6 +129,8 @@ ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:48:9-49:20
 	android:name
 		ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:48:19-49
 activity#com.fgroupindonesia.fgimobile.LoginActivity
-ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:51:9-52:20
+ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:51:9-52:53
+	android:theme
+		ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:52:13-50
 	android:name
 		ADDED from D:\java\android\FGIMobile\app\src\main\AndroidManifest.xml:51:19-48

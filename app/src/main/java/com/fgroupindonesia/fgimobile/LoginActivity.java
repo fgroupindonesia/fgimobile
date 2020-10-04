@@ -50,18 +50,11 @@ public class LoginActivity extends Activity implements WebCall  {
         textfieldPass = (EditText) findViewById(R.id.editTextPassword);
 
         requestPermission();
-        removeTitleBar();
-    }
-
-
-    private void removeTitleBar(){
-        try
-        {
-            this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        }
-        catch (NullPointerException e){}
 
     }
+
+
+
     
     
     

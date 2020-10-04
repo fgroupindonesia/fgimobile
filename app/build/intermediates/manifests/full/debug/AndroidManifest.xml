@@ -42,8 +42,9 @@
         </activity>
         <activity android:name="com.fgroupindonesia.fgimobile.OptionActivity" >
         </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.LoginActivity" >
-        </activity>
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.LoginActivity"
+            android:theme="@style/generalnotitle" />
     </application>
 
 </manifest>

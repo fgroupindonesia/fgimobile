@@ -2473,6 +2473,7 @@ public final class R {
     public static final int Widget_AppCompat_TextView_SpinnerItem=0x7f0e013e;
     public static final int Widget_AppCompat_Toolbar=0x7f0e013f;
     public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0e0140;
+    public static final int generalnotitle=0x7f0e0141;
   }
   public static final class styleable {
     /**

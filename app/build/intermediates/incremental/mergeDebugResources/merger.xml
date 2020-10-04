@@ -1396,7 +1396,9 @@
     <item>offline</item>
 	</string-array></file><file path="D:\java\android\FGIMobile\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme">
         
-    </style><style name="Theme.NoTitle" parent="@android:style/Theme.NoTitleBar"/></file><file path="D:\java\android\FGIMobile\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme">
+    </style><style name="Theme.NoTitle" parent="@android:style/Theme.NoTitleBar"/><style name="generalnotitle" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style></file><file path="D:\java\android\FGIMobile\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme">
         
     </style></file><file path="D:\java\android\FGIMobile\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme">
         
