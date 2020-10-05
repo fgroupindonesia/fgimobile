@@ -13,40 +13,29 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 
-public class WebRequest {
+import static android.content.ContentValues.TAG;
+
+// url comes in the last parameter
+public class WebRequest extends AsyncTask<String, Void, String> {
 
 	 URL url;
 	 String response = "";
 	 final String charset ="UTF-8";
 	 String targetURL = null, endResult=null;
 	 boolean verifiedCodeStat=false;
-	 public WebCall webcall;
+	 public Navigator webcall;
 	 // private static final String URL_ROOT_API = "http://api.fgroupindonesia.com/fgimobile";
 
 	 // for production purposes call below URL
-	 private static final String URL_ROOT_API = "http://192.168.0.10/fgimobile";
-	 public static final String URL_LOGIN = "/login", URL_NEW_REQUEST = "/save/new/request",
-			URL_BUY_VOUCHER="/buy", URL_CHANGE_PASS="/options/changepass",
-			URL_STATUS_VOUCHER = "/read/status/voucher",
-			URL_STATUS_PAYMENT = "/read/status/payment",
-			URL_STATUS_REQUEST="/read/status/request",
-			 URL_STATUS_LESSON="/read/status/lesson",
-			URL_VERIFICATION_VOUCHER = "/verify/voucher",
-			URL_USER_LIMIT="/read/user/limit",
-			URL_USER_BASIC_ATTENDANT="/read/basic/attendant",
-			 URL_USER_NEXT_ATTENDANT="/read/next/attendant",
-			URL_USER_SINGLE_ATTENDANT="/read/single/attendant",
-			URL_USER_SINGLE_LESSON="/read/single/lesson",
-			URL_USER_ALL_ATTENDANTS="/read/detail/attendant",
-			URL_UPDATE_VOUCHER= "/update/time/voucher",
-			URL_CHANGE_ATTENDANT= "/update/status/attendant",
-			URL_NEW_ATTENDANT= "/save/new/attendant",
-			URL_NEW_CONFIRMATION_PAYMENT = "/save/new/confirmation/username";
+
 	 
 	 public static final int POST_METHOD = 1, GET_METHOD=2;
 	 public static final int SERVER_ERROR = -1, SERVER_NO_RESULT = 0, SERVER_SUCCESS=1, SERVER_VERIFIED=2;
@@ -62,7 +51,7 @@ public class WebRequest {
 	 private ArrayList<FileInputStream> fileStreams = new ArrayList(); 
 	 private ArrayList<String> fileNames = new ArrayList(); 
 
-	 private Context myContext;
+	 private Activity myContext;
 	 private boolean multipartform = false;
 	 private static boolean waitState = false;
 	 
@@ -78,7 +67,7 @@ public class WebRequest {
 		
 	}
 
-	public WebRequest(Context contIn, WebCall webCallIn){
+	public WebRequest(Activity contIn, Navigator webCallIn){
 		myContext = contIn;
 		pilihanMethod= GET_METHOD;
 		webcall = webCallIn;
@@ -87,9 +76,13 @@ public class WebRequest {
 	public WebRequest(){
 		pilihanMethod= GET_METHOD;
 	}
-	
+
 	public WebRequest(int pilihanNyaMethod){
 		pilihanMethod = pilihanNyaMethod;
+	}
+
+	public void setRequestMethod(int pilihan){
+		pilihanMethod = pilihan;
 	}
 	
 	public void clearData(){
@@ -132,7 +125,7 @@ public class WebRequest {
 	}
 	
 	public void setTargetURL(String tujuanURL){
-		targetURL = URL_ROOT_API + tujuanURL;
+		targetURL = tujuanURL;
 	}
 	
 	public String getAllDataPassed(){
@@ -199,19 +192,13 @@ public class WebRequest {
 		}
 		
 	}
-	
-	public void execute(){
-		
+
+
+
+	protected String doInBackground(String... params) {
 		 try {
 			 
-			 if(targetURL.contains(URL_NEW_CONFIRMATION_PAYMENT)){
-				 // we modified the end point
-				 // become username
-				 targetURL = targetURL.replace("username", values.get(0));
-				 // then clear all key-values 
-				 // except for multipartform purposes (file will still remains)
-				 this.clearData();
-			 }
+
 			 
 		        url = new URL(targetURL);
 
@@ -237,7 +224,8 @@ public class WebRequest {
 		            //conn.setRequestProperty("User-Agent", "FGIMobile");
 		        	
 		        }
-		        
+
+		        //conn.connect();
 		        OutputStream outputStream = conn.getOutputStream();
 		        BufferedWriter writer = new BufferedWriter(
 		                new OutputStreamWriter(outputStream, "UTF-8"));
@@ -322,23 +310,33 @@ public class WebRequest {
 		        // this is for debugging purposes
 		        tryToGetStatusCode(endResult);
 
-		        // if this is not waitable respond
-			 	// then we proceed to the next activity
-		        if(!isWaitState()){
-		        	webcall.nextActivity();
-				}else{
-		        	// if this is waitable
-					// then we manually handle the success respond
-					webcall.onSuccess(endResult);
-				}
 
 		        
 		    } catch (Exception e) {
-		    	cetakErrorFile(e);
+		 		//ShowDialog.message(myContext, "error " + e.getMessage());
+		    	ErrorLogger.write(e);
 		    }
-		
+
+		return null;
+
 	}
 
+	@Override
+	protected void onPostExecute(String result) {
+
+		if (endResult != null && statusCode != SERVER_ERROR) {
+			// move to the next Activity
+			if (isWaitState() != true) {
+				webcall.nextActivity();
+			}else{
+				webcall.onSuccess(endResult);
+			}
+		} else {
+			ShowDialog.message(myContext, "WebRequest error, result is " + endResult);
+
+		}
+
+	}
 
 	
 	private void tryToGetStatusCode(String serverReply){
@@ -383,24 +381,7 @@ public class WebRequest {
 		
 	}
 	
-	private void cetakErrorFile(Exception ex){
-		
-		File file = null;
-		try{
-			File sdCard = Environment.getExternalStorageDirectory();
-			file = new File(sdCard.getAbsolutePath() + "/data");
-			file.mkdirs();
-			file = new File(file.getAbsolutePath() + "/test.log");
-			file.createNewFile();
-	    	PrintStream ps = new PrintStream(file);
-	    	ex.printStackTrace(ps);
-	    	ps.close();
-	    	
-		} catch(Exception e){
-			endResult = "Permission on file writing!";
-		}
-		
-	}
+
 
 	public static boolean checkConnection(Context context) {
 		final ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

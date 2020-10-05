@@ -28,11 +28,11 @@
             android:showDividers="middle">
 
             <ImageView
-                android:id="@+id/imageView2"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/fg_logo" />
+                android:src="@drawable/fg_logo" />
 
             <TextView
                 android:id="@+id/textviewUsername"
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/logout" />
+                android:src="@drawable/logout" />
         </LinearLayout>
 
     </LinearLayout>
@@ -104,7 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/payment" />
+                    android:src="@drawable/payment" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/attendance" />
+                    android:src="@drawable/attendance" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -151,7 +151,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/options" />
+                    android:src="@drawable/options" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -173,7 +173,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/history" />
+                    android:src="@drawable/history" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/board" />
+                    android:src="@drawable/board" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/billing" />
+                    android:src="@drawable/billing" />
 
                 <TextView
                     android:layout_width="wrap_content"

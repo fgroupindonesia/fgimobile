@@ -186,7 +186,7 @@ public class OptionActivity extends Activity{
                    		cobaPassing.addData("username", UserData.Username);
                    		cobaPassing.addData("passold", UserData.Passw);
                    		cobaPassing.addData("passnew", passBaru);
-                   		cobaPassing.setTargetURL(WebRequest.URL_CHANGE_PASS);
+                   		//cobaPassing.setTargetURL(WebRequest.URL_CHANGE_PASS);
                     	cobaPassing.execute();
                     	
                     }else if(modePilihan==OPTION_MODE_CONFIG){

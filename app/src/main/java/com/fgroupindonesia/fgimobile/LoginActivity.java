@@ -1,34 +1,28 @@
 package com.fgroupindonesia.fgimobile;
 
-import com.fgroupindonesia.beans.StatusLesson;
-import com.fgroupindonesia.beans.StatusVoucher;
-import com.fgroupindonesia.helper.AudioPlayer;
-import com.fgroupindonesia.helper.OptionConfiguration;
+import com.fgroupindonesia.helper.ErrorLogger;
+import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ShowDialog;
 import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
-import com.fgroupindonesia.helper.UserData;
-import com.fgroupindonesia.helper.WebCall;
+import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.WebRequest;
-import com.google.gson.Gson;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
 import android.support.v4.app.ActivityCompat;
 import android.widget.TextView;
 
-public class LoginActivity extends Activity implements WebCall  {
+import org.json.JSONObject;
+
+public class LoginActivity extends Activity implements Navigator {
 
 	EditText textfieldUsername, textfieldPass;
 	WebRequest httpCall;
@@ -43,8 +37,7 @@ public class LoginActivity extends Activity implements WebCall  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // preparing the httpcall
-        httpCall = new WebRequest(this,this);
+
 
         textfieldUsername = (EditText) findViewById(R.id.editTextUsername);
         textfieldPass = (EditText) findViewById(R.id.editTextPassword);
@@ -53,15 +46,9 @@ public class LoginActivity extends Activity implements WebCall  {
 
     }
 
-
-
-    
-    
-    
     @Override
     public void onPause(){
     	super.onPause();
-    	
     }
 
     public void registerUser(View v){
@@ -71,9 +58,7 @@ public class LoginActivity extends Activity implements WebCall  {
 	}
 
     public void verifyUser(View view){
-
-				periksaFormulir();
-
+        periksaFormulir();
 	}
 
 	@Override
@@ -85,21 +70,40 @@ public class LoginActivity extends Activity implements WebCall  {
 
     }
 
+
+
     @Override
     public void onSuccess(String respond) {
-        ShowDialog.message(this, respond);
+
+        try {
+
+            if(RespondHelper.isValidRespond(respond)){
+                    nextActivity();
+            }else{
+                ShowDialog.message(this, "Username or password are invalid, please try again!");
+            }
+
+        } catch(Exception err){
+            ErrorLogger.write(err);
+            ShowDialog.message(this, "Error verification. Please contact administrator!");
+        }
+
     }
 
     private void periksaFormulir(){
    	if(!UIHelper.empty(textfieldUsername) && !UIHelper.empty(textfieldPass)){
 
    		// the web request executed by httcall
-
+        // preparing the httpcall
+        httpCall = new WebRequest(this,this);
         httpCall.addData("username", UIHelper.getText(textfieldUsername));
         httpCall.addData("password", UIHelper.getText(textfieldPass));
         httpCall.setWaitState(true);
-        httpCall.execute();
+        httpCall.setRequestMethod(WebRequest.POST_METHOD);
+        httpCall.setTargetURL(URLReference.UserLogin);
+        httpCall.execute("");
 
+        ShowDialog.message(this,"going to " + URLReference.UserLogin);
     	}else{
     		ShowDialog.message(this, "Isi username dan password dengan benar!");
     	}
