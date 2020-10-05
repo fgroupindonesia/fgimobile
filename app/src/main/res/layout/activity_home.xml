@@ -24,6 +24,7 @@
             android:layout_weight="1"
             android:divider="@drawable/spacing"
             android:gravity="center_vertical|center_horizontal"
+            android:onClick="openUserProfile"
             android:orientation="horizontal"
             android:showDividers="middle">
 
@@ -52,6 +53,7 @@
             android:layout_weight="1"
             android:divider="@drawable/spacing"
             android:gravity="center_vertical|center_horizontal"
+            android:onClick="logout"
             android:orientation="horizontal"
             android:showDividers="middle">
 
@@ -146,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="openOptions"
                 android:orientation="vertical">
 
                 <ImageView
@@ -168,6 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="openHistory"
                 android:orientation="vertical">
 
                 <ImageView
@@ -189,6 +193,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="openKelas"
                 android:orientation="vertical">
 
                 <ImageView
@@ -221,6 +226,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="openTagihan"
                 android:orientation="vertical">
 
                 <ImageView

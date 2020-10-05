@@ -6,6 +6,7 @@ import com.fgroupindonesia.helper.ShowDialog;
 import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.Navigator;
+import com.fgroupindonesia.helper.UserData;
 import com.fgroupindonesia.helper.WebRequest;
 
 import android.Manifest;
@@ -13,16 +14,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.support.v4.app.ActivityCompat;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONObject;
 
 public class LoginActivity extends Activity implements Navigator {
+
+    // in miliseconds
+    int PERIOD_OF_TIME = 2000;
 
 	EditText textfieldUsername, textfieldPass;
 	WebRequest httpCall;
@@ -30,14 +36,15 @@ public class LoginActivity extends Activity implements Navigator {
 	boolean permitted=false;
 
 	TextView textRegisterUser;
-	String URL_FGROUP_REGISTER = "http://fgroupindonesia.com/pendaftaran";
+	ProgressBar loadingProgressBar;
+
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        loadingProgressBar = (ProgressBar) findViewById(R.id.loadingProgressBar);
 
         textfieldUsername = (EditText) findViewById(R.id.editTextUsername);
         textfieldPass = (EditText) findViewById(R.id.editTextPassword);
@@ -57,13 +64,26 @@ public class LoginActivity extends Activity implements Navigator {
 		startActivity(browserIntent);
 	}
 
+	private void showLoading(boolean t){
+        if(t==false){
+            loadingProgressBar.setVisibility(View.GONE);
+        }else{
+            loadingProgressBar.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+
     public void verifyUser(View view){
+
+        showLoading(true);
         periksaFormulir();
+
 	}
 
 	@Override
     public void nextActivity(){
-    	
+
     	 Intent intent = new Intent(this, HomeActivity.class);
          finish();
     	 startActivity(intent);
@@ -75,17 +95,35 @@ public class LoginActivity extends Activity implements Navigator {
     @Override
     public void onSuccess(String respond) {
 
+
+
         try {
 
             if(RespondHelper.isValidRespond(respond)){
-                    nextActivity();
+
+                // save the username somewhere
+                UserData.Username = UIHelper.getText(textfieldUsername);
+
+                // move to the next activity after period of time
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        showLoading(false);
+                        nextActivity();
+
+
+                    }
+                },PERIOD_OF_TIME);
+
             }else{
                 ShowDialog.message(this, "Username or password are invalid, please try again!");
+                showLoading(false);
             }
 
         } catch(Exception err){
             ErrorLogger.write(err);
             ShowDialog.message(this, "Error verification. Please contact administrator!");
+            showLoading(false);
         }
 
     }
@@ -103,7 +141,8 @@ public class LoginActivity extends Activity implements Navigator {
         httpCall.setTargetURL(URLReference.UserLogin);
         httpCall.execute("");
 
-        ShowDialog.message(this,"going to " + URLReference.UserLogin);
+        //ShowDialog.message(this,"going to " + URLReference.UserLogin);
+
     	}else{
     		ShowDialog.message(this, "Isi username dan password dengan benar!");
     	}

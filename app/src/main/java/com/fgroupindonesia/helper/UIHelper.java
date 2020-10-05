@@ -1,5 +1,6 @@
 package com.fgroupindonesia.helper;
 
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class UIHelper {
@@ -7,6 +8,7 @@ public class UIHelper {
     public static String getText(EditText element){
         return element.getText().toString();
     }
+
 
     public static boolean empty(EditText element){
 

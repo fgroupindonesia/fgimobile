@@ -8,29 +8,76 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.fgroupindonesia.helper.UserData;
 
 public class HomeActivity extends Activity {
 
-	final int ACT_CHECK_STATUS=2, ACT_OPTIONS=3, ACT_KONSULTASI=4, ACT_DATA_ABSEN=5,
-			ACT_BUY_VOUCHER=6, ACT_SEND_REQUEST=7;
+    TextView textviewUsername;
+
+	final int ACT_KELAS=2,
+            ACT_OPTIONS=3,
+            ACT_HISTORY=4,
+            ACT_TAGIHAN=5,
+            ACT_USER_PROFILE = 6;
+
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 	        setContentView(R.layout.activity_home);
-	        
 
+        textviewUsername = (TextView) findViewById(R.id.textviewUsername);
+
+        if(UserData.Username != null){
+            textviewUsername.setText(UserData.Username);
+        }
 	        
 	}
-	
+
+	public void logout(View v){
+
+        ActivityCompat.finishAffinity(this);
+
+    }
+
+    public void openTagihan(View v){
+	    nextActivity(ACT_TAGIHAN);
+    }
+
+    public void openUserProfile(View v){
+	    nextActivity(ACT_USER_PROFILE);
+    }
+
+    public void openOptions(View v){
+	    nextActivity(ACT_OPTIONS);
+    }
+
+    public void openKelas(View v){
+        nextActivity(ACT_KELAS);
+    }
+
+    public void openHistory(View v){
+	    nextActivity(ACT_HISTORY);
+    }
+
+
 	private void nextActivity(int jenisActivity){
 	    	
     	 Intent intent = null;
     	 
-    	 if(jenisActivity == ACT_BUY_VOUCHER){
+    	 if(jenisActivity == ACT_OPTIONS){
     		 intent = new Intent(this, OptionActivity.class);
-    	 }
+    	 }else if(jenisActivity == ACT_USER_PROFILE){
+             //intent = new Intent(this, UserProfileActivity.class);
+         }else if(jenisActivity == ACT_KELAS){
+            //intent = new Intent(this, KelasActivity.class);
+        }else if(jenisActivity == ACT_HISTORY){
+             //intent = new Intent(this, HistoryActivity.class);
+         }
     	 
          startActivity(intent);
     	

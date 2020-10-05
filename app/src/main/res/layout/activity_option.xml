@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp">
 
     <TextView
         android:id="@+id/textViewTanggalBerikutPickDate"
@@ -15,18 +18,21 @@
         android:id="@+id/checkboxRememberLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="activateRemember"
         android:text="@string/text_label_remember_login" />
 
     <CheckBox
         android:id="@+id/checkboxPaymentNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="activateNotifikasi"
         android:text="@string/text_label_notif_pembayaran" />
 
     <Button
         android:id="@+id/buttonChangePassword"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:onClick="changePass"
         android:text="@string/text_button_change_pass" />
 
 </LinearLayout>
