@@ -38,10 +38,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.HomeActivity" >
-        </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.OptionActivity" >
-        </activity>
+        <activity android:name="com.fgroupindonesia.fgimobile.HomeActivity" />
+        <activity android:name="com.fgroupindonesia.fgimobile.OptionActivity" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.LoginActivity"
             android:theme="@style/generalnotitle" />

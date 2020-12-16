@@ -143,7 +143,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutOption"
+                android:id="@+id/linearOption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -166,7 +166,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutHistory"
+                android:id="@+id/linearHistory"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -189,7 +189,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutKelas"
+                android:id="@+id/linearKelas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -221,7 +221,30 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/linearLayoutTagihan"
+                android:id="@+id/linearDesktop"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="openOptions"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/desktop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_title_desktop"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearTagihan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

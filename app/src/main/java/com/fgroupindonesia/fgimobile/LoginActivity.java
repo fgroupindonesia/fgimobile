@@ -12,6 +12,7 @@ import com.fgroupindonesia.helper.WebRequest;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,7 +51,13 @@ public class LoginActivity extends Activity implements Navigator {
         textfieldPass = (EditText) findViewById(R.id.editTextPassword);
 
         requestPermission();
+        reloadUserOptionData();
 
+    }
+
+    private void reloadUserOptionData(){
+        SharedPreferences preferences = getSharedPreferences(UserData.BroadCastTag, MODE_PRIVATE);
+        //String username = preferences.getInt("storedInt", 0);
     }
 
     @Override

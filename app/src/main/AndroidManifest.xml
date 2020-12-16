@@ -2,57 +2,45 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fgroupindonesia.fgimobile"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="23" />
 
-     <uses-feature
+    <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-    
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    
-    
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/fg_logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        
-      
-        
-        <activity 
+        android:theme="@style/AppTheme">
+        <activity android:name="com.fgroupindonesia.UserProfileActivity"></activity>
+        <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
             android:noHistory="true"
-            android:theme="@style/Theme.NoTitle" >
+            android:theme="@style/Theme.NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        
-        
-        <activity android:name=".HomeActivity" >
-        </activity>
-
-        <activity android:name=".OptionActivity" >
-        </activity>
-
-        <activity android:name=".LoginActivity"
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".OptionActivity" />
+        <activity
+            android:name=".LoginActivity"
             android:theme="@style/generalnotitle" />
-        
-
-       
     </application>
 
 </manifest>

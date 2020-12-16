@@ -15,6 +15,7 @@ import com.fgroupindonesia.helper.WebRequest;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -34,19 +35,23 @@ import android.view.inputmethod.InputMethodManager;
 
 public class OptionActivity extends Activity {
 
-    Context contextNya;
+
     WebRequest cobaPassing = new WebRequest(WebRequest.POST_METHOD);
     String passBaru = null;
 
     final int OPTION_MODE_PASS = 1, OPTION_MODE_CONFIG = 2;
     CheckBox opsiRememberLogin, opsiNotifPembayaran;
 
+    SharedPreferences sharedpreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option);
 
-        contextNya = getApplicationContext();
+        // this is for shared pref part
+        sharedpreferences = getSharedPreferences(UserData.BroadCastTag, Context.MODE_PRIVATE);
+        UserData.setPreference(sharedpreferences);
 
         opsiRememberLogin = (CheckBox) findViewById(R.id.checkboxRememberLogin);
         opsiNotifPembayaran = (CheckBox) findViewById(R.id.checkboxPaymentNotification);
@@ -64,23 +69,28 @@ public class OptionActivity extends Activity {
 
     public void activateNotifikasi(View v) {
 		UserData.NotifLimitPayment = opsiNotifPembayaran.isChecked();
+		UserData.savePreference("notiflimitpayment", UserData.NotifLimitPayment);
     }
 
     public void activateRemember(View v) {
         UserData.RememberLogin = opsiRememberLogin.isChecked();
+        UserData.savePreference("rememberlogin", UserData.RememberLogin);
     }
 
     public void changePass(View v) {
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(contextNya);
 
-		final EditText et = new EditText(contextNya);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-		// set prompts.xml to alertdialog builder
-		alertDialogBuilder.setView(et);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.popup_change_pass, null);
+        alertDialogBuilder.setView(dialogView);
 
 		// set dialog message
-		alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		alertDialogBuilder.setCancelable(true).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
+                EditText editText = (EditText) dialogView.findViewById(R.id.editTextPasswordOption);
+			    UserData.Passw = UIHelper.getText(editText);
+                UserData.savePreference("passw", UserData.Passw);
 			}
 		});
 
