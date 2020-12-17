@@ -137,6 +137,7 @@
     <string name="text_label_teamviewer_pass">TeamViewer Pass</string>
 
     <string name="text_label_save">Save</string>
+    <string name="text_label_loading">Loading...</string>
 
     <string name="text_menu_consultation_finished">Finish Session</string>
     <string name="text_menu_bank_details">Bank Details</string>

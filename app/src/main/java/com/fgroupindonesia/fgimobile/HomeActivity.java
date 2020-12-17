@@ -11,7 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.fgroupindonesia.helper.UserData;
+import com.fgroupindonesia.helper.shared.KeyPref;
+import com.fgroupindonesia.helper.shared.UserData;
 
 public class HomeActivity extends Activity {
 
@@ -32,13 +33,21 @@ public class HomeActivity extends Activity {
 
         textviewUsername = (TextView) findViewById(R.id.textviewUsername);
 
-        if(UserData.Username != null){
-            textviewUsername.setText(UserData.Username);
+        // for shared preference usage
+        UserData.setPreference(this);
+
+        String username = UserData.getPreferenceString(KeyPref.USERNAME);
+
+        if(username != null){
+            textviewUsername.setText(username);
         }
 	        
 	}
 
 	public void logout(View v){
+
+	    UserData.savePreference(KeyPref.USERNAME, null);
+        UserData.savePreference(KeyPref.PASSWORD, null);
 
         ActivityCompat.finishAffinity(this);
 
@@ -70,16 +79,18 @@ public class HomeActivity extends Activity {
     	 Intent intent = null;
     	 
     	 if(jenisActivity == ACT_OPTIONS){
-    		 intent = new Intent(this, OptionActivity.class);
+    		 //intent = new Intent(this, OptionActivity.class);
     	 }else if(jenisActivity == ACT_USER_PROFILE){
-             //intent = new Intent(this, UserProfileActivity.class);
+             intent = new Intent(this, UserProfileActivity.class);
          }else if(jenisActivity == ACT_KELAS){
             //intent = new Intent(this, KelasActivity.class);
         }else if(jenisActivity == ACT_HISTORY){
              //intent = new Intent(this, HistoryActivity.class);
          }
-    	 
-         startActivity(intent);
+
+    	 if(intent!=null) {
+             startActivity(intent);
+         }
     	
     }
 

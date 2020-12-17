@@ -7,6 +7,8 @@ import android.os.Handler;
 
 public class SplashActivity extends Activity{
 
+	private int TIME_WAIT = 2000;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class SplashActivity extends Activity{
 				startActivity(new Intent(SplashActivity.this, LoginActivity.class));
 
 			}
-		},2000);
+		},TIME_WAIT);
 	        
 	}
 	

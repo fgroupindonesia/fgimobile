@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
@@ -19,7 +21,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
 
 import static android.content.ContentValues.TAG;
 
@@ -31,6 +32,7 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 	 final String charset ="UTF-8";
 	 String targetURL = null, endResult=null;
 	 boolean verifiedCodeStat=false;
+	 boolean downloadStat = false;
 	 public Navigator webcall;
 	 // private static final String URL_ROOT_API = "http://api.fgroupindonesia.com/fgimobile";
 
@@ -102,6 +104,14 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 
 	public void setWaitState(boolean b){
 		waitState = b;
+	}
+
+	public void setDownloadState(boolean b){
+		downloadStat = b;
+	}
+
+	public boolean isDownloadState(){
+		return downloadStat;
 	}
 
 	public int getStatusCode(){
@@ -193,13 +203,14 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		
 	}
 
-
+	// just for temporarily data passed usually we put it at the front
+	public String getFirstData(){
+		return values.get(0);
+	}
 
 	protected String doInBackground(String... params) {
 		 try {
-			 
 
-			 
 		        url = new URL(targetURL);
 
 		        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -230,10 +241,10 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		        BufferedWriter writer = new BufferedWriter(
 		                new OutputStreamWriter(outputStream, "UTF-8"));
 		        
-		        if(isMultipartform()==false){
-			        writer.write(this.getAllDataPassed());
-
-		        }else {
+		        if(isMultipartform()==false && isDownloadState()==false){
+		        		// not for download nor post file
+						writer.write(this.getAllDataPassed());
+		        }else if(isMultipartform()==true && isDownloadState()==false) {
 		        	// we do writing for each data stored
 		        	// for multipartform request
 		        	
@@ -245,7 +256,7 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 			            writer.append("Content-Type: text/plain; charset=" + charset).append(
 			                    LINE_FEED);
 			            writer.append(LINE_FEED);
-			            writer.append(values.get(index)).append(LINE_FEED);
+			            writer.append(decode(values.get(index))).append(LINE_FEED);
 			            writer.flush();
 		        		
 		        	}
@@ -294,24 +305,65 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		        int responseCode=conn.getResponseCode();
 
 		        if (responseCode == HttpURLConnection.HTTP_OK) {
-		            String line;
-		            BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
-		            while ((line=br.readLine()) != null) {
-		                response+=line;
-		            }
+
+		        	// if this is a usual text reply mode no downloading
+					// just casual text return we read
+		        	if(isDownloadState()==false) {
+
+						String line;
+						BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+						while ((line = br.readLine()) != null) {
+							response += line;
+						}
+
+					} else {
+
+		        		// this is for downloading progress
+						// save to file locally
+
+						int length = conn.getContentLength();
+
+						// the file name expected is here in the first data
+						String singleFile = getFirstData();
+						String endPath = Environment.getExternalStorageDirectory() + File.separator + singleFile;
+						//pd.setMax(length / (1000));
+
+						InputStream is = conn.getInputStream();
+						FileOutputStream os = new FileOutputStream(endPath);
+
+						byte data[] = new byte[4096];
+						long total = 0;
+						int count;
+						while ((count = is.read(data)) != -1) {
+							if (isCancelled()) {
+								is.close();
+								return null;
+							}
+							total += count;
+
+							os.write(data, 0, count);
+						}
+
+						os.close();
+						is.close();
+
+						// the respond is actually the file path completely
+						response = endPath;
+
+					}
 		        }
 		        else {
 		            response="error";    
 
 		        }
-		        
-		        endResult = response;
+
+
+			 	endResult = response;
 		        
 		        // this is for debugging purposes
 		        tryToGetStatusCode(endResult);
+				conn.disconnect();
 
-
-		        
 		    } catch (Exception e) {
 		 		//ShowDialog.message(myContext, "error " + e.getMessage());
 		    	ErrorLogger.write(e);
@@ -401,6 +453,12 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		}
 		return false;
 	}
-	
+
+
+	public String decode(String mess) throws Exception {
+		String val = null;
+		val = URLDecoder.decode(mess, "UTF-8");
+		return val;
+	}
 	
 }

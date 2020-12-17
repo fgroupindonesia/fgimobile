@@ -1,37 +1,22 @@
 package com.fgroupindonesia.fgimobile;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-
-import com.fgroupindonesia.helper.AudioPlayer;
-import com.fgroupindonesia.helper.OptionConfiguration;
-import com.fgroupindonesia.helper.ShowDialog;
 import com.fgroupindonesia.helper.UIHelper;
-import com.fgroupindonesia.helper.UserData;
+import com.fgroupindonesia.helper.shared.UserData;
 import com.fgroupindonesia.helper.WebRequest;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 import android.view.LayoutInflater;
-import android.view.inputmethod.InputMethodManager;
 
 public class OptionActivity extends Activity {
 
@@ -51,7 +36,7 @@ public class OptionActivity extends Activity {
 
         // this is for shared pref part
         sharedpreferences = getSharedPreferences(UserData.BroadCastTag, Context.MODE_PRIVATE);
-        UserData.setPreference(sharedpreferences);
+        UserData.setPreference(this);
 
         opsiRememberLogin = (CheckBox) findViewById(R.id.checkboxRememberLogin);
         opsiNotifPembayaran = (CheckBox) findViewById(R.id.checkboxPaymentNotification);
@@ -89,8 +74,8 @@ public class OptionActivity extends Activity {
 		alertDialogBuilder.setCancelable(true).setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
                 EditText editText = (EditText) dialogView.findViewById(R.id.editTextPasswordOption);
-			    UserData.Passw = UIHelper.getText(editText);
-                UserData.savePreference("passw", UserData.Passw);
+			    String passw = UIHelper.getText(editText);
+                UserData.savePreference("passw", passw);
 			}
 		});
 

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="23" />
 
     <uses-feature
@@ -27,6 +27,7 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.fgroupindonesia.fgimobile.UserProfileActivity" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.SplashActivity"
             android:label="@string/app_name"
