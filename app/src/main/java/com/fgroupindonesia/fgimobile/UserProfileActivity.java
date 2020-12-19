@@ -42,7 +42,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     }
 
-    public void downloadPictureAPI(){
+    public void downloadPictureAPI() {
 
         ACT_API_CURRENT_CALL = ACT_API_DOWNLOAD_PICTURE;
 
@@ -75,7 +75,7 @@ public class UserProfileActivity extends Activity implements Navigator {
         httpCall.addData("tmv_id", UIHelper.getText(editTextTmvID));
         httpCall.addData("tmv_pass", UIHelper.getText(editTextTmvPass));
 
-        if(picturePath!=null) {
+        if (picturePath != null) {
             httpCall.addFile("propic", new File(picturePath));
         }
 
@@ -100,8 +100,8 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     // just some code to remember
     private int TIME_WAIT = 2000, PICK_PICTURE = 1,
-    ACT_API_CURRENT_CALL=1, ACT_API_CALL_DATA = 2, ACT_API_CALL_UPDATE=3,
-    ACT_API_DOWNLOAD_PICTURE=4;
+            ACT_API_CURRENT_CALL = 1, ACT_API_CALL_DATA = 2, ACT_API_CALL_UPDATE = 3,
+            ACT_API_DOWNLOAD_PICTURE = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,12 +134,12 @@ public class UserProfileActivity extends Activity implements Navigator {
                 getDataAPI();
 
             }
-        },TIME_WAIT);
+        }, TIME_WAIT);
 
 
     }
 
-    public void pickPicture(View view){
+    public void pickPicture(View view) {
 
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
@@ -147,7 +147,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     }
 
-    public static String getPath(Context context, Uri uri ) {
+    public static String getPath(Context context, Uri uri) {
         String filePath = "";
 
         Pattern p = Pattern.compile("(\\d+)$");
@@ -158,11 +158,11 @@ public class UserProfileActivity extends Activity implements Navigator {
         }
         String imgId = m.group();
 
-        String[] column = { MediaStore.Images.Media.DATA };
+        String[] column = {MediaStore.Images.Media.DATA};
         String sel = MediaStore.Images.Media._ID + "=?";
 
         Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                column, sel, new String[]{ imgId }, null);
+                column, sel, new String[]{imgId}, null);
 
         int columnIndex = cursor.getColumnIndex(column[0]);
 
@@ -179,7 +179,7 @@ public class UserProfileActivity extends Activity implements Navigator {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_PICTURE && resultCode == Activity.RESULT_OK) {
             if (data == null) {
-                //Display an error
+                // stop if there's nothing
                 return;
             }
 
@@ -187,19 +187,15 @@ public class UserProfileActivity extends Activity implements Navigator {
                 Uri imageURI = data.getData();
                 imageUserProfile.setImageURI(imageURI);
 
-                //InputStream inputStream = this.getContentResolver().openInputStream(data.getData());
                 // this will be sent to server later
-                 picturePath = getPath( this.getApplicationContext( ), imageURI );
+                picturePath = getPath(this.getApplicationContext(), imageURI);
                 //ShowDialog.message(UserProfileActivity.this, picturePath);
 
-            } catch(Exception ex){
-
+            } catch (Exception ex) {
             }
 
         }
     }
-
-
 
     public void getDataAPI() {
 
@@ -228,11 +224,11 @@ public class UserProfileActivity extends Activity implements Navigator {
 
         try {
 
-           // ShowDialog.message(UserProfileActivity.this, "respond is " + respond);
+            // ShowDialog.message(UserProfileActivity.this, "respond is " + respond);
 
             if (RespondHelper.isValidRespond(respond)) {
 
-                if(ACT_API_CURRENT_CALL==ACT_API_CALL_DATA) {
+                if (ACT_API_CURRENT_CALL == ACT_API_CALL_DATA) {
 
                     JSONObject jo = RespondHelper.getObject(respond, "multi_data");
 
@@ -253,13 +249,13 @@ public class UserProfileActivity extends Activity implements Navigator {
                     // calling the image download
                     downloadPictureAPI();
 
-                } else if (ACT_API_CURRENT_CALL==ACT_API_CALL_UPDATE){
+                } else if (ACT_API_CURRENT_CALL == ACT_API_CALL_UPDATE) {
                     // back to the dashboard (home)
                     finish();
                 }
 
                 // the invalid output is sometimes for non post method
-            } else if (ACT_API_CURRENT_CALL == ACT_API_DOWNLOAD_PICTURE){
+            } else if (ACT_API_CURRENT_CALL == ACT_API_DOWNLOAD_PICTURE) {
                 // refreshing the imageview
                 //ShowDialog.message(this, "downloading got " + respond);
 

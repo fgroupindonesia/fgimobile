@@ -1,4 +1,4 @@
 git add .
-git commit -m "Updating & Download data JSON from UserProfile is completed."
+git commit -m "Desktop Mobile AutoLogin fix bugs rotation portrait."
 git push origin master
 git gc --prune

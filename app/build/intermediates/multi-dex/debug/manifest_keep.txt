@@ -1,2 +1,2 @@
-# Referenced at D:\java\android\FGIMobile\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:22
+# Referenced at D:\java\android\FGIMobile\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:39
 -keep class android.support.multidex.MultiDexApplication { <init>(...); }
