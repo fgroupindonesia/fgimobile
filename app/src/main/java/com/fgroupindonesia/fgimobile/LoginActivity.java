@@ -107,7 +107,7 @@ public class LoginActivity extends Activity implements Navigator {
 
 
     @Override
-    public void onSuccess(String respond) {
+    public void onSuccess(String urlTarget, String respond) {
 
 
         try {

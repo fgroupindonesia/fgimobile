@@ -9,14 +9,12 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.fgroupindonesia.fgimobile.R;
 import com.fgroupindonesia.helper.ErrorLogger;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
@@ -25,13 +23,14 @@ import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.KeyPref;
+import com.fgroupindonesia.helper.shared.OPSAction;
+import com.fgroupindonesia.helper.shared.UIAction;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,12 +38,11 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     public void saveUserProfile(View v) {
         saveDataAPI();
-
     }
 
     public void downloadPictureAPI() {
 
-        ACT_API_CURRENT_CALL = ACT_API_DOWNLOAD_PICTURE;
+        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE;
 
         WebRequest httpCall = new WebRequest(this, this);
         //httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
@@ -60,7 +58,7 @@ public class UserProfileActivity extends Activity implements Navigator {
     }
 
     public void saveDataAPI() {
-        ACT_API_CURRENT_CALL = ACT_API_CALL_UPDATE;
+        UIAction.ACT_API_CURRENT_CALL = UIAction.ACT_API_CALL_UPDATE;
 
         // the web request executed by httcall
         // preparing the httpcall
@@ -99,9 +97,8 @@ public class UserProfileActivity extends Activity implements Navigator {
     String picturePath, idText, filePropicName;
 
     // just some code to remember
-    private int TIME_WAIT = 2000, PICK_PICTURE = 1,
-            ACT_API_CURRENT_CALL = 1, ACT_API_CALL_DATA = 2, ACT_API_CALL_UPDATE = 3,
-            ACT_API_DOWNLOAD_PICTURE = 4;
+    private int TIME_WAIT = 2000, PICK_PICTURE = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,7 +196,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     public void getDataAPI() {
 
-        ACT_API_CURRENT_CALL = ACT_API_CALL_DATA;
+        UIAction.ACT_API_CURRENT_CALL = UIAction.ACT_API_CALL_DATA;
         // the web request executed by httcall
         // preparing the httpcall
         WebRequest httpCall = new WebRequest(this, this);
@@ -220,7 +217,7 @@ public class UserProfileActivity extends Activity implements Navigator {
     }
 
     @Override
-    public void onSuccess(String respond) {
+    public void onSuccess(String urlTarget, String respond) {
 
         try {
 
@@ -228,7 +225,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
             if (RespondHelper.isValidRespond(respond)) {
 
-                if (ACT_API_CURRENT_CALL == ACT_API_CALL_DATA) {
+                if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_CALL_DATA) {
 
                     JSONObject jo = RespondHelper.getObject(respond, "multi_data");
 
@@ -249,13 +246,13 @@ public class UserProfileActivity extends Activity implements Navigator {
                     // calling the image download
                     downloadPictureAPI();
 
-                } else if (ACT_API_CURRENT_CALL == ACT_API_CALL_UPDATE) {
+                } else if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_CALL_UPDATE) {
                     // back to the dashboard (home)
                     finish();
                 }
 
                 // the invalid output is sometimes for non post method
-            } else if (ACT_API_CURRENT_CALL == ACT_API_DOWNLOAD_PICTURE) {
+            } else if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
                 // refreshing the imageview
                 //ShowDialog.message(this, "downloading got " + respond);
 

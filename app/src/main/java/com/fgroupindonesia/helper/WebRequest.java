@@ -381,7 +381,7 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 			if (isWaitState() != true) {
 				webcall.nextActivity();
 			}else{
-				webcall.onSuccess(endResult);
+				webcall.onSuccess(targetURL, endResult);
 			}
 		} else {
 			ShowDialog.message(myContext, "WebRequest error, result is " + endResult);

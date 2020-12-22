@@ -8,16 +8,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceView;
 
+import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.UIHelper;
+import com.fgroupindonesia.helper.URLReference;
+import com.fgroupindonesia.helper.WebRequest;
+import com.fgroupindonesia.helper.shared.KeyPref;
+import com.fgroupindonesia.helper.shared.UIAction;
+import com.fgroupindonesia.helper.shared.UserData;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.CaptureActivity;
 
 
-public class DesktopActivity extends Activity {
+public class DesktopActivity extends Activity implements Navigator {
 
     private IntentIntegrator intentIntegrator;
-
+    WebRequest httpCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,23 @@ public class DesktopActivity extends Activity {
 
     }
 
+    private void verifyClient(String machineID){
+
+        // the web request executed by httcall
+        // preparing the httpcall
+        httpCall = new WebRequest(this, this);
+        httpCall.addData("machine_unique", machineID);
+
+        String usName = UserData.getPreferenceString(KeyPref.USERNAME);
+
+        httpCall.addData("username", usName);
+        httpCall.setWaitState(true);
+        httpCall.setRequestMethod(WebRequest.POST_METHOD);
+        httpCall.setTargetURL(URLReference.RemoteLoginVerify);
+        httpCall.execute();
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
@@ -51,7 +75,10 @@ public class DesktopActivity extends Activity {
                     // post to the server to unlock the client
                     ShowDialog.message(this, message);
 
+                UIAction.ACT_API_CURRENT_CALL
+                    verifyClient(message);
 
+                    finish();
 
             }
         }else{
@@ -59,4 +86,15 @@ public class DesktopActivity extends Activity {
         }
     }
 
+    @Override
+    public void nextActivity() {
+
+    }
+
+    @Override
+    public void onSuccess(String urlTarget, String result) {
+
+
+
+    }
 }

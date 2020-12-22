@@ -4,6 +4,6 @@ package com.fgroupindonesia.helper;
 public  interface Navigator {
 
     public void nextActivity();
-    public void onSuccess(String result);
+    public void onSuccess(String urlTarget, String result);
 
 }
