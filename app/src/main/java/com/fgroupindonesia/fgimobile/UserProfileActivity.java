@@ -58,7 +58,7 @@ public class UserProfileActivity extends Activity implements Navigator {
     }
 
     public void saveDataAPI() {
-        UIAction.ACT_API_CURRENT_CALL = UIAction.ACT_API_CALL_UPDATE;
+        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_UPDATE_DATA;
 
         // the web request executed by httcall
         // preparing the httpcall
@@ -196,7 +196,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     public void getDataAPI() {
 
-        UIAction.ACT_API_CURRENT_CALL = UIAction.ACT_API_CALL_DATA;
+        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_LOAD_DATA;
         // the web request executed by httcall
         // preparing the httpcall
         WebRequest httpCall = new WebRequest(this, this);
@@ -225,7 +225,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
             if (RespondHelper.isValidRespond(respond)) {
 
-                if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_CALL_DATA) {
+                if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
 
                     JSONObject jo = RespondHelper.getObject(respond, "multi_data");
 
@@ -246,13 +246,13 @@ public class UserProfileActivity extends Activity implements Navigator {
                     // calling the image download
                     downloadPictureAPI();
 
-                } else if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_CALL_UPDATE) {
+                } else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_UPDATE_DATA) {
                     // back to the dashboard (home)
                     finish();
                 }
 
                 // the invalid output is sometimes for non post method
-            } else if (UIAction.ACT_API_CURRENT_CALL == UIAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
+            } else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
                 // refreshing the imageview
                 //ShowDialog.message(this, "downloading got " + respond);
 

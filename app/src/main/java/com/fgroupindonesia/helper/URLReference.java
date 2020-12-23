@@ -9,6 +9,8 @@ public class URLReference {
     public static String UserProfile = Remote + "/user/profile";
     public static String UserUpdate = Remote + "/user/update";
     public static String UserPicture = Remote + "/user/picture?propic=";
+
+    public static String HistoryAdd = Remote + "/history/add";
     public static String MainWebsite = "http://fgroupindonesia.com";
     public static String RegistrationPage = MainWebsite + "/pendaftaran";
 
