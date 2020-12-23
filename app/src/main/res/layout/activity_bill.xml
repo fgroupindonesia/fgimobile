@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".BillActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/cash" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_label_tagihan_pembayaran"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewTagihanTanggalRilis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_label_tagihan_terbit_tanggal" />
+
+    <TextView
+        android:id="@+id/textViewTagihanRupiah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="@string/text_label_rupiah_tagihan_pembayaran"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewTagihanDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewTagihanStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:text="@string/text_label_tagihan_status"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonTagihanBayarSekarang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bayarSekarang"
+        android:text="@string/text_label_tagihan_bayar_sekarang" />
+
+    <Button
+        android:id="@+id/buttonTagihanUnggahBuktiPembayaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="unggahBukti"
+        android:text="@string/text_label_tagihan_unggah_bukti"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonTagihanNantiDulu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="nantiDulu"
+        android:text="@string/text_label_nanti_dulu" />
+</LinearLayout>

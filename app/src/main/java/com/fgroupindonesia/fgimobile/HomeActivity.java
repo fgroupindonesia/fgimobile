@@ -91,7 +91,10 @@ public class HomeActivity extends Activity {
             //intent = new Intent(this, HistoryActivity.class);
         } else if (jenisActivity == ACT_DESKTOP) {
             intent = new Intent(this, DesktopActivity.class);
+        } else if (jenisActivity == ACT_TAGIHAN) {
+            intent = new Intent(this, BillActivity.class);
         }
+
 
         if (intent != null) {
             startActivity(intent);

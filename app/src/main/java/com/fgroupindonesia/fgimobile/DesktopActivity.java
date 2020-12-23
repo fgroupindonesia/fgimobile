@@ -83,6 +83,8 @@ public class DesktopActivity extends Activity implements Navigator {
         if (result != null){
             if (result.getContents() == null){
                 ShowDialog.message(this, "Hasil tidak ditemukan");
+                // let's back to Home Dashboard
+                finish();
             }else{
                  // jika qrcode berisi data
 
