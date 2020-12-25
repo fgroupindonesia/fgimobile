@@ -504,6 +504,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\0309a32aa889e12168494d04e3c6f675\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_filter_payment.xml.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\filter_payment.xml"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0.aar\\0309a32aa889e12168494d04e3c6f675\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },

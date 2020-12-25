@@ -1,4 +1,4 @@
 git add .
-git commit -m "Attendance Activity is now with Filter Button."
+git commit -m "Payment Activity is now with Filter Button also."
 git push origin master
 git gc --prune

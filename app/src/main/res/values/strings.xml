@@ -46,6 +46,7 @@
 
     <string name="text_button_absensi">Data Absensi</string>
     <string name="text_button_absensi_filter">Filter Data Absensi...</string>
+    <string name="text_button_payment_filter">Filter Data Payment...</string>
 
     <string name="text_button_take_picture">Take Picture!</string>
 
@@ -80,6 +81,9 @@
     <string name="text_title_tagihan">Tagihan</string>
     <string name="text_title_absensi">Absensi</string>
 
+    <string name="text_label_filter_method_payment">Method</string>
+    <string name="text_label_filter_amount_payment">Sejumlah</string>
+    <string name="text_label_filter_date_payment">Tanggal</string>
 
     <string name="text_label_filter_month_attendance">Bulan : </string>
     <string name="text_label_filter_status_attendance">Status : </string>
