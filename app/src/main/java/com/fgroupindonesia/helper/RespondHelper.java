@@ -1,33 +1,41 @@
 package com.fgroupindonesia.helper;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class RespondHelper {
 
-    public static boolean isValidRespond(String respond) throws Exception{
+    public static boolean isValidRespond(String respond) throws Exception {
 
-        try{
-        JSONObject jo = new JSONObject(respond);
+        try {
+            JSONObject jo = new JSONObject(respond);
 
-        if(jo.getString("status").equalsIgnoreCase("valid")){
-            return true;
-        }
+            if (jo.getString("status").equalsIgnoreCase("valid")) {
+                return true;
+            }
 
-        } catch(Exception ex){
+        } catch (Exception ex) {
 
         }
 
         return false;
     }
 
-    public static JSONObject getObject(String respond, String key) throws Exception{
+    public static JSONObject getObject(String respond, String key) throws Exception {
 
         JSONObject jo = new JSONObject(respond);
         return jo.getJSONObject(key);
 
     }
 
-    public static String getValue(String respond, String key) throws Exception{
+    public static JSONArray getArray(String respond, String key) throws Exception {
+
+        JSONObject jo = new JSONObject(respond);
+        return jo.getJSONArray(key);
+
+    }
+
+    public static String getValue(String respond, String key) throws Exception {
 
         String val = null;
         JSONObject jo = new JSONObject(respond);

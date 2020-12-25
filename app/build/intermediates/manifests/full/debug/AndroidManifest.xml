@@ -45,7 +45,11 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.fgroupindonesia.fgimobile.BillActivity" />
+        <activity android:name="com.fgroupindonesia.fgimobile.PaymentActivity" />
+        <activity android:name="com.fgroupindonesia.fgimobile.AttendanceActivity" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.BillActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.DesktopActivity"
             android:screenOrientation="fullSensor" />
@@ -55,11 +59,14 @@
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name="com.fgroupindonesia.fgimobile.UserProfileActivity" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.UserProfileActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.SplashActivity"
             android:label="@string/app_name"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.NoTitle" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,10 +74,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.fgroupindonesia.fgimobile.HomeActivity" />
-        <activity android:name="com.fgroupindonesia.fgimobile.OptionActivity" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.OptionActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/generalnotitle" />
 
         <meta-data

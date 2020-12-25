@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="latihan_membership">
-        <item>Regular</item>
-        <item>Silver</item>
-        <item>Gold</item>
-        <item>VIP</item>
+    <string-array name="filter_status_attendance">
+        <item>Hadir</item>
+        <item>Idzin</item>
+        <item>Sakit</item>
+        <item>Semua</item>
+    </string-array>
+
+    <string-array name="filter_month_attendance">
+        <item>1 Bulan Lalu</item>
+        <item>Bulan Ini</item>
     </string-array>
 
     <string-array name="latihan_produk">
@@ -40,6 +45,7 @@
     <string name="text_desc_absensi_start">Kelas Sudah bermula, kamu sudah hadir?</string>
 
     <string name="text_button_absensi">Data Absensi</string>
+    <string name="text_button_absensi_filter">Filter Data Absensi...</string>
 
     <string name="text_button_take_picture">Take Picture!</string>
 
@@ -73,6 +79,10 @@
     <string name="text_title_pembayaran">Pembayaran</string>
     <string name="text_title_tagihan">Tagihan</string>
     <string name="text_title_absensi">Absensi</string>
+
+
+    <string name="text_label_filter_month_attendance">Bulan : </string>
+    <string name="text_label_filter_status_attendance">Status : </string>
 
     <string name="text_title_payment">Payment</string>
 
@@ -135,6 +145,10 @@
     <string name="text_label_mobile">Mobile Phone</string>
     <string name="text_label_teamviewer_id">TeamViewer ID</string>
     <string name="text_label_teamviewer_pass">TeamViewer Pass</string>
+
+    <string name="text_label_tanggal">Tanggal</string>
+    <string name="text_label_status">Status</string>
+    <string name="text_label_kelas">Kelas</string>
 
     <string name="text_label_save">Save</string>
     <string name="text_label_loading">Loading...</string>

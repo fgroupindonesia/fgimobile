@@ -120,7 +120,6 @@ public class LoginActivity extends Activity implements Navigator {
 
                 if(UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USER_LOGIN) {
 
-
                     JSONObject json = RespondHelper.getObject(respond, "multi_data");
 
                     if (json != null) {
@@ -142,7 +141,9 @@ public class LoginActivity extends Activity implements Navigator {
                     UserData.savePreference(KeyPref.USERNAME, username);
                     UserData.savePreference(KeyPref.PASSWORD, passw);
 
+
                     // track History record
+                    UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_HISTORY_ADD;
                     HistoryCall.addHistory(username, "logging in successfully.");
 
                 }else if(UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_HISTORY_ADD){
@@ -172,6 +173,7 @@ public class LoginActivity extends Activity implements Navigator {
 
         } catch (Exception err) {
             ErrorLogger.write(err);
+            ShowDialog.message(this, err.getMessage());
             ShowDialog.message(this, "Error verification. Please contact administrator!");
             showLoading(false);
         }

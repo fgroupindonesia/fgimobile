@@ -362,10 +362,12 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		        
 		        // this is for debugging purposes
 		        tryToGetStatusCode(endResult);
-				conn.disconnect();
+		        if(conn!=null) {
+					conn.disconnect();
+				}
 
 		    } catch (Exception e) {
-		 		//ShowDialog.message(myContext, "error " + e.getMessage());
+		 		ShowDialog.message(myContext, "error WebRequest " + e.getMessage());
 		    	ErrorLogger.write(e);
 		    }
 
