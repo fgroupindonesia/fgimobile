@@ -43,7 +43,7 @@ public class HomeActivity extends Activity implements Navigator {
 
     TimerAnimate animWorks = new TimerAnimate();
     private Timer myTimer;
-    TextView textviewUsername, textViewNextClass;
+    TextView textviewUsername, textViewNextClass, textViewNextSchedule;
     WebRequest httpCall;
 
     final int ACT_KELAS = 2,
@@ -68,6 +68,10 @@ public class HomeActivity extends Activity implements Navigator {
 
         textviewUsername = (TextView) findViewById(R.id.textviewUsername);
         textViewNextClass = (TextView) findViewById(R.id.textViewNextClass);
+        textViewNextSchedule = (TextView) findViewById(R.id.textViewNextSchedule);
+
+        textViewNextClass.setBackgroundResource(R.color.yellow);
+        textViewNextSchedule.setBackgroundResource(R.color.yellow);
 
         // for shared preference usage
         UserData.setPreference(this);
@@ -368,15 +372,16 @@ public class HomeActivity extends Activity implements Navigator {
                     String innerData = RespondHelper.getValue(respond, "multi_data");
                     Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
                     String className = dataIn[0].getClass_registered();
-                    String schedText = dataIn[0].getDay_schedule() + " " + dataIn[0].getTime_schedule();
+                    String schedText1 = dataIn[0].getDay_schedule() + " " + dataIn[0].getTime_schedule();
+                    String schedText2 = dataIn[1].getDay_schedule() + " " + dataIn[1].getTime_schedule();
 
                     // schedule helper to calculate and animate time interval before class started
                     ScheduleObserver schedObs = new ScheduleObserver();
-                    schedObs.setDate(schedText);
 
-                    prepareAnimation(schedObs.getDate());
+                    schedObs.setDates(schedText1, schedText2);
+                    prepareAnimation(schedObs.getDateNearest());
 
-                    ShowDialog.message(this, "we got " + schedText);
+                    ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
 
                 }
             } else {
@@ -385,7 +390,7 @@ public class HomeActivity extends Activity implements Navigator {
             }
 
         } catch (Exception ex) {
-            ShowDialog.message(this, "ERror");
+            ShowDialog.message(this, "Error " + ex.getMessage());
         }
 
 

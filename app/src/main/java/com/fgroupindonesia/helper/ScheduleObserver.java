@@ -16,10 +16,17 @@ public class ScheduleObserver {
     int indexFound = -1;
     int manyDays = 0;
     String timeSet;
-    String nowDaySet, daySet, todaySet, estimatedNextDate;
+    String nowDaySet, daySet, nowDayTimeSet, estimatedNextDate;
     int hour, minute;
     String hourText, minuteText;
-    Date realDate, nowDate;
+    Date realDate, nowDate, date1, date2;
+
+    int dayToSched1 = 0;
+    int dayToSched2 = 0;
+
+    String stat;
+
+    boolean day1Passed, day2Passed;
 
     // using mysql format
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -30,12 +37,115 @@ public class ScheduleObserver {
 
     }
 
+    public String getStat(){
+        return stat;
+    }
+
+    public int getDifferenceDay() {
+        return manyDays;
+
+    }
+
+    public int getDay1ToSched(){
+        return dayToSched1;
+    }
+
+    public int getDay2ToSched(){
+        return dayToSched2;
+    }
+
+
+
+    public boolean isDay1Passed(){
+
+       day1Passed = checkPassedTime(getDay1ToSched());
+        return day1Passed;
+
+    }
+
+    public boolean isDay2Passed(){
+        day2Passed = checkPassedTime(getDay2ToSched());
+        return day2Passed;
+    }
+
+    private boolean checkPassedTime(int diffDay){
+
+        boolean passedBy = false;
+        int hourNow, minuteNow;
+        String hourNowText, minuteNowText;
+
+        String dataTempNow[] = nowDayTimeSet.split(" ");
+        hourNowText = dataTempNow[1].split(":")[0];
+        minuteNowText = dataTempNow[1].split(":")[1];
+
+        hourNow = Integer.parseInt(hourNowText);
+        minuteNow = Integer.parseInt(minuteNowText);
+
+        if (diffDay == 0) {
+            // means today but hour not reached yet
+            if (hourNow < hour) {
+                passedBy = false;
+                stat = hourNow + "<" + hour;
+            }else if(hourNow == hour && minuteNow > minute){
+                passedBy = true;
+                stat = hourNow + "=" + hour;
+            }else if(hourNow > hour){
+                passedBy = true;
+                stat = hourNow + ">" + hour;
+            }
+        }else if(diffDay> 0){
+            // means day is on next day / week
+            passedBy = false;
+            stat = "too far";
+        }
+
+        return passedBy;
+    }
+
+    public Date getDateNearest() {
+        Date foundDate = null;
+
+        if ((dayToSched1 < dayToSched2)&& !isDay1Passed()) {
+
+            foundDate = date1;
+
+        } else {
+            if (date2 != null) {
+                foundDate = date2;
+            } else {
+                foundDate = date1;
+            }
+
+        }
+
+        return foundDate;
+    }
+
+    public int daysBetween(Date d1, Date d2) {
+        return (int) ((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
+    }
+
+    public void setDates(String... formatted) {
+        setDate(formatted[0]);
+        dayToSched1 = getDifferenceDay();
+        date1 = getDate();
+
+        if (formatted.length > 1) {
+            setDate(formatted[1]);
+            dayToSched2 = getDifferenceDay();
+            date2 = getDate();
+        }
+
+    }
+
     public void setDate(String formattedDate) {
         // input is DAY <space> TIME, for example
         // monday 12:00
 
         String dataRaw[] = formattedDate.split(" ");
+        // day
         daySet = dataRaw[0];
+        // time
         // additional for measuring differences later with precision
         timeSet = dataRaw[1] + ":00";
 
@@ -48,6 +158,7 @@ public class ScheduleObserver {
 
         nowDate = new Date();
         nowDaySet = dayOnlyformatter.format(nowDate).toLowerCase();
+        nowDayTimeSet = formatterComplete.format(nowDate).toLowerCase();
 
         manyDays = countDifferenceDay(nowDaySet, daySet);
 
@@ -55,7 +166,7 @@ public class ScheduleObserver {
 
         Calendar c = Calendar.getInstance();
         c.setTime(nowDate); // Now use today date.
-        c.add(Calendar.DATE, manyDays); // Adding 5 days
+        c.add(Calendar.DATE, manyDays); // Adding X days
 
         estimatedNextDate = formatter.format(c.getTime()) + " " + timeSet;
         //UIEffect.popup(estimatedNextDate, null);

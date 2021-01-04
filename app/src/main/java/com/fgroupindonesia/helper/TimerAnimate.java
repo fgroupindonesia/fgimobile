@@ -60,7 +60,7 @@ public class TimerAnimate implements Runnable {
                             + diffHours + " Hour, "
                             + diffMinutes + " Minute, "
                             + diffSeconds + " Second.");
-                } else if (diffHours == 0) {
+                } else if (diffHours == 0 && diffMinutes>-1) {
 
                     textView.setText("Next Class : Today, "
                             + diffMinutes + " Minute, "

@@ -4,5 +4,7 @@
     <color name="md_lime_500">#6D9904</color>
     <color name="md_lime_700">#587C02</color>
     <color name="md_amber_A400">#F55E0C</color>
+    <color name="yellow">#F9FF33</color>
+    <color name="black">#000000</color>
 
 </resources>
