@@ -20,6 +20,7 @@ public class ScheduleObserver {
     int hour, minute;
     String hourText, minuteText;
     Date realDate, nowDate, date1, date2;
+    String date1Text, date2Text;
 
     int dayToSched1 = 0;
     int dayToSched2 = 0;
@@ -102,6 +103,25 @@ public class ScheduleObserver {
         return passedBy;
     }
 
+    public String getScheduleNearest(){
+        String text = null;
+        if ((dayToSched1 < dayToSched2)&& !isDay1Passed()) {
+
+            text = date1Text;
+
+        } else {
+            if (date2 != null) {
+                text = date2Text;
+            } else {
+                text = date1Text;
+            }
+
+        }
+
+
+        return text;
+    }
+
     public Date getDateNearest() {
         Date foundDate = null;
 
@@ -121,19 +141,17 @@ public class ScheduleObserver {
         return foundDate;
     }
 
-    public int daysBetween(Date d1, Date d2) {
-        return (int) ((d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
-    }
-
     public void setDates(String... formatted) {
         setDate(formatted[0]);
         dayToSched1 = getDifferenceDay();
         date1 = getDate();
+        date1Text = formatted[0];
 
         if (formatted.length > 1) {
             setDate(formatted[1]);
             dayToSched2 = getDifferenceDay();
             date2 = getDate();
+            date2Text = formatted[1];
         }
 
     }

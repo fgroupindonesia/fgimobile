@@ -18,36 +18,41 @@ public class UIHelper {
 
     public static final int LANG_CODE_ID = 0, LANG_CODE_EN = 1;
 
-    private static String toIndonesian(String dayName){
+    public static String toIndonesian(String dayName){
         int indexFound = 0;
+        String newName = null;
         for(String dName: dayEnglish) {
 
-
-            if (dayName.equalsIgnoreCase(dName.toLowerCase())) {
+            if (dayName.contains(dName.toLowerCase())) {
+                newName = dayName.replace(dName.toLowerCase(), dayIndonesia[indexFound]);
                 break;
             }
             indexFound++;
         }
 
-        return dayIndonesia[indexFound];
+
+        //return dayIndonesia[indexFound];
+        return newName;
     }
 
-    private static String toEnglish(String dayName){
+    public static String toEnglish(String dayName){
         int indexFound = 0;
+        String newName = null;
         for(String dName: dayIndonesia) {
 
-            if (dayName.equalsIgnoreCase(dName.toLowerCase())) {
+            if (dayName.contains(dName.toLowerCase())) {
+                newName = dayName.replace(dName.toLowerCase(), dayEnglish[indexFound]);
                 break;
             }
 
             indexFound++;
         }
 
-        return dayEnglish[indexFound];
+        //return dayEnglish[indexFound];
+        return newName;
     }
 
     public static String convertDayName(String computerDate, int langCode) {
-
 
         String res = null;
         try {

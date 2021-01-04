@@ -379,13 +379,15 @@ public class HomeActivity extends Activity implements Navigator {
                     ScheduleObserver schedObs = new ScheduleObserver();
 
                     schedObs.setDates(schedText1, schedText2);
+
+                    String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
+                    textViewNextSchedule.setText("Next Schedule : " + schedIndo);
                     prepareAnimation(schedObs.getDateNearest());
 
-                    ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
+                    //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
 
                 }
             } else {
-
                 ShowDialog.message(this, "invalid");
             }
 
