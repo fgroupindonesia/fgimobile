@@ -18,3 +18,6 @@ FGI Mobile:
 	- tanda tangan digital (hadir)
 	- timer bermula / stop
 	- sisa pertemuan
+
+- fitur document:
+	(BARU)
