@@ -114,8 +114,11 @@
     <string name="text_label_lain">Lain-lain</string>
     <string name="text_label_keterangan">Keterangan lain</string>
 
+    <string name="text_label_kelas_belum_dimulai">Kelas Belum Dimulai!</string>
     <string name="text_label_stop_alarm">Stop Alarm</string>
     <string name="text_label_class_next">Kelas Selanjutnya: -</string>
+    <string name="text_label_class_absen">Absen Kehadiran</string>
+    <string name="text_label_class_beri_tanda_paraf">Berilah tanda paraf (tanda tangan) kehadiran ditengah bagian ini  : </string>
 
     <string name="text_label_noSesi">Sesi 1</string>
     <string name="text_label_tanggal_sesi">dd/MMM/yyyy HH:mm</string>

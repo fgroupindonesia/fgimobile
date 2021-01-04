@@ -214,7 +214,7 @@ public class HomeActivity extends Activity implements Navigator {
         } else if (jenisActivity == ACT_USER_PROFILE) {
             intent = new Intent(this, UserProfileActivity.class);
         } else if (jenisActivity == ACT_KELAS) {
-            //intent = new Intent(this, KelasActivity.class);
+            intent = new Intent(this, KelasActivity.class);
         } else if (jenisActivity == ACT_HISTORY) {
 
             // hide the other menus
@@ -374,6 +374,10 @@ public class HomeActivity extends Activity implements Navigator {
                     String className = dataIn[0].getClass_registered();
                     String schedText1 = dataIn[0].getDay_schedule() + " " + dataIn[0].getTime_schedule();
                     String schedText2 = dataIn[1].getDay_schedule() + " " + dataIn[1].getTime_schedule();
+
+                    // store it inside the shared reference
+                    UserData.savePreference(KeyPref.SCHEDULE_DAY_1, schedText1);
+                    UserData.savePreference(KeyPref.SCHEDULE_DAY_2, schedText2);
 
                     // schedule helper to calculate and animate time interval before class started
                     ScheduleObserver schedObs = new ScheduleObserver();

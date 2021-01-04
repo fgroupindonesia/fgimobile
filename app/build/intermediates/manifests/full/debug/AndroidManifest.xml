@@ -48,6 +48,7 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.fgroupindonesia.fgimobile.KelasActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.AlarmNotifActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.PaymentActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.AttendanceActivity" />

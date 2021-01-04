@@ -38,6 +38,16 @@ public class ScheduleObserver {
 
     }
 
+    public boolean isScheduleStarted(){
+
+        boolean startNow = true;
+        // check whether for day1 or day2 is now?
+
+
+        return startNow;
+
+    }
+
     public String getStat(){
         return stat;
     }
