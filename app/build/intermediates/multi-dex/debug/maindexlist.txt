@@ -1,3 +1,5 @@
+android/arch/lifecycle/Lifecycle$Event.class
+android/arch/lifecycle/OnLifecycleEvent.class
 android/support/annotation/AnimRes.class
 android/support/annotation/AnimatorRes.class
 android/support/annotation/AnyRes.class
@@ -26,8 +28,10 @@ android/support/annotation/IntegerRes.class
 android/support/annotation/InterpolatorRes.class
 android/support/annotation/Keep.class
 android/support/annotation/LayoutRes.class
+android/support/annotation/LongDef.class
 android/support/annotation/MainThread.class
 android/support/annotation/MenuRes.class
+android/support/annotation/NavigationRes.class
 android/support/annotation/NonNull.class
 android/support/annotation/Nullable.class
 android/support/annotation/PluralsRes.class
@@ -49,6 +53,8 @@ android/support/annotation/UiThread.class
 android/support/annotation/VisibleForTesting.class
 android/support/annotation/WorkerThread.class
 android/support/annotation/XmlRes.class
+android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
+android/support/design/widget/CoordinatorLayout$DispatchChangeEvent.class
 android/support/multidex/MultiDex$V14.class
 android/support/multidex/MultiDex$V19.class
 android/support/multidex/MultiDex$V4.class
@@ -63,7 +69,9 @@ android/support/v4/app/DialogFragment$DialogStyle.class
 android/support/v4/app/FragmentTransaction$Transit.class
 android/support/v4/app/FrameMetricsAggregator$MetricType.class
 android/support/v4/app/NotificationCompat$BadgeIconType.class
+android/support/v4/app/NotificationCompat$GroupAlertBehavior.class
 android/support/v4/app/NotificationCompat$NotificationVisibility.class
+android/support/v4/app/NotificationCompat$StreamType.class
 android/support/v4/app/ServiceCompat$StopForegroundFlags.class
 android/support/v4/content/PermissionChecker$PermissionResult.class
 android/support/v4/content/res/FontResourcesParserCompat$FetchStrategy.class
@@ -93,6 +101,7 @@ android/support/v4/provider/FontsContractCompat$FontFamilyResult$FontResultStatu
 android/support/v4/provider/FontsContractCompat$FontRequestCallback$FontRequestFailReason.class
 android/support/v4/text/util/LinkifyCompat$LinkifyMask.class
 android/support/v4/view/ViewCompat$AccessibilityLiveRegion.class
+android/support/v4/view/ViewCompat$AutofillImportance.class
 android/support/v4/view/ViewCompat$FocusDirection.class
 android/support/v4/view/ViewCompat$FocusRealDirection.class
 android/support/v4/view/ViewCompat$FocusRelativeDirection.class
@@ -123,3 +132,4 @@ com/google/gson/annotations/JsonAdapter.class
 com/google/gson/annotations/SerializedName.class
 com/google/gson/annotations/Since.class
 com/google/gson/annotations/Until.class
+pl/droidsonroids/gif/annotations/Beta.class

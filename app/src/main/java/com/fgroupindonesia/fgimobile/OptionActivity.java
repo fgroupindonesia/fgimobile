@@ -1,33 +1,51 @@
 package com.fgroupindonesia.fgimobile;
 
-import com.fgroupindonesia.helper.UIHelper;
+import com.fgroupindonesia.helper.Navigator;
+import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.shared.HistoryCall;
+import com.fgroupindonesia.helper.shared.KeyAudio;
+import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.fgroupindonesia.helper.WebRequest;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.EditText;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.view.LayoutInflater;
+import android.widget.Spinner;
 
-public class OptionActivity extends Activity {
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
+public class OptionActivity extends Activity implements Navigator {
+
+    MediaPlayer mp;
 
     WebRequest cobaPassing = new WebRequest(WebRequest.POST_METHOD);
     String passBaru = null;
 
     final int OPTION_MODE_PASS = 1, OPTION_MODE_CONFIG = 2;
-    CheckBox opsiRememberLogin, opsiNotifPembayaran;
+    CheckBox checkboxNotifPayment, checkboxNotifKelas;
 
     SharedPreferences sharedpreferences;
+    String aToken, audioChosen;
+
+    int ops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,54 +53,140 @@ public class OptionActivity extends Activity {
         setContentView(R.layout.activity_option);
 
         // this is for shared pref part
-        sharedpreferences = getSharedPreferences(UserData.BroadCastTag, Context.MODE_PRIVATE);
         UserData.setPreference(this);
 
-        opsiRememberLogin = (CheckBox) findViewById(R.id.checkboxRememberLogin);
-        opsiNotifPembayaran = (CheckBox) findViewById(R.id.checkboxPaymentNotification);
+        checkboxNotifPayment = (CheckBox) findViewById(R.id.checkboxNotifPayment);
+        checkboxNotifKelas = (CheckBox) findViewById(R.id.checkboxNotifKelas);
 
 		//this will ensure the data remain same until user close the app
 		reloadUserOptionData();
 
+        aToken = UserData.getPreferenceString(KeyPref.TOKEN);
+        // for History API call
+        HistoryCall.setReference(this, this, aToken);
+
     }
 
     private void reloadUserOptionData(){
-		opsiRememberLogin.setChecked(UserData.RememberLogin);
-		opsiNotifPembayaran.setChecked(UserData.NotifLimitPayment);
+        checkboxNotifKelas.setChecked(UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS));
+        checkboxNotifPayment.setChecked(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT));
 	}
 
 
-    public void activateNotifikasi(View v) {
-		UserData.NotifLimitPayment = opsiNotifPembayaran.isChecked();
-		UserData.savePreference("notiflimitpayment", UserData.NotifLimitPayment);
+
+    private void playAudioSample(int fileOrder){
+
+        AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
+        audioManager.setSpeakerphoneOn(true);
+
+        if(mp!=null){
+            mp.stop();
+            mp = null;
+        }
+
+        if (fileOrder == KeyAudio.ALARM_01) {
+            mp = MediaPlayer.create(this, R.raw.alarm_01);
+        }else if (fileOrder == KeyAudio.ALARM_02) {
+            mp = MediaPlayer.create(this, R.raw.alarm_02);
+        } else if (fileOrder == KeyAudio.ALARM_03) {
+            mp = MediaPlayer.create(this, R.raw.alarm_03);
+        }
+
+        mp.start();
+
     }
 
-    public void activateRemember(View v) {
-        UserData.RememberLogin = opsiRememberLogin.isChecked();
-        UserData.savePreference("rememberlogin", UserData.RememberLogin);
+    private void setAudioChosen(int orderAlarm){
+        switch (orderAlarm){
+            case 0:
+                audioChosen = "alarm_01.wav";
+                break;
+            case 1:
+                audioChosen = "alarm_02.wav";
+                break;
+            case 2:
+                audioChosen = "alarm_03.wav";
+                break;
+        }
+
     }
 
-    public void changePass(View v) {
+    public void activateNotifPayment(View v) {
 
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		UserData.savePreference(KeyPref.NOTIF_PAYMENT, checkboxNotifPayment.isChecked());
 
-        LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.popup_change_pass, null);
-        alertDialogBuilder.setView(dialogView);
+		if(checkboxNotifPayment.isChecked()){
 
-		// set dialog message
-		alertDialogBuilder.setCancelable(true).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int id) {
-                EditText editText = (EditText) dialogView.findViewById(R.id.editTextPasswordOption);
-			    String passw = UIHelper.getText(editText);
-                UserData.savePreference("passw", passw);
-			}
-		});
+		    // show popup first
+            ops = 2;
+            showPopupChooseSound();
 
-		// create alert dialog
-		AlertDialog alertDialog = alertDialogBuilder.create();
-		// show it
-		alertDialog.show();
+		    //startAlarm(KeyAudio.ALARM_01);
+        }
+
+
+    }
+
+    private void showPopupChooseSound(){
+
+        // ops 1 for KELAS
+        // ops 2 for PAYMENT
+
+        // create an alert builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose Audio");
+        builder.setSingleChoiceItems(R.array.alarm_audio,-1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                playAudioSample(which);
+                setAudioChosen(which);
+
+            }
+        });
+
+        /*builder.setItems(R.array.alarm_audio, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                playAudioSample(which);
+                setAudioChosen(which);
+            }
+        });*/
+
+        // add OK and Cancel buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user clicked OK
+                // save it to the sharedPreference
+                if(ops==1){
+                    UserData.savePreference(KeyPref.NOTIF_KELAS_AUDIO, audioChosen);
+                }else if(ops==2){
+                    UserData.savePreference(KeyPref.NOTIF_PAYMENT_AUDIO, audioChosen);
+                }
+
+            }
+        });
+
+        //builder.setNegativeButton("Cancel", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+    }
+
+    public void activateNotifKelas(View v) {
+
+        UserData.savePreference(KeyPref.NOTIF_KELAS, checkboxNotifKelas.isChecked());
+
+        if(checkboxNotifKelas.isChecked()){
+
+            // show popup first
+            ops = 1;
+            showPopupChooseSound();
+
+            //startAlarm(KeyAudio.ALARM_01);
+        }
     }
 
     @Override
@@ -103,4 +207,13 @@ public class OptionActivity extends Activity {
     }
 
 
+    @Override
+    public void nextActivity() {
+
+    }
+
+    @Override
+    public void onSuccess(String urlTarget, String result) {
+
+    }
 }

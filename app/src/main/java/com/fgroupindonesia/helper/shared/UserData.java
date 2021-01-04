@@ -5,8 +5,6 @@ import android.content.SharedPreferences;
 
 public class UserData {
 
-
-    public static boolean RememberLogin = false, NotifLimitPayment = false;
     public static String CurrentVoucherCode = null;
     public static String BroadCastTag = "FGIMobile";
     public static int MINUTES_CURRENT = 0;

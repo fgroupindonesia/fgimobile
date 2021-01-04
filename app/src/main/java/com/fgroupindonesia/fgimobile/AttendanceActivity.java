@@ -3,7 +3,6 @@ package com.fgroupindonesia.fgimobile;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -17,6 +16,7 @@ import com.fgroupindonesia.beans.Attendance;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.HistoryCall;
@@ -213,13 +213,15 @@ public class AttendanceActivity extends Activity implements Navigator {
 
         TableRow.LayoutParams trLayout = new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f);
 
-        TextView dataText1 = createTextView(dataIn.getDate_created());
-        TextView dataText2 = createTextView(dataIn.getClass_registered());
-        TextView dataText3 = createTextView(dataIn.getStatus());
+        TextView dataText1 = createTextView(dataIn.getClass_registered());
+        TextView dataText2 = createTextView(dataIn.getStatus());
+        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created(), UIHelper.LANG_CODE_ID));
+        TextView dataText4 = createTextView(dataIn.getDate_created());
 
         tr.addView(dataText1, trLayout );
         tr.addView(dataText2, trLayout);
         tr.addView(dataText3, trLayout);
+        tr.addView(dataText4, trLayout);
 
         tableLayoutAttendance.addView(tr);
     }

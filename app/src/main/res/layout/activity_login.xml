@@ -35,7 +35,7 @@
         android:gravity="center"
         android:hint="@string/text_login_username"
         android:inputType="textEmailAddress"
-        android:text="admin"
+        android:text="udin"
         android:textColor="@android:color/background_light"
         android:textSize="14sp">
 
@@ -51,7 +51,7 @@
         android:gravity="center"
         android:hint="@string/text_login_pass"
         android:inputType="textPassword"
-        android:text="admin"
+        android:text="123"
         android:textColor="@android:color/background_light"
         android:textSize="14dp" />
 

@@ -3,7 +3,6 @@ package com.fgroupindonesia.fgimobile;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -18,6 +17,7 @@ import com.fgroupindonesia.beans.Payment;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.HistoryCall;
@@ -93,11 +93,13 @@ public class PaymentActivity extends Activity  implements Navigator  {
 
         TextView dataText1 = createTextView(""+dataIn.getAmount());
         TextView dataText2 = createTextView(dataIn.getMethod());
-        TextView dataText3 = createTextView(dataIn.getDate_created());
+        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created(), UIHelper.LANG_CODE_ID));
+        TextView dataText4 = createTextView(dataIn.getDate_created());
 
         tr.addView(dataText1, trLayout );
         tr.addView(dataText2, trLayout);
         tr.addView(dataText3, trLayout);
+        tr.addView(dataText4, trLayout);
 
         tableLayoutPayment.addView(tr);
     }

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="alarm_audio">
+        <item>Danger</item>
+        <item>Digital</item>
+        <item>Evacuation</item>
+    </string-array>
+
     <string-array name="filter_status_attendance">
         <item>Hadir</item>
         <item>Idzin</item>
@@ -108,6 +114,9 @@
     <string name="text_label_lain">Lain-lain</string>
     <string name="text_label_keterangan">Keterangan lain</string>
 
+    <string name="text_label_stop_alarm">Stop Alarm</string>
+    <string name="text_label_class_next">Kelas Selanjutnya: -</string>
+
     <string name="text_label_noSesi">Sesi 1</string>
     <string name="text_label_tanggal_sesi">dd/MMM/yyyy HH:mm</string>
 
@@ -124,8 +133,8 @@
     <string name="text_label_time_start">00:00</string>
     <string name="text_label_start_konsultasi">Start</string>
 
-    <string name="text_label_notif_pembayaran">Notifikasi limit pembayaran</string>
-    <string name="text_label_remember_login">Remember My Login</string>
+    <string name="text_label_notif_pembayaran">Notifikasi pembayaran awal bulan</string>
+    <string name="text_label_notif_kelas_1_hour">Notifikasi 1 jam sebelum kelas</string>
 
     <string name="text_label_sisa_pertemuan">Sisa Pertemuan : 0</string>
     <string name="text_label_total_pertemuan">Total Pertemuan : 0</string>
@@ -153,6 +162,7 @@
     <string name="text_label_tanggal">Tanggal</string>
     <string name="text_label_status">Status</string>
     <string name="text_label_kelas">Kelas</string>
+    <string name="text_label_hari">Hari</string>
 
     <string name="text_label_save">Save</string>
     <string name="text_label_loading">Loading...</string>

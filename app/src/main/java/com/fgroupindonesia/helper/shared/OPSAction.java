@@ -7,7 +7,9 @@ public class OPSAction {
             ACT_API_USERPROFILE_DOWNLOAD_PICTURE = 4,
             ACT_API_REMOTELOGIN_VERIFY = 5,
             ACT_API_HISTORY_ADD = 6,
-            ACT_API_USER_LOGIN = 7;
+            ACT_API_USER_LOGIN = 7,
+            // schedule all for specific user
+            ACT_API_SCHEDULE_ALL = 8;
 
 
 }
