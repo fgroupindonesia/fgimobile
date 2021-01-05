@@ -54,7 +54,6 @@ public class UserProfileActivity extends Activity implements Navigator {
         httpCall.setTargetURL(URLReference.UserPicture + filePropicName);
         httpCall.execute();
 
-
     }
 
     public void saveDataAPI() {

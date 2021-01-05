@@ -60,10 +60,10 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@drawable/round_buttons"
         android:gravity="center"
         android:onClick="verifyUser"
         android:text="@string/action_login"
+        android:background="@drawable/round_buttons"
         android:textColor="@android:color/background_light"
         android:textSize="12sp" />
 

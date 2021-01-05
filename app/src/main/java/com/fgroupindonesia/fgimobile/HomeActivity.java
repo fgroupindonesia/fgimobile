@@ -6,6 +6,8 @@ import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
@@ -29,6 +31,7 @@ import com.fgroupindonesia.helper.shared.OPSAction;
 import com.fgroupindonesia.helper.shared.UIAction;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.google.gson.Gson;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONObject;
 
@@ -41,10 +44,12 @@ import java.util.TimerTask;
 
 public class HomeActivity extends Activity implements Navigator {
 
+    CircularImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer myTimer;
     TextView textviewUsername, textViewNextClass, textViewNextSchedule;
     WebRequest httpCall;
+    String filePropicName;
 
     final int ACT_KELAS = 2,
             ACT_OPTIONS = 3,
@@ -73,6 +78,8 @@ public class HomeActivity extends Activity implements Navigator {
         textViewNextClass.setBackgroundResource(R.color.yellow);
         textViewNextSchedule.setBackgroundResource(R.color.yellow);
 
+        imageUserProfileHome = (CircularImageView) findViewById(R.id.imageUserProfileHome);
+
         // for shared preference usage
         UserData.setPreference(this);
 
@@ -96,6 +103,8 @@ public class HomeActivity extends Activity implements Navigator {
 
         // calling schedule_all from Web API
         callCheckNextSchedule();
+
+
 
     }
 
@@ -390,9 +399,24 @@ public class HomeActivity extends Activity implements Navigator {
 
                     //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
 
+                    // calling another user data from API Server
+                    getDataAPI();
+
+                }else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
+
+                    JSONObject jo = RespondHelper.getObject(respond, "multi_data");
+                    filePropicName = jo.getString("propic");
+
+                    // calling another process to show the images
+                    downloadPictureAPI();
+
                 }
-            } else {
-                ShowDialog.message(this, "invalid");
+            } else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
+                // refreshing the imageview
+                //ShowDialog.message(this, "downloading got " + respond);
+
+                Bitmap b = BitmapFactory.decodeFile(respond);
+                imageUserProfileHome.setImageBitmap(b);
             }
 
         } catch (Exception ex) {
@@ -401,4 +425,37 @@ public class HomeActivity extends Activity implements Navigator {
 
 
     }
+
+    // for obtaining a user profile but not rendered in UI
+    public void getDataAPI() {
+
+        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_LOAD_DATA;
+        // the web request executed by httcall
+        // preparing the httpcall
+        WebRequest httpCall = new WebRequest(this, this);
+        httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
+        httpCall.addData("username", UserData.getPreferenceString(KeyPref.USERNAME));
+        httpCall.setWaitState(true);
+        httpCall.setRequestMethod(WebRequest.POST_METHOD);
+        httpCall.setTargetURL(URLReference.UserProfile);
+        httpCall.execute();
+
+    }
+
+    public void downloadPictureAPI() {
+
+        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE;
+
+        WebRequest httpCall = new WebRequest(this, this);
+        //httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
+        httpCall.addData("propic", filePropicName);
+        httpCall.setWaitState(true);
+        httpCall.setDownloadState(true);
+
+        httpCall.setRequestMethod(WebRequest.GET_METHOD);
+        httpCall.setTargetURL(URLReference.UserPicture + filePropicName);
+        httpCall.execute();
+
+    }
+
 }

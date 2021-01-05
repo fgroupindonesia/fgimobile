@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,21 +27,34 @@ import java.io.OutputStreamWriter;
 
 public class KelasActivity extends Activity {
 
-    LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature;
+    LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature,
+            linearKelasBerlangsung;
     SignaturePad mSignaturePad;
-    Button buttonSaveSignature, buttonClearSignature;
+    Button buttonSaveSignature, buttonClearSignature,
+    buttonHadir, buttonIdzin;
+    // in miliseconds
+    int PERIOD_OF_TIME = 2000;
+    boolean statusStartedClass = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelas);
 
+        buttonHadir = (Button) findViewById(R.id.buttonHadir);
+        buttonIdzin = (Button) findViewById(R.id.buttonIdzin);
         buttonSaveSignature =  (Button) findViewById(R.id.buttonSaveSignature);
         buttonClearSignature =  (Button) findViewById(R.id.buttonClearSignature);
 
         linearKelasLoading = (LinearLayout) findViewById(R.id.linearKelasLoading);
         linearKelasNoEntry = (LinearLayout) findViewById(R.id.linearKelasNoEntry);
         linearKelasSignature = (LinearLayout) findViewById(R.id.linearKelasSignature);
+        linearKelasBerlangsung = (LinearLayout) findViewById(R.id.linearKelasBerlangsung);
+
+
+        // first time show loading
+        // before ui changes
+        checkingClassNow();
 
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -65,6 +79,50 @@ public class KelasActivity extends Activity {
 
         checkClassStarted();
 
+    }
+
+    public void checkingClassNow(){
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //showLoading(false);
+                // if else here
+                if(statusStartedClass){
+                    showClassStarted();
+                }else{
+                    showNoEntry();
+                }
+
+            }
+        }, PERIOD_OF_TIME);
+
+    }
+
+    public void idzinKelas(View v){
+        ShowDialog.message(this,"kelas cancelled -idzin");
+        finish();
+    }
+
+    public void showClassStarted(){
+        linearKelasSignature.setVisibility(View.GONE);
+        linearKelasNoEntry.setVisibility(View.GONE);
+        linearKelasBerlangsung.setVisibility(View.VISIBLE);
+        linearKelasLoading.setVisibility(View.GONE);
+    }
+
+    public void showNoEntry(){
+        linearKelasSignature.setVisibility(View.GONE);
+        linearKelasNoEntry.setVisibility(View.VISIBLE);
+        linearKelasBerlangsung.setVisibility(View.GONE);
+        linearKelasLoading.setVisibility(View.GONE);
+    }
+
+    public void showSignaturePad(View v){
+        linearKelasSignature.setVisibility(View.VISIBLE);
+        linearKelasNoEntry.setVisibility(View.GONE);
+        linearKelasBerlangsung.setVisibility(View.GONE);
+        linearKelasLoading.setVisibility(View.GONE);
     }
 
     public File getAlbumStorageDir(String albumName) {

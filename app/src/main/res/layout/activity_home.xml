@@ -28,16 +28,24 @@
             android:orientation="horizontal"
             android:showDividers="middle">
 
-            <ImageView
-
-                android:layout_width="wrap_content"
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/imageUserProfileHome"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:src="@drawable/fg_logo" />
+                android:src="@drawable/fg_logo"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="3dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#8BC34A"
+                app:civ_shadow_radius="10" />
 
             <TextView
                 android:id="@+id/textviewUsername"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/text_label_hello_username"
