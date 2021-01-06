@@ -28,10 +28,10 @@ import java.io.OutputStreamWriter;
 public class KelasActivity extends Activity {
 
     LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature,
-            linearKelasBerlangsung;
+            linearKelasBerlangsung, linearKelasRating;
     SignaturePad mSignaturePad;
     Button buttonSaveSignature, buttonClearSignature,
-    buttonHadir, buttonIdzin;
+    buttonHadir, buttonIdzin, buttonRatingNormal, buttonRatingConfused, buttonRatingExcited;
     // in miliseconds
     int PERIOD_OF_TIME = 2000;
     boolean statusStartedClass = true;
@@ -41,20 +41,23 @@ public class KelasActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelas);
 
+        buttonRatingNormal = (Button) findViewById(R.id.buttonRatingNormal);
+        buttonRatingConfused = (Button) findViewById(R.id.buttonRatingConfused);
+        buttonRatingExcited = (Button) findViewById(R.id.buttonRatingExcited);
+
         buttonHadir = (Button) findViewById(R.id.buttonHadir);
         buttonIdzin = (Button) findViewById(R.id.buttonIdzin);
         buttonSaveSignature =  (Button) findViewById(R.id.buttonSaveSignature);
         buttonClearSignature =  (Button) findViewById(R.id.buttonClearSignature);
 
+        linearKelasRating = (LinearLayout) findViewById(R.id.linearKelasRating);
         linearKelasLoading = (LinearLayout) findViewById(R.id.linearKelasLoading);
         linearKelasNoEntry = (LinearLayout) findViewById(R.id.linearKelasNoEntry);
         linearKelasSignature = (LinearLayout) findViewById(R.id.linearKelasSignature);
         linearKelasBerlangsung = (LinearLayout) findViewById(R.id.linearKelasBerlangsung);
 
 
-        // first time show loading
-        // before ui changes
-        checkingClassNow();
+
 
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -77,7 +80,23 @@ public class KelasActivity extends Activity {
             }
         });
 
-        checkClassStarted();
+        // first time show loading
+        // before ui changes
+        checkingClassNow();
+
+       // checkClassStarted();
+
+    }
+
+    public void ratingNormal(View v){
+
+    }
+
+    public void ratingConfused(View v){
+
+    }
+
+    public void ratingExcited(View v){
 
     }
 
@@ -89,7 +108,8 @@ public class KelasActivity extends Activity {
                 //showLoading(false);
                 // if else here
                 if(statusStartedClass){
-                    showClassStarted();
+                    showRating();
+                    //showClassStarted();
                 }else{
                     showNoEntry();
                 }
@@ -109,6 +129,7 @@ public class KelasActivity extends Activity {
         linearKelasNoEntry.setVisibility(View.GONE);
         linearKelasBerlangsung.setVisibility(View.VISIBLE);
         linearKelasLoading.setVisibility(View.GONE);
+        linearKelasRating.setVisibility(View.GONE);
     }
 
     public void showNoEntry(){
@@ -116,6 +137,15 @@ public class KelasActivity extends Activity {
         linearKelasNoEntry.setVisibility(View.VISIBLE);
         linearKelasBerlangsung.setVisibility(View.GONE);
         linearKelasLoading.setVisibility(View.GONE);
+        linearKelasRating.setVisibility(View.GONE);
+    }
+
+    public void showRating(){
+        linearKelasSignature.setVisibility(View.GONE);
+        linearKelasNoEntry.setVisibility(View.GONE);
+        linearKelasBerlangsung.setVisibility(View.GONE);
+        linearKelasLoading.setVisibility(View.GONE);
+        linearKelasRating.setVisibility(View.VISIBLE);
     }
 
     public void showSignaturePad(View v){
@@ -123,6 +153,7 @@ public class KelasActivity extends Activity {
         linearKelasNoEntry.setVisibility(View.GONE);
         linearKelasBerlangsung.setVisibility(View.GONE);
         linearKelasLoading.setVisibility(View.GONE);
+        linearKelasRating.setVisibility(View.GONE);
     }
 
     public File getAlbumStorageDir(String albumName) {
@@ -205,6 +236,7 @@ public class KelasActivity extends Activity {
     public void clearSignature(View view){
         mSignaturePad.clear();
     }
+
     private void checkClassStarted() {
 
         ScheduleObserver schedObs = new ScheduleObserver();
@@ -216,14 +248,11 @@ public class KelasActivity extends Activity {
 
         if (!schedObs.isScheduleStarted()) {
             // when not started
-            linearKelasLoading.setVisibility(View.GONE);
-            linearKelasNoEntry.setVisibility(View.VISIBLE);
-            linearKelasSignature.setVisibility(View.GONE);
+            showNoEntry();
+
         } else {
             // when it is time for class
-            linearKelasLoading.setVisibility(View.GONE);
-            linearKelasNoEntry.setVisibility(View.GONE);
-            linearKelasSignature.setVisibility(View.VISIBLE);
+            showClassStarted();
         }
 
     }

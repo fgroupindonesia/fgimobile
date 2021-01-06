@@ -48,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.mikhaellopez.circularimageview.CircularImageView
+              <!--  <com.mikhaellopez.circularimageview.CircularImageView -->
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageUserProfile"
                     android:layout_width="250dp"
                     android:layout_height="250dp"
@@ -57,12 +58,10 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="37dp"
                     android:onClick="pickPicture"
-                    android:src="@drawable/user"
+                    android:src="@drawable/default_logo"
                     app:civ_border_color="#ffffff"
                     app:civ_border_width="3dp"
-                    app:civ_shadow="true"
-                    app:civ_shadow_color="#8BC34A"
-                    app:civ_shadow_radius="10" />
+                    />
 
 
             </LinearLayout>
@@ -214,9 +213,11 @@
 
                 <Button
                     android:id="@+id/buttonUserProfileSave"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="saveUserProfile"
+                    android:background="@drawable/round_buttons"
+                    android:textColor="@android:color/background_light"
                     android:text="@string/text_label_save" />
 
             </LinearLayout>

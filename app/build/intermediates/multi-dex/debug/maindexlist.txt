@@ -55,6 +55,10 @@ android/support/annotation/WorkerThread.class
 android/support/annotation/XmlRes.class
 android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
 android/support/design/widget/CoordinatorLayout$DispatchChangeEvent.class
+android/support/multidex/MultiDex$V14$ElementConstructor.class
+android/support/multidex/MultiDex$V14$ICSElementConstructor.class
+android/support/multidex/MultiDex$V14$JBMR11ElementConstructor.class
+android/support/multidex/MultiDex$V14$JBMR2ElementConstructor.class
 android/support/multidex/MultiDex$V14.class
 android/support/multidex/MultiDex$V19.class
 android/support/multidex/MultiDex$V4.class

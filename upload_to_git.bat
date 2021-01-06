@@ -1,4 +1,4 @@
 git add .
-git commit -m "Fixing HomeActivity Bugs for showing Image & Schedule Countdown..."
+git commit -m "ShowDialog for Toast is now applicable in every Activities."
 git push origin master
 git gc --prune

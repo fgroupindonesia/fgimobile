@@ -26,13 +26,15 @@ import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.OPSAction;
 import com.fgroupindonesia.helper.shared.UIAction;
 import com.fgroupindonesia.helper.shared.UserData;
-import com.mikhaellopez.circularimageview.CircularImageView;
+//import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONObject;
 
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserProfileActivity extends Activity implements Navigator {
 
@@ -92,7 +94,7 @@ public class UserProfileActivity extends Activity implements Navigator {
     LinearLayout linearUserProfileLoading;
     ScrollView scrollViewUserProfile;
 
-    CircularImageView imageUserProfile;
+    CircleImageView imageUserProfile;
     String picturePath, idText, filePropicName;
 
     // just some code to remember
@@ -121,7 +123,7 @@ public class UserProfileActivity extends Activity implements Navigator {
         linearUserProfileLoading = (LinearLayout) findViewById(R.id.linearUserProfileLoading);
         scrollViewUserProfile = (ScrollView) findViewById(R.id.scrollViewUserProfile);
 
-        imageUserProfile = (CircularImageView) findViewById(R.id.imageUserProfile);
+        imageUserProfile = (CircleImageView) findViewById(R.id.imageUserProfile);
 
         new Handler().postDelayed(new Runnable() {
             @Override

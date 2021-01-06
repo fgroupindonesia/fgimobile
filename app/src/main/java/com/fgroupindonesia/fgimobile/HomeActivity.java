@@ -1,5 +1,6 @@
 package com.fgroupindonesia.fgimobile;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -31,7 +32,7 @@ import com.fgroupindonesia.helper.shared.OPSAction;
 import com.fgroupindonesia.helper.shared.UIAction;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.google.gson.Gson;
-import com.mikhaellopez.circularimageview.CircularImageView;
+//import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONObject;
 
@@ -42,9 +43,11 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class HomeActivity extends Activity implements Navigator {
 
-    CircularImageView imageUserProfileHome;
+    CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer myTimer;
     TextView textviewUsername, textViewNextClass, textViewNextSchedule;
@@ -78,7 +81,7 @@ public class HomeActivity extends Activity implements Navigator {
         textViewNextClass.setBackgroundResource(R.color.yellow);
         textViewNextSchedule.setBackgroundResource(R.color.yellow);
 
-        imageUserProfileHome = (CircularImageView) findViewById(R.id.imageUserProfileHome);
+        imageUserProfileHome = (CircleImageView) findViewById(R.id.imageUserProfileHome);
 
         // for shared preference usage
         UserData.setPreference(this);
@@ -104,7 +107,8 @@ public class HomeActivity extends Activity implements Navigator {
         // calling schedule_all from Web API
         callCheckNextSchedule();
 
-
+        // calling another user data from API Server
+        getDataAPI();
 
     }
 
@@ -376,7 +380,8 @@ public class HomeActivity extends Activity implements Navigator {
 
             if (RespondHelper.isValidRespond(respond)) {
 
-                if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_SCHEDULE_ALL) {
+                //if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_SCHEDULE_ALL) {
+                if(urlTarget.contains(URLReference.ScheduleAll)){
 
                     String innerData = RespondHelper.getValue(respond, "multi_data");
                     Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
@@ -393,32 +398,40 @@ public class HomeActivity extends Activity implements Navigator {
 
                     schedObs.setDates(schedText1, schedText2);
 
-                    String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
-                    textViewNextSchedule.setText("Next Schedule : " + schedIndo);
+                    //String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
+
+                    textViewNextSchedule.setSelected(true);
+                    textViewNextSchedule.setText("Jadwal Kelas : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
                     prepareAnimation(schedObs.getDateNearest());
 
-                    //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
+                    ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
 
-                    // calling another user data from API Server
-                    getDataAPI();
 
-                }else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
+                //}else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
+                }else  if (urlTarget.contains(URLReference.UserProfile)) {
 
                     JSONObject jo = RespondHelper.getObject(respond, "multi_data");
                     filePropicName = jo.getString("propic");
+
+                    //ShowDialog.message(this, "propic got " + filePropicName);
 
                     // calling another process to show the images
                     downloadPictureAPI();
 
                 }
-            } else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
-                // refreshing the imageview
-                //ShowDialog.message(this, "downloading got " + respond);
+            //} else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
+                // when it is invalid
+            }else if (!RespondHelper.isValidRespond(respond)) {
 
-                Bitmap b = BitmapFactory.decodeFile(respond);
-                imageUserProfileHome.setImageBitmap(b);
+                if (urlTarget.contains(URLReference.UserPicture)) {
+                    // refreshing the imageview
+                    //ShowDialog.message(this, "downloading got " + respond);
+
+                    Bitmap b = BitmapFactory.decodeFile(respond);
+                    imageUserProfileHome.setImageBitmap(b);
+                }
+
             }
-
         } catch (Exception ex) {
             ShowDialog.message(this, "Error " + ex.getMessage());
         }
@@ -429,7 +442,7 @@ public class HomeActivity extends Activity implements Navigator {
     // for obtaining a user profile but not rendered in UI
     public void getDataAPI() {
 
-        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_LOAD_DATA;
+        //UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_LOAD_DATA;
         // the web request executed by httcall
         // preparing the httpcall
         WebRequest httpCall = new WebRequest(this, this);
@@ -444,7 +457,7 @@ public class HomeActivity extends Activity implements Navigator {
 
     public void downloadPictureAPI() {
 
-        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE;
+        //UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE;
 
         WebRequest httpCall = new WebRequest(this, this);
         //httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
