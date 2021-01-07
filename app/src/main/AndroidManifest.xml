@@ -29,7 +29,8 @@
         android:icon="@drawable/fg_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".KelasActivity"></activity>
+        <activity android:name=".DokumenActivity"></activity>
+        <activity android:name=".KelasActivity" />
         <activity android:name=".AlarmNotifActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".AttendanceActivity" />
@@ -69,8 +70,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/generalnotitle" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -36,6 +36,8 @@ public class KelasActivity extends Activity {
     int PERIOD_OF_TIME = 2000;
     boolean statusStartedClass = true;
 
+    final int STATUS_RATE_NORMAL = 1, STATUS_RATE_CONFUSED = 0, STATUS_RATE_EXCITED = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,15 +91,19 @@ public class KelasActivity extends Activity {
     }
 
     public void ratingNormal(View v){
-
+        postRating(STATUS_RATE_NORMAL);
     }
 
     public void ratingConfused(View v){
-
+        postRating(STATUS_RATE_CONFUSED);
     }
 
     public void ratingExcited(View v){
+        postRating(STATUS_RATE_EXCITED);
+    }
 
+    private  void postRating(int stat){
+        finish();
     }
 
     public void checkingClassNow(){
@@ -108,8 +114,8 @@ public class KelasActivity extends Activity {
                 //showLoading(false);
                 // if else here
                 if(statusStartedClass){
-                    showRating();
-                    //showClassStarted();
+                    //showRating();
+                    showClassStarted();
                 }else{
                     showNoEntry();
                 }
@@ -229,7 +235,8 @@ public class KelasActivity extends Activity {
         if (addJpgSignatureToGallery(signatureBitmap))
         {
             ShowDialog.message(this, "signature saved!");
-            finish();
+            //finish();
+            showRating();
         }
     }
 

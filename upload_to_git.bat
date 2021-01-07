@@ -1,4 +1,4 @@
 git add .
-git commit -m "ShowDialog for Toast is now applicable in every Activities."
+git commit -m "New DokumeActivity for showing available docs."
 git push origin master
 git gc --prune

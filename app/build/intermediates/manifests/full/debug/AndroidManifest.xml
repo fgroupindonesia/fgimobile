@@ -48,6 +48,7 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.fgroupindonesia.fgimobile.DokumenActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.KelasActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.AlarmNotifActivity" />
         <activity android:name="com.fgroupindonesia.fgimobile.PaymentActivity" />
@@ -87,8 +88,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/generalnotitle" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

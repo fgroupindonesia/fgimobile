@@ -1,6 +1,6 @@
 package com.fgroupindonesia.fgimobile;
 
-import android.animation.ValueAnimator;
+
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -9,7 +9,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,11 +30,9 @@ import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.KeyAudio;
 import com.fgroupindonesia.helper.shared.KeyPref;
-import com.fgroupindonesia.helper.shared.OPSAction;
-import com.fgroupindonesia.helper.shared.UIAction;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.google.gson.Gson;
-//import com.mikhaellopez.circularimageview.CircularImageView;
+
 
 import org.json.JSONObject;
 
@@ -50,9 +50,12 @@ public class HomeActivity extends Activity implements Navigator {
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer myTimer;
-    TextView textviewUsername, textViewNextClass, textViewNextSchedule;
+    TextView textViewLogout, textviewUsername, textViewNextClass, textViewNextSchedule;
     WebRequest httpCall;
     String filePropicName;
+
+    int TIME_WAIT = 1 * 1000 * 60;// in minutes
+    int FIVE_SECOND = 5 * 1000; // in seconds
 
     final int ACT_KELAS = 2,
             ACT_OPTIONS = 3,
@@ -61,12 +64,13 @@ public class HomeActivity extends Activity implements Navigator {
             ACT_USER_PROFILE = 6,
             ACT_DESKTOP = 7,
             ACT_ABSENSI = 8,
-            ACT_PEMBAYARAN = 9;
+            ACT_PEMBAYARAN = 9,
+            ACT_DOCUMENT = 10;
 
-    LinearLayout linearOption, linearHistory, linearKelas, linearDesktop, linearTagihan,
+    LinearLayout linearDocument, linearOption, linearHistory, linearKelas, linearDesktop, linearTagihan,
             linearAbsensi, linearPembayaran;
 
-    boolean mainMenuShown = true;
+    boolean mainMenuShown = true, firstTime = true;
     String usName, aToken;
 
     @Override
@@ -75,6 +79,7 @@ public class HomeActivity extends Activity implements Navigator {
         setContentView(R.layout.activity_home);
 
         textviewUsername = (TextView) findViewById(R.id.textviewUsername);
+        textViewLogout = (TextView) findViewById(R.id.textViewLogout);
         textViewNextClass = (TextView) findViewById(R.id.textViewNextClass);
         textViewNextSchedule = (TextView) findViewById(R.id.textViewNextSchedule);
 
@@ -91,12 +96,18 @@ public class HomeActivity extends Activity implements Navigator {
 
         if (usName != null) {
             textviewUsername.setText(usName);
+
         }
+
+        // making things underlined
+        textviewUsername.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+        textViewLogout.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
         //ShowDialog.message(this, "a username called " + usName);
 
         linearAbsensi = (LinearLayout) findViewById(R.id.linearAbsensi);
         linearPembayaran = (LinearLayout) findViewById(R.id.linearPembayaran);
+        linearDocument = (LinearLayout) findViewById(R.id.linearDocument);
 
         linearOption = (LinearLayout) findViewById(R.id.linearOption);
         linearHistory = (LinearLayout) findViewById(R.id.linearHistory);
@@ -104,7 +115,7 @@ public class HomeActivity extends Activity implements Navigator {
         linearDesktop = (LinearLayout) findViewById(R.id.linearDesktop);
         linearTagihan = (LinearLayout) findViewById(R.id.linearTagihan);
 
-        // calling schedule_all from Web API
+        // calling schedule_all from Web API by interval
         callCheckNextSchedule();
 
         // calling another user data from API Server
@@ -112,17 +123,17 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
-    public void openAlarm(){
+    public void openAlarm() {
         Intent intent = new Intent(this, AlarmNotifActivity.class);
         startActivity(intent);
     }
 
-    public boolean isNotifClassHourBefore(){
+    public boolean isNotifClassHourBefore() {
         return UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS);
     }
 
     // scheduled comes in
-    private void prepareAnimation(Date dataIn){
+    private void prepareAnimation(Date dataIn) {
 
         animWorks.setActivity(this);
         animWorks.setTextView(textViewNextClass);
@@ -186,6 +197,11 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
+    public void openDocument(View v) {
+        nextActivity(ACT_DOCUMENT);
+    }
+
+
     public void openTagihan(View v) {
         nextActivity(ACT_TAGIHAN);
     }
@@ -228,6 +244,8 @@ public class HomeActivity extends Activity implements Navigator {
             intent = new Intent(this, UserProfileActivity.class);
         } else if (jenisActivity == ACT_KELAS) {
             intent = new Intent(this, KelasActivity.class);
+        } else if (jenisActivity == ACT_DOCUMENT) {
+            intent = new Intent(this, DokumenActivity.class);
         } else if (jenisActivity == ACT_HISTORY) {
 
             // hide the other menus
@@ -253,21 +271,65 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
+    private void callScheduleChecking(int sec) {
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animWorks = new TimerAnimate();
+                animWorks.setWorking(true);
+
+                httpCall = new WebRequest(HomeActivity.this, HomeActivity.this);
+                httpCall.addData("username", usName);
+                httpCall.addData("token", aToken);
+
+                httpCall.setWaitState(true);
+                httpCall.setRequestMethod(WebRequest.POST_METHOD);
+                httpCall.setTargetURL(URLReference.ScheduleAll);
+                httpCall.execute();
+
+            }
+        }, sec);
+
+    }
+
+    private void checkScheduleOnServer() {
+        if (animWorks.isWorking()) {
+            animWorks.stopTimer();
+            animWorks = null;
+            textViewNextClass.setText("Loading...");
+        }
+
+        if (!firstTime) {
+            // call with delay 5 seconds
+            callScheduleChecking(FIVE_SECOND);
+        } else {
+            // direct call
+            callScheduleChecking(0);
+        }
+
+    }
+
     private void callCheckNextSchedule() {
 
-        UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_SCHEDULE_ALL;
+        //UIAction.ACT_API_CURRENT_CALL = OPSAction.ACT_API_SCHEDULE_ALL;
 
-        // the web request executed by httcall
-        // preparing the httpcall
-        httpCall = new WebRequest(this, this);
-        httpCall.addData("username", usName);
-        httpCall.addData("token", aToken);
+        if (firstTime) {
+            // quick post
+            checkScheduleOnServer();
+            firstTime = false;
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // the web request executed by httcall
+                    // preparing the httpcall
+                    checkScheduleOnServer();
 
-        httpCall.setWaitState(true);
-        httpCall.setRequestMethod(WebRequest.POST_METHOD);
-        httpCall.setTargetURL(URLReference.ScheduleAll);
-        httpCall.execute();
+                }
+            }, TIME_WAIT);
 
+        }
     }
 
     private void startAlarm(int codeUsage) {
@@ -381,7 +443,7 @@ public class HomeActivity extends Activity implements Navigator {
             if (RespondHelper.isValidRespond(respond)) {
 
                 //if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_SCHEDULE_ALL) {
-                if(urlTarget.contains(URLReference.ScheduleAll)){
+                if (urlTarget.contains(URLReference.ScheduleAll)) {
 
                     String innerData = RespondHelper.getValue(respond, "multi_data");
                     Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
@@ -398,17 +460,22 @@ public class HomeActivity extends Activity implements Navigator {
 
                     schedObs.setDates(schedText1, schedText2);
 
-                    //String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
+                    // String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
 
                     textViewNextSchedule.setSelected(true);
-                    textViewNextSchedule.setText("Jadwal Kelas : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
+                    textViewNextSchedule.setText("Jadwal Kelas " + className + " : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
+
                     prepareAnimation(schedObs.getDateNearest());
 
-                    ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
+                    //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
 
+                    // now calling again for 5 min delay
+                    if (!firstTime) {
+                        callCheckNextSchedule();
+                    }
 
-                //}else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
-                }else  if (urlTarget.contains(URLReference.UserProfile)) {
+                    //}else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
+                } else if (urlTarget.contains(URLReference.UserProfile)) {
 
                     JSONObject jo = RespondHelper.getObject(respond, "multi_data");
                     filePropicName = jo.getString("propic");
@@ -419,9 +486,9 @@ public class HomeActivity extends Activity implements Navigator {
                     downloadPictureAPI();
 
                 }
-            //} else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
+                //} else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
                 // when it is invalid
-            }else if (!RespondHelper.isValidRespond(respond)) {
+            } else if (!RespondHelper.isValidRespond(respond)) {
 
                 if (urlTarget.contains(URLReference.UserPicture)) {
                     // refreshing the imageview

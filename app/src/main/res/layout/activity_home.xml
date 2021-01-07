@@ -49,7 +49,9 @@
                 android:layout_weight="1"
                 android:text="@string/text_label_hello_username"
                 android:textColor="@android:color/background_light"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                />
+
 
         </LinearLayout>
 
@@ -65,7 +67,7 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -230,9 +232,34 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/linearDocument"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="openDocument"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/document" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_title_document"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/linearDesktop"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="openDesktop"

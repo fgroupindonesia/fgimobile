@@ -81,7 +81,7 @@ public class LoginActivity extends Activity implements Navigator {
 
     private void showLoading(boolean t) {
         if (t == false) {
-            loadingProgressBar.setVisibility(View.GONE);
+            loadingProgressBar.setVisibility(View.INVISIBLE);
         } else {
             loadingProgressBar.setVisibility(View.VISIBLE);
         }

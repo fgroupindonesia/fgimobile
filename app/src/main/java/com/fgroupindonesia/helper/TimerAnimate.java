@@ -13,6 +13,17 @@ public class TimerAnimate implements Runnable {
     private TextView textView;
     private Timer timerRef;
     private HomeActivity homeAct;
+    private boolean working= false;
+
+
+
+    public void setWorking(boolean b){
+        working = b;
+    }
+
+    public boolean isWorking(){
+        return working;
+    }
 
     public void setActivity(Activity act){
         homeAct = (HomeActivity) act;
@@ -36,6 +47,9 @@ public class TimerAnimate implements Runnable {
         nowDate = new Date();
 
         //in milliseconds
+        if(scheduleDate!=null){
+
+
         long diff = scheduleDate.getTime() - nowDate.getTime();
 
         long diffSeconds = diff / 1000 % 60;
@@ -70,6 +84,8 @@ public class TimerAnimate implements Runnable {
                     // here when the class is already passed
 
                     textView.setText("Class was ended");
+
+                    stopTimer();
                 }
 
 
@@ -84,13 +100,21 @@ public class TimerAnimate implements Runnable {
             }
         } else if (diffDays < 0) {
 
-            if(timerRef!=null) {
-                timerRef.cancel();
-            }
+            stopTimer();
 
             textView.setText("");
 
         }
 
+        }
+
+    }
+
+
+
+    public void stopTimer(){
+        if(timerRef!=null) {
+            timerRef.cancel();
+        }
     }
 }
