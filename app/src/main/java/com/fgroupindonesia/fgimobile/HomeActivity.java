@@ -1,6 +1,7 @@
 package com.fgroupindonesia.fgimobile;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -78,6 +79,8 @@ public class HomeActivity extends Activity implements Navigator {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        requestPermission();
+
         textviewUsername = (TextView) findViewById(R.id.textviewUsername);
         textViewLogout = (TextView) findViewById(R.id.textViewLogout);
         textViewNextClass = (TextView) findViewById(R.id.textViewNextClass);
@@ -122,6 +125,8 @@ public class HomeActivity extends Activity implements Navigator {
         getDataAPI();
 
     }
+
+
 
     public void openAlarm() {
         Intent intent = new Intent(this, AlarmNotifActivity.class);
@@ -332,6 +337,35 @@ public class HomeActivity extends Activity implements Navigator {
         }
     }
 
+    private boolean requestPermission(){
+        boolean request=true;
+        String[] permissions={Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.INTERNET,
+                Manifest.permission.MODIFY_AUDIO_SETTINGS,
+                Manifest.permission.WAKE_LOCK,
+                Manifest.permission.SET_ALARM
+                };
+
+        if (permissions.length!=0){
+            ActivityCompat.requestPermissions(this,permissions,102);
+            request= true;
+        }
+
+        else{
+            ShowDialog.message(this,"Permissions Denied");
+
+            request=false;
+        }
+
+        return request;
+
+    }
+
     private void startAlarm(int codeUsage) {
 
         DateFormat dateFormat = new SimpleDateFormat("HH:mm");
@@ -366,6 +400,8 @@ public class HomeActivity extends Activity implements Navigator {
     public void onResume() {
         super.onResume();
 
+        // refreshing the picture
+        getDataAPI();
     }
 
     @Override
@@ -493,6 +529,9 @@ public class HomeActivity extends Activity implements Navigator {
                 if (urlTarget.contains(URLReference.UserPicture)) {
                     // refreshing the imageview
                     //ShowDialog.message(this, "downloading got " + respond);
+                    // memory saver
+                    BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inSampleSize = 5;
 
                     Bitmap b = BitmapFactory.decodeFile(respond);
                     imageUserProfileHome.setImageBitmap(b);

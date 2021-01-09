@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.os.Bundle;
@@ -31,6 +33,7 @@ import com.fgroupindonesia.helper.shared.UserData;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -189,10 +192,64 @@ public class UserProfileActivity extends Activity implements Navigator {
                 picturePath = getPath(this.getApplicationContext(), imageURI);
                 //ShowDialog.message(UserProfileActivity.this, picturePath);
 
+                // lets convert it to png to make it save for any server
+                picturePath = convertToSmallJPG(picturePath);
+
+
+
             } catch (Exception ex) {
             }
 
         }
+    }
+
+    private String convertToSmallJPG(String path1){
+
+
+        String pathEnd = null;
+
+
+        try {
+            // memory saver
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 5;
+
+            Bitmap bmp = BitmapFactory.decodeFile(path1);
+
+            int width = bmp.getWidth();
+            int height = bmp.getHeight();
+            float scaleWidth = ((float) width/2) / width;
+            float scaleHeight = ((float) height/2) / height;
+            // CREATE A MATRIX FOR THE MANIPULATION
+            Matrix matrix = new Matrix();
+            // RESIZE THE BIT MAP
+            matrix.postScale(scaleWidth, scaleHeight);
+
+            // "RECREATE" THE NEW BITMAP
+            Bitmap resizedBitmap = Bitmap.createBitmap(
+                    bmp, 0, 0, width, height, matrix, false);
+            bmp.recycle();
+
+            String path = Environment.getExternalStorageDirectory()
+                    + "/Android/data/"
+                    + getApplicationContext().getPackageName();
+
+            File photo = new File(path + "/" + String.format("propic_%d.jpeg", System.currentTimeMillis()));
+            FileOutputStream out = new FileOutputStream(photo);
+
+            ShowDialog.message(this, "first " + path1 + "\nNow become "+ photo);
+
+            resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 65, out); //100-best quality
+            out.close();
+
+            pathEnd = photo.getPath();
+
+        } catch (Exception e) {
+            ShowDialog.message(this, "Error on 223 " + e.getMessage());
+        }
+
+        return pathEnd;
+
     }
 
     public void getDataAPI() {

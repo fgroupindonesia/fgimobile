@@ -220,7 +220,7 @@ public class KelasActivity extends Activity {
             if (!dir.exists())
                 dir.mkdirs();
 
-            File photo = new File(Environment.getExternalStorageDirectory() + "/Android/data/" + this.getPackageName() + "/" + String.format("Signature_%d.jpg", System.currentTimeMillis()));
+            File photo = new File(path + "/" + String.format("Signature_%d.jpg", System.currentTimeMillis()));
             saveBitmapToJPG(signature, photo);
             scanMediaFile(photo);
             result = true;

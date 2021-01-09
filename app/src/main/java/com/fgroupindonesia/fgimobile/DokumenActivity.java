@@ -88,7 +88,6 @@ public class DokumenActivity extends Activity implements Navigator {
 
                     ShowDialog.message(this, "Documents are " + dataDocuments.size());
 
-
                     arrayDocAdapter.notifyDataSetChanged();
 
                 }
