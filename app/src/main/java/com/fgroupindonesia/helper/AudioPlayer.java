@@ -1,17 +1,26 @@
 package com.fgroupindonesia.helper;
 
 import android.app.Activity;
+import android.content.Context;
 import android.media.MediaPlayer;
 
 import com.fgroupindonesia.fgimobile.R;
 
 public class AudioPlayer {
 
+	private static MediaPlayer mPlayer2;
 	public static final int DING_AUDIO=1, VOICE_REQ_SENT=2, VOUCHER_ORDER=3,
-			VOICE_UPDATED=4, TIME_OUT=5, HORRAY=6;
+			VOICE_UPDATED=4, TIME_OUT=5, HORRAY=6,
+			VOICE_60_MIN_CLASS=7,
+			VOICE_30_MIN_CLASS=8,
+			VOICE_15_MIN_CLASS=9,
+			VOICE_5_MIN_CLASS=10;
 	
-	public static void play(Activity komp, int audioFileType){
-		MediaPlayer mPlayer2 = null;
+	public static void play(Context komp, int audioFileType){
+		if(mPlayer2!=null) {
+			mPlayer2.stop();
+			mPlayer2 = null;
+		}
 		if(audioFileType == DING_AUDIO){
 			mPlayer2 = MediaPlayer.create(komp, R.raw.ding);
 		}else if(audioFileType == VOICE_REQ_SENT){
@@ -24,9 +33,17 @@ public class AudioPlayer {
 			mPlayer2 = MediaPlayer.create(komp, R.raw.timeout);
 		} else if(audioFileType == HORRAY){
 			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_horray);
+		}else if(audioFileType == VOICE_5_MIN_CLASS){
+			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_5menit);
+		}else if(audioFileType == VOICE_15_MIN_CLASS){
+			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_15menit);
+		}else if(audioFileType == VOICE_30_MIN_CLASS){
+			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_30menit);
+		}else if(audioFileType == VOICE_60_MIN_CLASS){
+			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_1jam);
 		}
-			  
-			  mPlayer2.start();
+		mPlayer2.setLooping(false);
+		mPlayer2.start();
 		
 	}
 	

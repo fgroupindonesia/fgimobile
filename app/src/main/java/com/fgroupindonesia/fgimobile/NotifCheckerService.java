@@ -13,6 +13,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
+import com.fgroupindonesia.helper.AudioPlayer;
 import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
 
@@ -26,44 +27,83 @@ public class NotifCheckerService extends Service {
         return null;
     }
 
-    MediaPlayer myPlayer;
 
-    private void playAudio(){
-        if(myPlayer!=null){
-            myPlayer.stop();
-            myPlayer=null;
-        }
-
-        myPlayer = MediaPlayer.create(this, R.raw.voice_kelas_dimulai_1jam);
-        myPlayer.setLooping(false);
-        myPlayer.start();
+    private void playAudio(int fileChoosen){
+        AudioPlayer.play(this, fileChoosen);
     }
 
     private Timer myTimer, timerNotification60m, timerNotification30m,
     timerNotification15m, timerNotification5m;
 
+    private boolean timer60Done, timer30Done, timer15Done, timer5Done;
+
+    private int secTo60, secTo30, secTo15, secTo5;
+
     private void startIntervalWork(){
 
-        stopTimerTask();
+        timerNotification60m = new Timer();
+        timerNotification60m.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(!timer60Done) {
+                    playAudio(AudioPlayer.VOICE_60_MIN_CLASS);
+                    timer60Done = true;
+                }else{
+                    stopTimerTask(timerNotification60m);
+                }
+            }
 
-        myTimer = new Timer();
-        myTimer.schedule(new TimerTask() {
+        }, secTo60, secTo60);
+
+        timerNotification30m = new Timer();
+        timerNotification30m.schedule(new TimerTask() {
             @Override
             public void run() {
 
-                // checking here
-                playAudio();
+                if(!timer30Done) {
+                    playAudio(AudioPlayer.VOICE_30_MIN_CLASS);
+                    timer30Done = true;
+                }else{
+                    stopTimerTask(timerNotification30m);
+                }
             }
 
-        }, 0, 5000);
+        }, secTo30, secTo30);
 
+        timerNotification15m = new Timer();
+        timerNotification15m.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(!timer15Done) {
+                    playAudio(AudioPlayer.VOICE_15_MIN_CLASS);
+                    timer15Done = true;
+                }else{
+                    stopTimerTask(timerNotification15m);
+                }
+            }
+
+        }, secTo15, secTo15);
+
+        timerNotification5m = new Timer();
+        timerNotification5m.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(!timer5Done) {
+                    playAudio(AudioPlayer.VOICE_5_MIN_CLASS);
+                    timer5Done = true;
+                }else{
+                    stopTimerTask(timerNotification5m);
+                }
+            }
+
+        }, secTo5, secTo5);
 
     }
 
-    public void stopTimerTask () {
-        if ( myTimer != null ) {
-            myTimer .cancel() ;
-            myTimer = null;
+    public void stopTimerTask (Timer timerIn) {
+        if ( timerIn != null ) {
+            timerIn .cancel() ;
+            timerIn = null;
         }
     }
 
@@ -75,13 +115,22 @@ public class NotifCheckerService extends Service {
         //Log.i(TAG, "onDestroy called");
         // restart the never ending service
 
-        stopTimerTask();
+        stopTimerTask(timerNotification60m);
+        stopTimerTask(timerNotification30m);
+        stopTimerTask(timerNotification15m);
+        stopTimerTask(timerNotification5m);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         //Log. e ( TAG , "onStartCommand" ) ;
         super.onStartCommand(intent, flags, startId);
+
+        // incase the service is called
+        timer5Done = false;
+        timer15Done = false;
+        timer30Done = false;
+        timer60Done = false;
 
         textJudul = "Notifikasi Kelas";
         textMuncul = "kelas 1 jam lagi pada ";
