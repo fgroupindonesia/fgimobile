@@ -1,9 +1,11 @@
 package com.fgroupindonesia.helper.shared;
 
 import android.app.Activity;
+import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 
-public class UserData {
+public class UserData  {
 
     public static String CurrentVoucherCode = null;
     public static String BroadCastTag = "FGIMobile";
@@ -12,10 +14,12 @@ public class UserData {
     public static String HOUR_MINUTE_SECOND_SAVED = null;
     public static String HOUR_MINUTE_SECOND_ELAPSED_SAVED = null;
 
+
+
     private static SharedPreferences sharedPreference;
 
     public static void setPreference(Activity act) {
-        sharedPreference = act.getApplicationContext().getSharedPreferences(BroadCastTag, 0);
+        sharedPreference = act.getApplicationContext().getSharedPreferences(BroadCastTag, Context.MODE_PRIVATE);
     }
 
     public static void savePreference(String keyName, String valHere) {
@@ -25,6 +29,7 @@ public class UserData {
         editor.commit();
 
     }
+
 
     public static void savePreference(String keyName, boolean valHere) {
 

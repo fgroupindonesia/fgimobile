@@ -237,7 +237,7 @@ public class UserProfileActivity extends Activity implements Navigator {
             File photo = new File(path + "/" + String.format("propic_%d.jpeg", System.currentTimeMillis()));
             FileOutputStream out = new FileOutputStream(photo);
 
-            ShowDialog.message(this, "first " + path1 + "\nNow become "+ photo);
+            //ShowDialog.message(this, "first " + path1 + "\nNow become "+ photo);
 
             resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 65, out); //100-best quality
             out.close();

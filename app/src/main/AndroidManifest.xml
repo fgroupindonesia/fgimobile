@@ -30,6 +30,8 @@
         android:icon="@drawable/fg_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".DokumenActivity"></activity>
         <activity android:name=".KelasActivity" />
         <activity android:name=".AlarmNotifActivity" />
@@ -72,6 +74,12 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
+
+        <service
+            android:name=".NotifCheckerService"
+            android:enabled="true"
+            android:process=":notifCheckerService" />
+
     </application>
 
 </manifest>

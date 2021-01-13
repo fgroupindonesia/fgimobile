@@ -2963,17 +2963,16 @@ public final class R {
     public static final int cash=0x7f0c0003;
     public static final int ding=0x7f0c0004;
     public static final int timeout=0x7f0c0005;
-    public static final int video_finished=0x7f0c0006;
-    public static final int voice_horray=0x7f0c0007;
-    public static final int voice_kelas_berlangsung=0x7f0c0008;
-    public static final int voice_kelas_dimulai_15menit=0x7f0c0009;
-    public static final int voice_kelas_dimulai_1jam=0x7f0c000a;
-    public static final int voice_kelas_dimulai_30menit=0x7f0c000b;
-    public static final int voice_kelas_dimulai_5menit=0x7f0c000c;
-    public static final int voice_req_sent=0x7f0c000d;
-    public static final int voice_tagihan_awal_bulan=0x7f0c000e;
-    public static final int voice_updated=0x7f0c000f;
-    public static final int zxing_beep=0x7f0c0010;
+    public static final int voice_horray=0x7f0c0006;
+    public static final int voice_kelas_berlangsung=0x7f0c0007;
+    public static final int voice_kelas_dimulai_15menit=0x7f0c0008;
+    public static final int voice_kelas_dimulai_1jam=0x7f0c0009;
+    public static final int voice_kelas_dimulai_30menit=0x7f0c000a;
+    public static final int voice_kelas_dimulai_5menit=0x7f0c000b;
+    public static final int voice_req_sent=0x7f0c000c;
+    public static final int voice_tagihan_awal_bulan=0x7f0c000d;
+    public static final int voice_updated=0x7f0c000e;
+    public static final int zxing_beep=0x7f0c000f;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0d0000;

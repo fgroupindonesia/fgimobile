@@ -151,6 +151,95 @@ public class ScheduleObserver {
         return foundDate;
     }
 
+    public String generateTimeNotif(String date1TextIn){
+        // using the following format : day HH:mm
+        // for example -> monday 10:00
+        String[] data = date1TextIn.split(" ");
+
+        String hourTextNa = data[1].split(":")[0];
+        int hour = Integer.parseInt(hourTextNa);
+
+        String a60MinBefore = getTimeByHour(hour-1, 0);
+        String a30MinBefore = getTimeByHour(hour-1, 30);
+        String a15MinBefore = getTimeByHour(hour-1, 45);
+        String a5MinBefore = getTimeByHour(hour-1, 55);
+
+        //return a5MinBefore;
+
+        int x = getSecondIntervalBetween("10:00", a30MinBefore);
+        return "got " + x;
+    }
+
+    public int getSecondIntervalBetween(String hour1Text, String hourTarget){
+
+        int secondCalculated = 0;
+
+        // hour1Text is using format -> HH:00
+        // for example -> 12:00
+
+        int hour1Na = Integer.parseInt(hour1Text.split(":")[0]);
+        int menit1Na = Integer.parseInt(hour1Text.split(":")[1]);
+
+        int hourTargetNa = Integer.parseInt(hourTarget.split(":")[0]);
+        int menitTargetNa = Integer.parseInt(hourTarget.split(":")[1]);
+
+        if(hour1Na < hourTargetNa){
+            // difference in hour
+            int jarakJam = hourTargetNa-hour1Na;
+            if(menit1Na == menitTargetNa){
+                // when the minutes is equal
+                // thus jam is multiplied by 60minutes x by 60seconds
+                secondCalculated = jarakJam * 60 * 60 ;
+            }else if(menit1Na>menitTargetNa){
+                // when the minutes is bigger than target
+                // thus the calculation need to be subtracted from the hour diff
+                int jarakMenit = (jarakJam*60)-menit1Na;
+                secondCalculated = jarakMenit * 60;
+            }else if(menit1Na<menitTargetNa){
+
+                int jarakMenit = (jarakJam*60)+(menitTargetNa-menit1Na);
+                secondCalculated = jarakMenit*60;
+
+            }
+        } else if(hour1Na == hourTargetNa){
+            // if this is same hour
+            // thus get the minute multiple by 60 seconds
+            if(menit1Na<menitTargetNa){
+                int jarakMenit = menitTargetNa-menit1Na;
+                secondCalculated = jarakMenit * 60;
+            }else if(menit1Na>menitTargetNa){
+                int jarakMenit = menit1Na-menitTargetNa;
+                secondCalculated = jarakMenit *60;
+            }else{
+                // when the minute is equal
+                secondCalculated = 0;
+            }
+        }
+
+        return secondCalculated;
+
+    }
+
+    private String getTimeByHour(int h, int min){
+        String n = null;
+        String hourNa = null;
+        if(h<10){
+            // 0x:00
+            hourNa = "0"+h;
+        }else{
+            hourNa = ""+h;
+        }
+
+        if(min<10){
+            n = hourNa + ":0"+min;
+        }else{
+            n = hourNa + ":"+min;
+        }
+
+
+        return n;
+    }
+
     public void setDates(String... formatted) {
         setDate(formatted[0]);
         dayToSched1 = getDifferenceDay();

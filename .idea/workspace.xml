@@ -23,49 +23,57 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/fgroupindonesia/fgimobile/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/fgroupindonesia/fgimobile/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/zxing/client/android/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/zxing/client/android/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/HomeActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/KelasActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/KelasActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$raw.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$raw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/R$styleable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/UserProfileActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/fgimobile/UserProfileActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/AudioPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/AudioPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/TimerAnimate.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/TimerAnimate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/shared/UserData.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/fgroupindonesia/helper/shared/UserData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/zxing/client/android/R$raw.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/zxing/client/android/R$raw.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/KF2AeeMMqWTqbFT70TmZclh0oYI=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/KF2AeeMMqWTqbFT70TmZclh0oYI=" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/raw_video_finished.mp4.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity$4.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/HomeActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/KelasActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/KelasActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$raw.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$raw.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$string.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$string.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$style.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$style.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$styleable.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/R$styleable.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/UserProfileActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/fgimobile/UserProfileActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/AudioPlayer.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/AudioPlayer.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/TimerAnimate.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/TimerAnimate.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/shared/UserData.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/fgroupindonesia/helper/shared/UserData.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/google/zxing/client/android/R$raw.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/15/com/google/zxing/client/android/R$raw.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/16/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/16/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/DokumenActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/DokumenActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/HomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/KelasActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/KelasActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/UserProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/fgimobile/UserProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/attendance.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/attendance.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/audio.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/audio.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_absensi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_absensi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_silver.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_silver.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_splashed.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_splashed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/billing.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/billing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/blank_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/blank_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/board.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/board.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cash.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/cash_lunas.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cash_lunas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/checklist.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/checklist.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/circular.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/circular.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/circular_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/circular_dark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/default_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/default_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/desktop.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/desktop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/document.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/document.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/download.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/download.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/ScheduleObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/ScheduleObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/TimerAnimate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/TimerAnimate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/shared/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fgroupindonesia/helper/shared/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/video_finished.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,11 +273,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1608865049944" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1610011021729">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1610392531094">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1601796694094" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1610011021729" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1610392531094" />
     <state x="242" y="139" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1606622598786">
       <screen x="0" y="0" width="1024" height="738" />
     </state>
@@ -290,12 +297,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601877569811" />
-    <state x="310" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609487449807">
-      <screen x="0" y="0" width="1024" height="738" />
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610390948929">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="310" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609487449807" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786498375" />
-    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1608785880946" />
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1610390948929" />
     <state x="263" y="120" key="AndroidCreateResourceFileDialog" timestamp="1610007171695">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -309,51 +315,37 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="980" height="177" key="GridCell.Tab.0.bottom/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609915025465" />
-    <state width="1286" height="156" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786436795" />
-    <state width="1286" height="187" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601797805587" />
     <state width="1322" height="217" key="GridCell.Tab.0.bottom/0.0.1366.738/1366.0.800.600@0.0.1366.738" timestamp="1608184592850" />
     <state width="1322" height="267" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1610123861097" />
     <state width="1322" height="267" key="GridCell.Tab.0.center" timestamp="1610123861096">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="980" height="177" key="GridCell.Tab.0.center/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609915025465" />
-    <state width="1286" height="156" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786436794" />
-    <state width="1286" height="187" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601797805587" />
     <state width="1322" height="217" key="GridCell.Tab.0.center/0.0.1366.738/1366.0.800.600@0.0.1366.738" timestamp="1608184592850" />
     <state width="1322" height="267" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1610123861096" />
     <state width="1322" height="267" key="GridCell.Tab.0.left" timestamp="1610123861096">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="980" height="177" key="GridCell.Tab.0.left/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609915025465" />
-    <state width="1286" height="156" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786436793" />
-    <state width="1286" height="187" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601797805587" />
     <state width="1322" height="217" key="GridCell.Tab.0.left/0.0.1366.738/1366.0.800.600@0.0.1366.738" timestamp="1608184592848" />
     <state width="1322" height="267" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1610123861096" />
     <state width="1322" height="267" key="GridCell.Tab.0.right" timestamp="1610123861096">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="980" height="177" key="GridCell.Tab.0.right/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609915025465" />
-    <state width="1286" height="156" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786436794" />
-    <state width="1286" height="187" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601797805587" />
     <state width="1322" height="217" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.800.600@0.0.1366.738" timestamp="1608184592850" />
     <state width="1322" height="267" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1610123861096" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1607678000845">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601791604679" />
     <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607678000845" />
-    <state x="499" y="141" key="chooseDestDirectoryDialog" timestamp="1601786667999">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="499" y="141" key="chooseDestDirectoryDialog/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601786667999" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1610120996438">
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1610509827009">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="283" y="189" key="com.intellij.ide.util.TipDialog/0.0.1024.738/1024.0.1024.768@0.0.1024.738" timestamp="1609580380702" />
     <state x="283" y="189" key="com.intellij.ide.util.TipDialog/0.0.1024.738@0.0.1024.738" timestamp="1606620141008" />
     <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1600.1200@0.0.1366.728" timestamp="1601955984689" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1601793745693" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1610120996438" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1610509827009" />
     <state x="472" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608866172918">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

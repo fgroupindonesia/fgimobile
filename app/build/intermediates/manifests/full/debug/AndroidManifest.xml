@@ -90,6 +90,12 @@
         <activity
             android:name="com.fgroupindonesia.fgimobile.LoginActivity"
             android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.fgroupindonesia.fgimobile.NotifCheckerService"
+            android:enabled="true"
+            android:process=":notifCheckerService" />
+
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"

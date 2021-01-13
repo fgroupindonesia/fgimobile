@@ -15,8 +15,6 @@ public class TimerAnimate implements Runnable {
     private HomeActivity homeAct;
     private boolean working= false;
 
-
-
     public void setWorking(boolean b){
         working = b;
     }
@@ -48,7 +46,6 @@ public class TimerAnimate implements Runnable {
 
         //in milliseconds
         if(scheduleDate!=null){
-
 
         long diff = scheduleDate.getTime() - nowDate.getTime();
 
@@ -91,13 +88,7 @@ public class TimerAnimate implements Runnable {
 
             }
 
-            if(homeAct != null) {
-                if (homeAct.isNotifClassHourBefore()) {
-                    if (diffDays == 0 && diffHours == 1 && diffMinutes == 0 && (diffSeconds == 0 || diffSeconds == 1)) {
-                        homeAct.openAlarm();
-                    }
-                }
-            }
+
         } else if (diffDays < 0) {
 
             stopTimer();

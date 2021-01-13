@@ -3,9 +3,11 @@ package com.fgroupindonesia.fgimobile;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +19,8 @@ import android.support.v4.app.ActivityCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -50,7 +54,7 @@ public class HomeActivity extends Activity implements Navigator {
 
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
-    private Timer myTimer;
+    private Timer timerSchedule;
     TextView textViewLogout, textviewUsername, textViewNextClass, textViewNextSchedule;
     WebRequest httpCall;
     String filePropicName;
@@ -77,6 +81,9 @@ public class HomeActivity extends Activity implements Navigator {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        addScreenUnlockFlag();
+
         setContentView(R.layout.activity_home);
 
         requestPermission();
@@ -127,7 +134,6 @@ public class HomeActivity extends Activity implements Navigator {
     }
 
 
-
     public void openAlarm() {
         Intent intent = new Intent(this, AlarmNotifActivity.class);
         startActivity(intent);
@@ -144,8 +150,8 @@ public class HomeActivity extends Activity implements Navigator {
         animWorks.setTextView(textViewNextClass);
         animWorks.setScheduleDate(dataIn);
 
-        myTimer = new Timer();
-        myTimer.schedule(new TimerTask() {
+        timerSchedule = new Timer();
+        timerSchedule.schedule(new TimerTask() {
             @Override
             public void run() {
                 startAnimate();
@@ -153,7 +159,7 @@ public class HomeActivity extends Activity implements Navigator {
 
         }, 0, 1000);
 
-        animWorks.setTimer(myTimer);
+        animWorks.setTimer(timerSchedule);
 
     }
 
@@ -170,6 +176,7 @@ public class HomeActivity extends Activity implements Navigator {
         if (b) {
             linearPembayaran.setVisibility(View.VISIBLE);
             linearAbsensi.setVisibility(View.VISIBLE);
+
         } else {
             linearPembayaran.setVisibility(View.GONE);
             linearAbsensi.setVisibility(View.GONE);
@@ -184,16 +191,55 @@ public class HomeActivity extends Activity implements Navigator {
             linearHistory.setVisibility(View.VISIBLE);
             linearDesktop.setVisibility(View.VISIBLE);
             linearTagihan.setVisibility(View.VISIBLE);
+            linearDocument.setVisibility(View.VISIBLE);
         } else {
             linearOption.setVisibility(View.GONE);
             linearKelas.setVisibility(View.GONE);
             linearHistory.setVisibility(View.GONE);
             linearDesktop.setVisibility(View.GONE);
             linearTagihan.setVisibility(View.GONE);
+            linearDocument.setVisibility(View.GONE);
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    private boolean isServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addScreenUnlockFlag() {
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+        window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+        window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+    }
+
+    public void startNotifChecker() {
+
+        if (!isServiceRunning(NotifCheckerService.class)) {
+            Intent panggilan = new Intent(this, NotifCheckerService.class);
+            panggilan.putExtra(KeyPref.SCHEDULE_DAY_1, UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_1));
+            panggilan.putExtra(KeyPref.SCHEDULE_DAY_2, UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2));
+            startService(panggilan);
+        }
+
+    }
+
     public void logout(View v) {
+
+        Intent intent = new Intent(this, NotifCheckerService.class);
+        stopService(intent);
 
         UserData.savePreference(KeyPref.USERNAME, null);
         UserData.savePreference(KeyPref.PASSWORD, null);
@@ -337,9 +383,9 @@ public class HomeActivity extends Activity implements Navigator {
         }
     }
 
-    private boolean requestPermission(){
-        boolean request=true;
-        String[] permissions={Manifest.permission.CAMERA,
+    private boolean requestPermission() {
+        boolean request = true;
+        String[] permissions = {Manifest.permission.CAMERA,
                 Manifest.permission.ACCESS_NETWORK_STATE,
                 Manifest.permission.ACCESS_WIFI_STATE,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -349,17 +395,15 @@ public class HomeActivity extends Activity implements Navigator {
                 Manifest.permission.MODIFY_AUDIO_SETTINGS,
                 Manifest.permission.WAKE_LOCK,
                 Manifest.permission.SET_ALARM
-                };
+        };
 
-        if (permissions.length!=0){
-            ActivityCompat.requestPermissions(this,permissions,102);
-            request= true;
-        }
+        if (permissions.length != 0) {
+            ActivityCompat.requestPermissions(this, permissions, 102);
+            request = true;
+        } else {
+            ShowDialog.message(this, "Permissions Denied");
 
-        else{
-            ShowDialog.message(this,"Permissions Denied");
-
-            request=false;
+            request = false;
         }
 
         return request;
@@ -406,8 +450,10 @@ public class HomeActivity extends Activity implements Navigator {
 
     @Override
     public void onDestroy() {
+
+        //startService(new Intent(this, NotifCheckerService.class));
+
         super.onDestroy();
-        //NotificationTray.clearAllMessages();
     }
 
     @Override
@@ -501,9 +547,13 @@ public class HomeActivity extends Activity implements Navigator {
                     textViewNextSchedule.setSelected(true);
                     textViewNextSchedule.setText("Jadwal Kelas " + className + " : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
 
+                    // now executing the Android Services
+                    startNotifChecker();
+
                     prepareAnimation(schedObs.getDateNearest());
 
                     //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
+                    ShowDialog.message(this, schedObs.generateTimeNotif(schedText1));
 
                     // now calling again for 5 min delay
                     if (!firstTime) {
