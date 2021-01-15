@@ -4,8 +4,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class UIHelper {
 
@@ -13,15 +15,15 @@ public class UIHelper {
         return element.getText().toString();
     }
 
-    private static String dayIndonesia [] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
-    private static String dayEnglish [] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    private static String dayIndonesia[] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
+    private static String dayEnglish[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     public static final int LANG_CODE_ID = 0, LANG_CODE_EN = 1;
 
-    public static String toIndonesian(String dayName){
+    public static String toIndonesian(String dayName) {
         int indexFound = 0;
         String newName = null;
-        for(String dName: dayEnglish) {
+        for (String dName : dayEnglish) {
 
             if (dayName.contains(dName.toLowerCase())) {
                 newName = dayName.replace(dName.toLowerCase(), dayIndonesia[indexFound]);
@@ -35,10 +37,10 @@ public class UIHelper {
         return newName;
     }
 
-    public static String toEnglish(String dayName){
+    public static String toEnglish(String dayName) {
         int indexFound = 0;
         String newName = null;
-        for(String dName: dayIndonesia) {
+        for (String dName : dayIndonesia) {
 
             if (dayName.contains(dName.toLowerCase())) {
                 newName = dayName.replace(dName.toLowerCase(), dayEnglish[indexFound]);
@@ -52,6 +54,38 @@ public class UIHelper {
         return newName;
     }
 
+    public static String convertDateToIndonesia(String dateSet) {
+        // yyyy-MM-dd HH:mm:ss
+        String dataMentah[] = dateSet.split(" ");
+        String tanggalOnly[] = dataMentah[0].split("-");
+        String tanggalIndo = tanggalOnly[2] + "-" + tanggalOnly[1] + "-" + tanggalOnly[0];
+
+        return tanggalIndo;
+    }
+
+    public static String convertStatusToIndonesia(String stat) {
+        String val = null;
+        switch (stat) {
+            case "unpaid":
+                val = "belum dibayar";
+                break;
+            case "pending":
+                val = "menunggu konfirmasi";
+                break;
+            case "paid":
+                val = "lunas";
+                break;
+        }
+
+        return val;
+    }
+
+    public static String formatRupiah(int number) {
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
+    }
+
     public static String convertDayName(String computerDate, int langCode) {
 
         String res = null;
@@ -62,7 +96,7 @@ public class UIHelper {
             String finalDay = format2.format(dt1);
             res = finalDay;
 
-            if(langCode == 1) {
+            if (langCode == 1) {
                 res = toEnglish(finalDay);
             } else {
                 res = toIndonesian(finalDay);

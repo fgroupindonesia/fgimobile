@@ -15,6 +15,9 @@ public class URLReference {
     public static String DocumentAll = Remote + "/document/all";
     public static String ScheduleAll = Remote + "/schedule/all";
 
+    public static String BillLast = Remote + "/bill/last";
+    public static String BillPaid = Remote + "/bill/paid";
+
     public static String HistoryAdd = Remote + "/history/add";
     public static String MainWebsite = "http://fgroupindonesia.com";
     public static String RegistrationPage = MainWebsite + "/pendaftaran";

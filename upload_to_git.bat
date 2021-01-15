@@ -1,4 +1,4 @@
 git add .
-git commit -m "Updating Schedule observer to get the second interval between two different hours."
+git commit -m "Updating BillActivity & Notification."
 git push origin master
 git gc --prune

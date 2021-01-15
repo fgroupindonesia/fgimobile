@@ -6,6 +6,7 @@ package com.fgroupindonesia.helper;
  */
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -20,7 +21,10 @@ public class ScheduleObserver {
     int hour, minute;
     String hourText, minuteText;
     Date realDate, nowDate, date1, date2;
-    String date1Text, date2Text;
+    String date1Text, date2Text,
+            a60MinBefore, a30MinBefore,
+            a15MinBefore, a5MinBefore;
+
 
     int dayToSched1 = 0;
     int dayToSched2 = 0;
@@ -32,13 +36,21 @@ public class ScheduleObserver {
     // using mysql format
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat formatterComplete = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    SimpleDateFormat dayOnlyformatter = new SimpleDateFormat("EEEE");
+    SimpleDateFormat dayOnlyFormatter = new SimpleDateFormat("EEEE");
+    SimpleDateFormat monthOnlyFormatter = new SimpleDateFormat("MMMM");
+    SimpleDateFormat hourOnlyFormatter = new SimpleDateFormat("HH:mm");
 
     public ScheduleObserver() {
 
     }
 
-    public boolean isScheduleStarted(){
+    public String getThisMonth(){
+        nowDate = new Date();
+        String mNumber = monthOnlyFormatter.format(nowDate);
+        return mNumber;
+    }
+
+    public boolean isScheduleStarted() {
 
         boolean startNow = true;
         // check whether for day1 or day2 is now?
@@ -48,7 +60,7 @@ public class ScheduleObserver {
 
     }
 
-    public String getStat(){
+    public String getStat() {
         return stat;
     }
 
@@ -57,29 +69,16 @@ public class ScheduleObserver {
 
     }
 
-    public int getDay1ToSched(){
+    public int getDay1ToSched() {
         return dayToSched1;
     }
 
-    public int getDay2ToSched(){
+    public int getDay2ToSched() {
         return dayToSched2;
     }
 
 
-
-    public boolean isDay1Passed(){
-
-       day1Passed = checkPassedTime(getDay1ToSched());
-        return day1Passed;
-
-    }
-
-    public boolean isDay2Passed(){
-        day2Passed = checkPassedTime(getDay2ToSched());
-        return day2Passed;
-    }
-
-    private boolean checkPassedTime(int diffDay){
+    private boolean checkPassedTime(int diffDay) {
 
         boolean passedBy = false;
         int hourNow, minuteNow;
@@ -97,14 +96,14 @@ public class ScheduleObserver {
             if (hourNow < hour) {
                 passedBy = false;
                 stat = hourNow + "<" + hour;
-            }else if(hourNow == hour && minuteNow > minute){
+            } else if (hourNow == hour && minuteNow > minute) {
                 passedBy = true;
                 stat = hourNow + "=" + hour;
-            }else if(hourNow > hour){
+            } else if (hourNow > hour) {
                 passedBy = true;
                 stat = hourNow + ">" + hour;
             }
-        }else if(diffDay> 0){
+        } else if (diffDay > 0) {
             // means day is on next day / week
             passedBy = false;
             stat = "too far";
@@ -113,21 +112,18 @@ public class ScheduleObserver {
         return passedBy;
     }
 
-    public String getScheduleNearest(){
+    public String getScheduleNearest() {
         String text = null;
-        if ((dayToSched1 < dayToSched2)&& !isDay1Passed()) {
 
+        // get the scheduleNearest but not passed yet
+        // and will get the next one if any
+        nowDate = new Date();
+
+        if(date2.before(date1)){
+            text = date2Text;
+        }else {
             text = date1Text;
-
-        } else {
-            if (date2 != null) {
-                text = date2Text;
-            } else {
-                text = date1Text;
-            }
-
         }
-
 
         return text;
     }
@@ -135,23 +131,151 @@ public class ScheduleObserver {
     public Date getDateNearest() {
         Date foundDate = null;
 
-        if ((dayToSched1 < dayToSched2)&& !isDay1Passed()) {
+        nowDate = new Date();
 
+        if(date2.before(date1)){
+            foundDate = date2;
+        }else {
             foundDate = date1;
-
-        } else {
-            if (date2 != null) {
-                foundDate = date2;
-            } else {
-                foundDate = date1;
-            }
-
         }
 
         return foundDate;
+
     }
 
-    public String generateTimeNotif(String date1TextIn){
+    public int convertIndexToMinToGo(int val){
+
+        int min=0;
+
+        // based upon array position
+        // 60min,30min,15min,5min
+        if(val==0){
+            min = 60;
+        }else if(val==1){
+            min = 30;
+        }else if(val==2){
+            min = 15;
+        }else if(val==3){
+            min = 5;
+        }
+
+        return min;
+    }
+
+    public int getIndexOfSmallestNonNegative(long[] entry){
+
+        int x=0;
+        for(long data: entry){
+            if(data>-1){
+                return x;
+            }
+            x++;
+        }
+
+        if(x==entry.length){
+            x = -1;
+        }
+
+        return x;
+
+    }
+
+    public boolean isScheduleToday(){
+        // this has : day HH:mm pattern
+        String nearest = getScheduleNearest();
+
+        nowDate = new Date();
+        nowDaySet = dayOnlyFormatter.format(nowDate).toLowerCase();
+
+        if(nearest.contains(nowDaySet)){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public int getIndexOfSmallest(long val, long[] entry){
+
+        int x=0;
+        for(long data: entry){
+            if(data == val){
+                return x;
+            }
+            x++;
+        }
+
+        return x;
+
+    }
+
+    public long getSmallest(long[] secondSetEntry) {
+
+        long selected = -1;
+        //Arrays.sort(secondSetEntry);
+
+        for (long sec : secondSetEntry) {
+            if (sec > -1) {
+                selected = sec;
+                break;
+            }
+        }
+
+        return selected;
+    }
+
+    public long[] generateSecondTimeDistance(String[] hourSetTarget) {
+
+        long[] secondDistances = new long[4];
+        long value;
+        int x = 0;
+
+        nowDate = new Date();
+        String timeNow = hourOnlyFormatter.format(nowDate);
+
+        for (String timeIn : hourSetTarget) {
+
+            value = getSecondIntervalBetween(timeNow, timeIn);
+            secondDistances[x] = value;
+
+            x++;
+        }
+
+        return secondDistances;
+
+    }
+
+    // for audio purposes
+    public int [] generateMinSet(){
+        // 60min, 30min, 15min, 5min
+        int minSet [] = {60, 30, 15, 5};
+        return minSet;
+
+    }
+
+    public String generateDateNotif(String hourText){
+
+        nowDate = new Date();
+        nowDaySet = formatter.format(nowDate).toLowerCase();
+        // yyyy-MM-dd HH:mm:ss
+        String result = nowDaySet + " " + hourText + ":00";
+        return result;
+
+    }
+
+    public String [] generateDateSetNotif(String [] hourSetText){
+        String newData [] = new String[hourSetText.length];
+
+        int i = 0;
+        for(String timeNa: hourSetText){
+            newData[i] = generateDateNotif(timeNa);
+            i++;
+        }
+
+        return newData;
+    }
+
+    public String[] generateTimeNotif(String date1TextIn) {
         // using the following format : day HH:mm
         // for example -> monday 10:00
         String[] data = date1TextIn.split(" ");
@@ -159,81 +283,73 @@ public class ScheduleObserver {
         String hourTextNa = data[1].split(":")[0];
         int hour = Integer.parseInt(hourTextNa);
 
-        String a60MinBefore = getTimeByHour(hour-1, 0);
-        String a30MinBefore = getTimeByHour(hour-1, 30);
-        String a15MinBefore = getTimeByHour(hour-1, 45);
-        String a5MinBefore = getTimeByHour(hour-1, 55);
+        a60MinBefore = getTimeByHour(hour - 1, 0);
+        a30MinBefore = getTimeByHour(hour - 1, 30);
+        a15MinBefore = getTimeByHour(hour - 1, 45);
+        a5MinBefore = getTimeByHour(hour - 1, 55);
 
+
+        // a returned value is an array of time targeted
+        // with the following format : hh:mm -> 12:00
+        // the order is : 11:00,11:30,11:45,11:55
+        String timeNotif[] = {a60MinBefore, a30MinBefore, a15MinBefore, a5MinBefore};
+        return timeNotif;
+
+        //int x = getSecondIntervalBetween("10:00", a15MinBefore);
+        //return "got " + x + " for " + a15MinBefore;
         //return a5MinBefore;
-
-        int x = getSecondIntervalBetween("10:00", a30MinBefore);
-        return "got " + x;
     }
 
-    public int getSecondIntervalBetween(String hour1Text, String hourTarget){
 
-        int secondCalculated = 0;
+    public String getTimeBy5Min() {
+        return a5MinBefore;
+    }
+
+    public String getTimeBy15Min() {
+        return a15MinBefore;
+    }
+
+    public String getTimeBy30Min() {
+        return a30MinBefore;
+    }
+
+    public String getTimeBy60Min() {
+        return a60MinBefore;
+    }
+
+    public long getSecondIntervalBetween(String hour1Text, String hourTarget) {
+
+        long diffSeconds = 0;
 
         // hour1Text is using format -> HH:00
         // for example -> 12:00
+        try {
+            Date date1x = hourOnlyFormatter.parse(hour1Text), date2x = hourOnlyFormatter.parse(hourTarget);
+            long diff = date2x.getTime() - date1x.getTime();
+            diffSeconds = diff / 1000;
 
-        int hour1Na = Integer.parseInt(hour1Text.split(":")[0]);
-        int menit1Na = Integer.parseInt(hour1Text.split(":")[1]);
-
-        int hourTargetNa = Integer.parseInt(hourTarget.split(":")[0]);
-        int menitTargetNa = Integer.parseInt(hourTarget.split(":")[1]);
-
-        if(hour1Na < hourTargetNa){
-            // difference in hour
-            int jarakJam = hourTargetNa-hour1Na;
-            if(menit1Na == menitTargetNa){
-                // when the minutes is equal
-                // thus jam is multiplied by 60minutes x by 60seconds
-                secondCalculated = jarakJam * 60 * 60 ;
-            }else if(menit1Na>menitTargetNa){
-                // when the minutes is bigger than target
-                // thus the calculation need to be subtracted from the hour diff
-                int jarakMenit = (jarakJam*60)-menit1Na;
-                secondCalculated = jarakMenit * 60;
-            }else if(menit1Na<menitTargetNa){
-
-                int jarakMenit = (jarakJam*60)+(menitTargetNa-menit1Na);
-                secondCalculated = jarakMenit*60;
-
-            }
-        } else if(hour1Na == hourTargetNa){
-            // if this is same hour
-            // thus get the minute multiple by 60 seconds
-            if(menit1Na<menitTargetNa){
-                int jarakMenit = menitTargetNa-menit1Na;
-                secondCalculated = jarakMenit * 60;
-            }else if(menit1Na>menitTargetNa){
-                int jarakMenit = menit1Na-menitTargetNa;
-                secondCalculated = jarakMenit *60;
-            }else{
-                // when the minute is equal
-                secondCalculated = 0;
-            }
+        } catch (Exception ex) {
+            diffSeconds = -1;
         }
 
-        return secondCalculated;
+        return diffSeconds;
 
     }
 
-    private String getTimeByHour(int h, int min){
+    private String getTimeByHour(int h, int min) {
         String n = null;
         String hourNa = null;
-        if(h<10){
+        if (h < 10) {
             // 0x:00
-            hourNa = "0"+h;
-        }else{
-            hourNa = ""+h;
+            hourNa = "0" + h;
+        } else {
+            hourNa = "" + h;
         }
 
-        if(min<10){
-            n = hourNa + ":0"+min;
-        }else{
-            n = hourNa + ":"+min;
+        if (min < 10) {
+            n = hourNa + ":0" + min;
+        } else {
+            n = hourNa + ":" + min;
         }
 
 
@@ -274,7 +390,7 @@ public class ScheduleObserver {
         minute = Integer.parseInt(minuteText);
 
         nowDate = new Date();
-        nowDaySet = dayOnlyformatter.format(nowDate).toLowerCase();
+        nowDaySet = dayOnlyFormatter.format(nowDate).toLowerCase();
         nowDayTimeSet = formatterComplete.format(nowDate).toLowerCase();
 
         manyDays = countDifferenceDay(nowDaySet, daySet);

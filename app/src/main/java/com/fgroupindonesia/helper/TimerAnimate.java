@@ -60,20 +60,20 @@ public class TimerAnimate implements Runnable {
                 if (diffDays > 0) {
 
                     //labelInterval.setText("Next Class : " + diffDays + " hari, " + diffHours + " jam, " + diffMinutes + " menit, " + diffSeconds + " detik.");
-                    textView.setText("countdown : " + diffDays + " Day, "
+                    textView.setText("next : " + diffDays + " Day, "
                             + diffHours + " Hour, "
                             + diffMinutes + " Minute, "
                             + diffSeconds + " Second.");
 
                 } else if (diffHours > 0) {
 
-                    textView.setText("countdown : Today, "
+                    textView.setText("next : Today, "
                             + diffHours + " Hour, "
                             + diffMinutes + " Minute, "
                             + diffSeconds + " Second.");
                 } else if (diffHours == 0 && diffMinutes>-1) {
 
-                    textView.setText("countdown : Today, "
+                    textView.setText("next : Today, "
                             + diffMinutes + " Minute, "
                             + diffSeconds + " Second.");
 

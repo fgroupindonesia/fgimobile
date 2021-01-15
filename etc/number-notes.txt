@@ -1,0 +1,75 @@
+
+local(android)
+
+Services check:
+- notif class 1 hour or less (60).
+
+postponed to 30, 15, 5 minutes left
+for example : 
+schedule is senin 10:00
+so, generateTimeNotif()
+ 09:55, 09:45, 09:30, 09:00
+ 
+apps calculate time near kemana satu?
+
+time now is senin 07:40
+
+getSecondTimeDistance(07:40, 09:00) = 2jam-40min=2*60-40=120-40= 80min
+getSecondTimeDistance(07:40, 09:30) = 2jam-10min=2*60-10=120-10= 110min
+getSecondTimeDistance(07:40, 09:45) = 
+getSecondTimeDistance(07:40, 09:55) = 
+
+time now is senin 08:00
+
+getSecondTimeDistance(08:00, 09:00) = 60min = 60*60 	= 3600seconds.
+getSecondTimeDistance(08:00, 09:30) = 90min = 90*60 	= 5400seconds.
+getSecondTimeDistance(08:00, 09:45) = 105min = 105*60 	= 6300seconds.
+getSecondTimeDistance(08:00, 09:55) = 115min = 115*60 	= 6900seconds.
+
+time now is senin 08:20
+
+getSecondTimeDistance(08:20, 09:00) = 1jam-20min = 40*60 	= 2400seconds.
+getSecondTimeDistance(08:20, 09:30) = 1jam+10min = 10+60)*60  	= 4200seconds.
+getSecondTimeDistance(08:20, 09:45) = 1jam+25min = 25+60)*60 	= 5100seconds.
+getSecondTimeDistance(08:20, 09:55) = 1jam+35min = 35+60)*60	= 5700seconds.
+
+time now is senin 09:10
+
+getSecondTimeDistance(09:10, 09:00) = -10min = 10*60 	= -600seconds.
+getSecondTimeDistance(09:10, 09:30) = 20min = 20*60 	= 1200seconds.
+getSecondTimeDistance(09:10, 09:45) = 35min = 35*60 	= 2100seconds.
+getSecondTimeDistance(09:10, 09:55) = 45min = 45*60 	= 2700seconds.
+
+time now is senin 09:30
+
+getSecondTimeDistance(09:30, 09:00) = -30min = 30*60 	= -1800seconds.
+getSecondTimeDistance(09:30, 09:30) = 0min = 0*60 		= 0seconds.
+getSecondTimeDistance(09:30, 09:45) = 15min = 15*60 	= 900seconds.
+getSecondTimeDistance(09:30, 09:55) = 25min = 25*60 	= 1500seconds.
+
+time now is senin 09:40 
+
+getSecondTimeDistance(09:40, 09:00) = -40min = 40*60 	= -2400seconds.
+getSecondTimeDistance(09:40, 09:30) = -10min = 10*60 	= -600seconds.
+getSecondTimeDistance(09:40, 09:45) = 5min = 5*60 		= 300seconds.
+getSecondTimeDistance(09:40, 09:55) = 15min = 15*60 	= 900seconds.
+
+time now is senin 10:00 
+
+getSecondTimeDistance(10:00, 09:00) = 1jam = 1*60*60 	= -3600seconds.
+getSecondTimeDistance(10:00, 09:30) = 30menit = 30*60 	= -1800seconds.
+getSecondTimeDistance(10:00, 09:45) = 15menit = 15*60 	= -900seconds.
+getSecondTimeDistance(10:00, 09:55) = 5menit = 5*60		= -300seconds.
+
+time now is senin 10:15 
+
+getSecondTimeDistance(10:15, 09:00) = -1
+getSecondTimeDistance(10:15, 09:30) = -1
+getSecondTimeDistance(10:15, 09:45) = -1
+getSecondTimeDistance(10:15, 09:55) = -1
+
+time is already passed
+
+getSecondTime at least 0 seconds or more (positive or non-negative value).
+
+getSecondTime will be used for timer (value for wait before executing).

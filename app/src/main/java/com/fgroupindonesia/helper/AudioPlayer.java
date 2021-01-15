@@ -14,7 +14,8 @@ public class AudioPlayer {
 			VOICE_60_MIN_CLASS=7,
 			VOICE_30_MIN_CLASS=8,
 			VOICE_15_MIN_CLASS=9,
-			VOICE_5_MIN_CLASS=10;
+			VOICE_5_MIN_CLASS=10,
+			VOICE_PAYMENT_EACH_MONTH= 11;
 	
 	public static void play(Context komp, int audioFileType){
 		if(mPlayer2!=null) {
@@ -41,6 +42,8 @@ public class AudioPlayer {
 			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_30menit);
 		}else if(audioFileType == VOICE_60_MIN_CLASS){
 			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_kelas_dimulai_1jam);
+		}else if(audioFileType == VOICE_PAYMENT_EACH_MONTH){
+			mPlayer2 = MediaPlayer.create(komp, R.raw.voice_tagihan_awal_bulan);
 		}
 		mPlayer2.setLooping(false);
 		mPlayer2.start();

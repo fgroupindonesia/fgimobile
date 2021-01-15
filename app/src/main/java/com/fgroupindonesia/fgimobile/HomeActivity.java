@@ -6,16 +6,22 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +31,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Schedule;
+import com.fgroupindonesia.helper.AudioPlayer;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ScheduleObserver;
@@ -40,9 +47,11 @@ import com.google.gson.Gson;
 
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
@@ -52,15 +61,21 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends Activity implements Navigator {
 
+    ScheduleObserver schedObs = new ScheduleObserver();
+    ;
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer timerSchedule;
-    TextView textViewLogout, textviewUsername, textViewNextClass, textViewNextSchedule;
+    TextView textViewLogout, textviewUsername, textViewNextClass, textViewNextSchedule,
+            textViewSample;
     WebRequest httpCall;
     String filePropicName;
 
+    public final String NOTIFICATION_CHANNEL_ID = "10002";
+    private final String default_notification_payment_id = "payment";
+
     int TIME_WAIT = 1 * 1000 * 60;// in minutes
-    int FIVE_SECOND = 5 * 1000; // in seconds
+    int FIFTEEN_SECOND = 15 * 1000; // in seconds
 
     final int ACT_KELAS = 2,
             ACT_OPTIONS = 3,
@@ -92,6 +107,8 @@ public class HomeActivity extends Activity implements Navigator {
         textViewLogout = (TextView) findViewById(R.id.textViewLogout);
         textViewNextClass = (TextView) findViewById(R.id.textViewNextClass);
         textViewNextSchedule = (TextView) findViewById(R.id.textViewNextSchedule);
+
+        textViewSample = (TextView) findViewById(R.id.textViewSample);
 
         textViewNextClass.setBackgroundResource(R.color.yellow);
         textViewNextSchedule.setBackgroundResource(R.color.yellow);
@@ -131,8 +148,67 @@ public class HomeActivity extends Activity implements Navigator {
         // calling another user data from API Server
         getDataAPI();
 
+
+        notifPaymentFirstMonth();
     }
 
+    private void createNotification(String title, String message) {
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), default_notification_payment_id);
+        mBuilder.setContentTitle(title);
+        mBuilder.setContentText(message);
+        mBuilder.setTicker(message);
+        mBuilder.setSmallIcon(R.drawable.fg_logo);
+        mBuilder.setAutoCancel(true);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                new Intent(this, BillActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
+
+        mBuilder.setContentIntent(contentIntent);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, default_notification_payment_id, importance);
+            mBuilder.setChannelId(NOTIFICATION_CHANNEL_ID);
+            //assert mNotificationManager != null;
+            mNotificationManager.createNotificationChannel(notificationChannel);
+        }
+        //assert mNotificationManager != null;
+        mNotificationManager.notify((int) System.currentTimeMillis(), mBuilder.build());
+    }
+
+    private void makePaymentNotification(String thisMonth){
+        createNotification("Notif Pembayaran ", "Harap lakukan pembayaran untuk bulan " + thisMonth);
+
+        // if the payment notification from option activity is checked true
+        // thus we play the audio as well
+        if(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)){
+            AudioPlayer.play(this, AudioPlayer.VOICE_PAYMENT_EACH_MONTH);
+        }
+
+        // we saved for this month and popup the voice
+        UserData.savePreference(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED, thisMonth);
+    }
+
+    public void notifPaymentFirstMonth() {
+
+        UserData.savePreference(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED, null);
+        String lastMonth = UserData.getPreferenceString(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED);
+        String thisMonth = schedObs.getThisMonth();
+        if (lastMonth != null) {
+            // but not this month
+            if (!lastMonth.equalsIgnoreCase(thisMonth)) {
+
+                makePaymentNotification(thisMonth);
+
+            }
+        } else {
+            // when there's no notif record we also make the popup
+            makePaymentNotification(thisMonth);
+
+        }
+
+    }
 
     public void openAlarm() {
         Intent intent = new Intent(this, AlarmNotifActivity.class);
@@ -225,12 +301,16 @@ public class HomeActivity extends Activity implements Navigator {
         window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
     }
 
-    public void startNotifChecker() {
+    public void startNotifChecker(String[] dateTimeText, int minWait[], int indexStart, String schedTextNear) {
 
         if (!isServiceRunning(NotifCheckerService.class)) {
             Intent panggilan = new Intent(this, NotifCheckerService.class);
-            panggilan.putExtra(KeyPref.SCHEDULE_DAY_1, UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_1));
-            panggilan.putExtra(KeyPref.SCHEDULE_DAY_2, UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2));
+            // set two arrays containing important variables
+            // and the index started
+            panggilan.putExtra(KeyPref.NOTIF_AUDIO_SCHEDULE, schedTextNear);
+            panggilan.putExtra(KeyPref.NOTIF_AUDIO_DATE_SET, dateTimeText);
+            panggilan.putExtra(KeyPref.NOTIF_AUDIO_MIN_SET, minWait);
+            panggilan.putExtra(KeyPref.NOTIF_AUDIO_DATE_INDEX, indexStart);
             startService(panggilan);
         }
 
@@ -352,8 +432,8 @@ public class HomeActivity extends Activity implements Navigator {
         }
 
         if (!firstTime) {
-            // call with delay 5 seconds
-            callScheduleChecking(FIVE_SECOND);
+            // call with delay 15 seconds
+            callScheduleChecking(FIFTEEN_SECOND);
         } else {
             // direct call
             callScheduleChecking(0);
@@ -511,6 +591,7 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
+
     @Override
     public void nextActivity() {
 
@@ -538,7 +619,7 @@ public class HomeActivity extends Activity implements Navigator {
                     UserData.savePreference(KeyPref.SCHEDULE_DAY_2, schedText2);
 
                     // schedule helper to calculate and animate time interval before class started
-                    ScheduleObserver schedObs = new ScheduleObserver();
+                    //schedObs = new ScheduleObserver();
 
                     schedObs.setDates(schedText1, schedText2);
 
@@ -547,13 +628,37 @@ public class HomeActivity extends Activity implements Navigator {
                     textViewNextSchedule.setSelected(true);
                     textViewNextSchedule.setText("Jadwal Kelas " + className + " : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
 
-                    // now executing the Android Services
-                    startNotifChecker();
-
                     prepareAnimation(schedObs.getDateNearest());
 
-                    //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
-                    ShowDialog.message(this, schedObs.generateTimeNotif(schedText1));
+                    String schedTextNear = schedObs.getScheduleNearest();
+
+                    if (schedObs.isScheduleToday()) {
+
+                        // now executing the Android Services
+
+                        //ShowDialog.message(this, "we got " + schedText1 + " and " + schedText2 +"\n" +schedObs.getDateNearest() + "\n" +schedObs.isDay1Passed() + "\n" + schedObs.getStat());
+                        String dataJam[] = schedObs.generateTimeNotif(schedTextNear);
+                        long dataDetik[] = schedObs.generateSecondTimeDistance(dataJam);
+
+                        int indexTime = schedObs.getIndexOfSmallestNonNegative(dataDetik);
+
+                        String[] dateTimeSetDekat = schedObs.generateDateSetNotif(dataJam);
+                        int[] minToGoSet = schedObs.generateMinSet();
+
+                       /* textViewSample.setText("data jam " + Arrays.toString(dataJam) + "\n" +
+                                "data second " + Arrays.toString(dataDetik) + "\n"+
+                                "hour to play notif " + Arrays.toString(dateTimeSetDekat) + "\n" +
+                                "waiting to " + minToGoSet[indexTime]); */
+
+                        startNotifChecker(dateTimeSetDekat, minToGoSet, indexTime, schedTextNear);
+
+                    } else {
+                        //ShowDialog.message(this, "the scheduled will be not today!" );
+                    }
+                    textViewSample.setText("next is " + schedTextNear);
+
+                    //ShowDialog.message(this, "data jam " + Arrays.toString(dataJam));
+                    //ShowDialog.message(this, "data " + Arrays.toString(dataDetik));
 
                     // now calling again for 5 min delay
                     if (!firstTime) {
@@ -590,6 +695,7 @@ public class HomeActivity extends Activity implements Navigator {
             }
         } catch (Exception ex) {
             ShowDialog.message(this, "Error " + ex.getMessage());
+            ex.printStackTrace();
         }
 
 

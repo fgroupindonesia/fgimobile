@@ -189,9 +189,10 @@
     <string name="text_label_tagihan_pembayaran">Tagihan Pembayaran</string>
     <string name="text_label_tagihan_bayar_sekarang">Bayar Sekarang</string>
     <string name="text_label_tagihan_unggah_bukti">Unggah Bukti Pembayaran</string>
-    <string name="text_label_tagihan_terbit_tanggal">Tanggal terbit xx-xxx-xxxx</string>
+    <string name="text_label_tagihan_terbit_tanggal">Tanggal terbit : </string>
     <string name="text_label_nanti_dulu">Nanti Dulu...</string>
     <string name="text_label_rupiah_tagihan_pembayaran">Rp.0</string>
+    <string name="text_label_rupiah_tagihan_pembayaran_loading">Rp. loading...</string>
 
     <string name="text_menu_consultation_finished">Finish Session</string>
     <string name="text_menu_bank_details">Bank Details</string>

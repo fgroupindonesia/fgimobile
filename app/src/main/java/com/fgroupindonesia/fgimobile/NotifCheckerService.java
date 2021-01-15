@@ -8,15 +8,19 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 
 import com.fgroupindonesia.helper.AudioPlayer;
 import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,85 +32,85 @@ public class NotifCheckerService extends Service {
     }
 
 
-    private void playAudio(int fileChoosen){
+    private void playAudio(int fileChoosen) {
         AudioPlayer.play(this, fileChoosen);
     }
 
-    private Timer myTimer, timerNotification60m, timerNotification30m,
-    timerNotification15m, timerNotification5m;
+    private Date audioDate;
+    private Timer myTimer;
+    private String scheduleText;
+    private String dateTimeText;
+    private String [] dateTimeSetText;
+    private int minToGoSetInt[];
+    private int minToGo;
+    private SimpleDateFormat formatterComplete = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    private boolean timer60Done, timer30Done, timer15Done, timer5Done;
+    int indexDate;
+    private Date nextDate(){
 
-    private int secTo60, secTo30, secTo15, secTo5;
+        indexDate++;
+        try {
+            audioDate = formatterComplete.parse(dateTimeSetText[indexDate]);
+        } catch (Exception ex){
+            audioDate = new Date();
+        }
 
-    private void startIntervalWork(){
+        return audioDate;
+    }
 
-        timerNotification60m = new Timer();
-        timerNotification60m.schedule(new TimerTask() {
+    private void startIntervalWork() {
+
+        myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+
             @Override
             public void run() {
-                if(!timer60Done) {
+
+                if (minToGo == 60) {
+                    // for 60min
+                    textMuncul = "kelas 1 jam lagi...";
                     playAudio(AudioPlayer.VOICE_60_MIN_CLASS);
-                    timer60Done = true;
-                }else{
-                    stopTimerTask(timerNotification60m);
-                }
-            }
-
-        }, secTo60, secTo60);
-
-        timerNotification30m = new Timer();
-        timerNotification30m.schedule(new TimerTask() {
-            @Override
-            public void run() {
-
-                if(!timer30Done) {
+                } else if (minToGo == 30) {
+                    // for 30min
+                    textMuncul = "kelas 30 menit lagi...";
                     playAudio(AudioPlayer.VOICE_30_MIN_CLASS);
-                    timer30Done = true;
-                }else{
-                    stopTimerTask(timerNotification30m);
-                }
-            }
-
-        }, secTo30, secTo30);
-
-        timerNotification15m = new Timer();
-        timerNotification15m.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if(!timer15Done) {
+                } else if (minToGo == 15) {
+                    // for 15min
+                    textMuncul = "kelas 15 menit lagi...";
                     playAudio(AudioPlayer.VOICE_15_MIN_CLASS);
-                    timer15Done = true;
-                }else{
-                    stopTimerTask(timerNotification15m);
-                }
-            }
-
-        }, secTo15, secTo15);
-
-        timerNotification5m = new Timer();
-        timerNotification5m.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if(!timer5Done) {
+                } else if (minToGo == 5) {
+                    // for 5min
+                    textMuncul = "kelas 5 menit lagi...";
                     playAudio(AudioPlayer.VOICE_5_MIN_CLASS);
-                    timer5Done = true;
-                }else{
-                    stopTimerTask(timerNotification5m);
                 }
-            }
 
-        }, secTo5, secTo5);
+                prepareText();
+                createNotification();
+                //sendToHome();
+
+                if(indexDate+1<dateTimeSetText.length) {
+                    // run for the next date
+                    audioDate = nextDate();
+                    startIntervalWork();
+                }else{
+                    // if the dateSet is complete thus
+                    // we stop everything,the timer along with this services
+                    stopTimerTask(myTimer);
+                    stopSelf();
+                }
+
+            }
+        }, audioDate);
+
 
     }
 
-    public void stopTimerTask (Timer timerIn) {
-        if ( timerIn != null ) {
-            timerIn .cancel() ;
+    public void stopTimerTask(Timer timerIn) {
+        if (timerIn != null) {
+            timerIn.cancel();
             timerIn = null;
         }
     }
-
 
 
     @Override
@@ -115,11 +119,18 @@ public class NotifCheckerService extends Service {
         //Log.i(TAG, "onDestroy called");
         // restart the never ending service
 
-        stopTimerTask(timerNotification60m);
-        stopTimerTask(timerNotification30m);
-        stopTimerTask(timerNotification15m);
-        stopTimerTask(timerNotification5m);
+        //stopTimerTask(myTimer);
     }
+
+    private void prepareText(){
+        textJudul = "Notifikasi Kelas " + scheduleText;
+        dateTimeText = dateTimeSetText[indexDate];
+        //textJudul += " " + dateTimeText;
+
+        minToGo = minToGoSetInt[indexDate];
+    }
+
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -127,20 +138,29 @@ public class NotifCheckerService extends Service {
         super.onStartCommand(intent, flags, startId);
 
         // incase the service is called
-        timer5Done = false;
-        timer15Done = false;
-        timer30Done = false;
-        timer60Done = false;
-
-        textJudul = "Notifikasi Kelas";
-        textMuncul = "kelas 1 jam lagi pada ";
-
-        textJudul = intent.getExtras().getString(KeyPref.SCHEDULE_DAY_1);
 
 
-        // initializing
-        startIntervalWork();
-        createNotification();
+
+        Bundle bundle = intent.getExtras();
+
+        scheduleText = bundle.getString(KeyPref.NOTIF_AUDIO_SCHEDULE);
+        dateTimeSetText = bundle.getStringArray(KeyPref.NOTIF_AUDIO_DATE_SET);
+        minToGoSetInt = bundle.getIntArray(KeyPref.NOTIF_AUDIO_MIN_SET);
+
+        indexDate = bundle.getInt(KeyPref.NOTIF_AUDIO_DATE_INDEX);
+
+        prepareText();
+
+
+        try {
+            audioDate = formatterComplete.parse(dateTimeText);
+            // initializing
+            startIntervalWork();
+        } catch (Exception ex) {
+            audioDate = new Date();
+        }
+
+
 
         // will recreate service after killed
         //return START_STICKY;
