@@ -325,7 +325,10 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 
 						// the file name expected is here in the first data
 						String singleFile = getFirstData();
-						String endPath = Environment.getExternalStorageDirectory() + File.separator + singleFile;
+						String endPath = Environment.getExternalStorageDirectory()
+								+ "/Android/data/"+ myContext.getApplicationContext().getPackageName() + "/files/" + singleFile;
+
+						//String endPath = Environment.getExternalStorageDirectory() + File.separator + singleFile;
 						//pd.setMax(length / (1000));
 
 						InputStream is = conn.getInputStream();

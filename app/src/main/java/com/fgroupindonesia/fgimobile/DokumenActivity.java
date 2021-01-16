@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,7 +34,7 @@ public class DokumenActivity extends Activity implements Navigator {
     ArrayList<Document> dataDocuments = new ArrayList<Document>();
     ArrayList<Document> dataTemp = new ArrayList<Document>();
 
-    String usName, aToken;
+    String usName, aToken, urlDownload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,13 @@ public class DokumenActivity extends Activity implements Navigator {
         setEditTextEvent(editTextSearchDocument);
 
         listViewDocument = (ListView) findViewById(R.id.listViewDocument);
+
         arrayDocAdapter = new DocumentArrayAdapter(this, dataDocuments);
+        // this activity is used for FileOpener later
+        arrayDocAdapter.setActivity(this);
+
+        setOnClickEvent(listViewDocument);
+
         listViewDocument.setAdapter(arrayDocAdapter);
 
         // for shared preference usage
@@ -59,7 +66,38 @@ public class DokumenActivity extends Activity implements Navigator {
         getDocumentsUser();
     }
 
+    public void downloadFile(String fileName, String alamatTujuan ){
 
+        //ShowDialog.message(this, "testing download " + alamatTujuan);
+
+        WebRequest httpCall = new WebRequest(this, this);
+        httpCall.setTargetURL(alamatTujuan);
+        httpCall.setDownloadState(true);
+        httpCall.setWaitState(true);
+        // we should put the filename over here
+        // to make android know what filename to be saved
+        httpCall.addData("filename", fileName);
+        httpCall.setRequestMethod(WebRequest.GET_METHOD);
+        httpCall.execute();
+
+        // store temporarily
+        urlDownload = alamatTujuan;
+
+    }
+
+    // additional onclick event for the listview instead of the icon clicked
+    private void setOnClickEvent(ListView el){
+        el.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                arrayDocAdapter.openingFile(position, view);
+
+            }
+        });
+    }
 
     private void setEditTextEvent(EditText el) {
         el.addTextChangedListener(new TextChangedListener<EditText>(el) {
@@ -137,6 +175,10 @@ public class DokumenActivity extends Activity implements Navigator {
                     String innerData = RespondHelper.getValue(respond, "multi_data");
                     Document[] dataIn = objectG.fromJson(innerData, Document[].class);
 
+                    // clearing up
+                    dataDocuments.clear();
+                    dataTemp.clear();
+
                     textViewDocumentTotal.setText("Keseluruhan dokumen anda berjumlah : " + dataIn.length + " file.");
                     dataDocuments = ArrayHelper.fillArrayList(dataDocuments, dataIn);
                     // backup for search purposes
@@ -150,6 +192,12 @@ public class DokumenActivity extends Activity implements Navigator {
 
                 //ShowDialog.message(this, "we got " + respond);
 
+            }else{
+                if(urlTarget.contains(urlDownload)){
+                    // refresh the layout
+                    // calling to Server API for documents
+                    getDocumentsUser();
+                }
             }
 
         } catch (Exception ex) {
