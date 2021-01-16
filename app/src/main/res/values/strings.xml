@@ -153,7 +153,7 @@
     <string name="text_label_time_start">00:00</string>
     <string name="text_label_start_konsultasi">Start</string>
 
-    <string name="text_label_notif_pembayaran">Notifikasi pembayaran awal bulan</string>
+    <string name="text_label_notif_pembayaran">Notifikasi tagihan pembayaran</string>
     <string name="text_label_notif_kelas_1_hour">Notifikasi 1 jam sebelum kelas</string>
 
     <string name="text_label_sisa_pertemuan">Sisa Pertemuan : 0</string>

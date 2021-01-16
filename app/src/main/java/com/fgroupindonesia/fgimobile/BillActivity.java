@@ -1,5 +1,6 @@
 package com.fgroupindonesia.fgimobile;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -8,15 +9,20 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Bill;
 import com.fgroupindonesia.beans.Schedule;
+import com.fgroupindonesia.helper.ImageHelper;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ShowDialog;
@@ -29,15 +35,25 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
+import java.io.File;
+import java.util.Date;
+
 public class BillActivity extends Activity implements Navigator {
 
+
+    Bill dataBillIn;
     TextView textViewTagihanRupiah,textViewTagihanTanggalRilis,
             textViewTagihanDescription, textViewTagihanStatus;
     Button buttonTagihanNantiDulu, buttonTagihanBayarSekarang, buttonTagihanUnggahBuktiPembayaran;
 
-    LinearLayout loadingLayout, billLayout;
+    ImageView imageViewBill;
 
-     final int ACT_CAMERA = 1, ACT_GALLERY = 2;
+    LinearLayout loadingLayout, billLayout;
+    String filePath;
+
+     final int ACT_CAMERA = 1, ACT_GALLERY = 2,
+            // for 3secs
+             PERIOD_OF_TIME = 3 * 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +66,8 @@ public class BillActivity extends Activity implements Navigator {
         loadingLayout = (LinearLayout) findViewById(R.id.linearBillLoading);
         billLayout = (LinearLayout) findViewById(R.id.linearBillDetail);
 
+        imageViewBill = (ImageView) findViewById(R.id.imageViewBill);
+
         textViewTagihanStatus = (TextView) findViewById(R.id.textViewTagihanStatus);
         textViewTagihanDescription = (TextView) findViewById(R.id.textViewTagihanDescription);
         textViewTagihanTanggalRilis = (TextView) findViewById(R.id.textViewTagihanTanggalRilis);
@@ -59,8 +77,21 @@ public class BillActivity extends Activity implements Navigator {
         buttonTagihanNantiDulu = (Button) findViewById(R.id.buttonTagihanNantiDulu);
         buttonTagihanUnggahBuktiPembayaran = (Button) findViewById(R.id.buttonTagihanUnggahBuktiPembayaran);
 
+        requestCamera();
+
         // calling to Server API
-        getLastBill();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getLastBill();
+
+            }
+        }, PERIOD_OF_TIME);
+
+    }
+
+    private void requestCamera(){
+        ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 1);
     }
 
     public void nantiDulu(View v){
@@ -96,16 +127,23 @@ public class BillActivity extends Activity implements Navigator {
         }
     }
 
-    public void updateBill(Bill dataIn){
+    public void updateBill(){
 
         WebRequest httpCall = new WebRequest(BillActivity.this, BillActivity.this);
         httpCall.addData("username", UserData.getPreferenceString(KeyPref.USERNAME));
         httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
-        httpCall.addData("amount", dataIn.getAmount()+"");
-        httpCall.addData("description", dataIn.getDescription());
-        httpCall.addData("id", dataIn.getId()+"");
+        httpCall.addData("amount", dataBillIn.getAmount()+"");
+        httpCall.addData("description", dataBillIn.getDescription());
+        httpCall.addData("id", dataBillIn.getId()+"");
+
+        if(filePath!=null) {
+            httpCall.addFile("screenshot", new File(filePath));
+
+        }
 
         httpCall.setWaitState(true);
+        // for uploading image
+        httpCall.setMultipartform(true);
         httpCall.setRequestMethod(WebRequest.POST_METHOD);
         httpCall.setTargetURL(URLReference.BillPaid);
         httpCall.execute();
@@ -123,20 +161,43 @@ public class BillActivity extends Activity implements Navigator {
             switch (requestCode) {
                 case ACT_CAMERA:
                     if (resultCode == RESULT_OK && data != null) {
-                        Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+                        //Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         //imageView.setImageBitmap(selectedImage);
-                        ShowDialog.message(this, "Gambar sedang diupload...");
 
-                        // call API to add data for this Bill
+                        Bitmap photo = (Bitmap) data.getExtras().get("data");
+                        //imageView.setImageBitmap(photo);
+                        //knop.setVisibility(Button.VISIBLE);
 
 
-                        finish();
+                        // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
+                        Uri tempUri = ImageHelper.getImageUri(getApplicationContext(), photo);
+
+                        // CALL THIS METHOD TO GET THE ACTUAL PATH
+                        filePath = ImageHelper.getRealPathFromURI(this,tempUri);
+                        filePath = ImageHelper.convertToSmallJPG(this, filePath, "payment");
+
+                        textViewTagihanStatus.setText("didapatlah " + filePath);
+                        ShowDialog.message(this, "didapatlah " + filePath);
+
+                        updateBill();
+
                     }
 
                     break;
                 case ACT_GALLERY:
                     if (resultCode == RESULT_OK && data != null) {
                         Uri selectedImage =  data.getData();
+                        filePath = ImageHelper.getPath(this.getApplicationContext(), selectedImage);
+                        //ShowDialog.message(UserProfileActivity.this, picturePath);
+
+                        // lets convert it to png to make it save for any server
+                        filePath = ImageHelper.convertToSmallJPG(this, filePath, "payment");
+
+                        // showing the loading layout
+                        //showBillLayout(false);
+                        //updateBill();
+
+                        /*
                         String[] filePathColumn = {MediaStore.Images.Media.DATA};
                         if (selectedImage != null) {
                             Cursor cursor = getContentResolver().query(selectedImage,
@@ -145,16 +206,24 @@ public class BillActivity extends Activity implements Navigator {
                                 cursor.moveToFirst();
 
                                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                String picturePath = cursor.getString(columnIndex);
+                                filePath = cursor.getString(columnIndex);
+
                                 //imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-                                ShowDialog.message(this, "Gambar sudah terpilih...");
+
+                                // lets convert it to png to make it save for any server
+                                filePath = ImageHelper.convertToSmallJPG(this, filePath);
+
                                 cursor.close();
-                                finish();
+
+                                // showing the loading layout
+                                showBillLayout(false);
+                                updateBill();
                             }
                         }
-
+*/
+                        break;
                     }
-                    break;
+
             }
         }
     }
@@ -204,28 +273,39 @@ public class BillActivity extends Activity implements Navigator {
                     showBillLayout(true);
 
                     String innerData = RespondHelper.getValue(respond, "multi_data");
-                    Bill dataIn = objectG.fromJson(innerData, Bill.class);
 
-                    textViewTagihanRupiah.setText(UIHelper.formatRupiah(dataIn.getAmount()));
-                    textViewTagihanStatus.setText("Status : " + UIHelper.convertStatusToIndonesia(dataIn.getStatus()));
-                    textViewTagihanDescription.setText(dataIn.getDescription());
-                    textViewTagihanTanggalRilis.setText("Tanggal rilis : " + UIHelper.convertDateToIndonesia(dataIn.getDate_created()));
+                    dataBillIn = objectG.fromJson(innerData, Bill.class);
+
+                    textViewTagihanRupiah.setText(UIHelper.formatRupiah(dataBillIn.getAmount()));
+                    textViewTagihanStatus.setText("Status : " + UIHelper.convertStatusToIndonesia(dataBillIn.getStatus()));
+                    textViewTagihanDescription.setText(dataBillIn.getDescription());
+                    textViewTagihanTanggalRilis.setText("Tanggal rilis : " + UIHelper.convertDateToIndonesia(dataBillIn.getDate_created()));
 
                     // in case he already upload the approval
                     // we will hide all buttons
-                    if(dataIn.getStatus().equalsIgnoreCase("pending")){
-                        buttonTagihanNantiDulu.setVisibility(View.GONE);
-                        buttonTagihanBayarSekarang.setVisibility(View.GONE);
-                        buttonTagihanUnggahBuktiPembayaran.setVisibility(View.GONE);
+                    if(dataBillIn.getStatus().equalsIgnoreCase("pending")){
+                        hideAllButtons();
+
+                    }else if(dataBillIn.getStatus().equalsIgnoreCase("paid")){
+                        hideAllButtons();
+
+                        imageViewBill.setImageResource(R.drawable.cash_lunas);
                     }
 
-                    //}else  if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_LOAD_DATA) {
+                }else if (urlTarget.contains(URLReference.BillPaid)) {
+
+                    // this is when updating the payment bill
+
+                    showBillLayout(true);
+                    hideAllButtons();
+                    textViewTagihanStatus.setText("Status : menunggu konfirmasi");
+
                 }
-                //} else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {
-                // when it is invalid
+
             } else if (!RespondHelper.isValidRespond(respond)) {
 
-                showBillLayout(false);
+                ShowDialog.message(this, "tidak ada tagihan terkini");
+                finish();
 
             }
         } catch (Exception ex) {
@@ -234,5 +314,11 @@ public class BillActivity extends Activity implements Navigator {
         }
 
 
+    }
+
+    private void hideAllButtons(){
+        buttonTagihanNantiDulu.setVisibility(View.GONE);
+        buttonTagihanBayarSekarang.setVisibility(View.GONE);
+        buttonTagihanUnggahBuktiPembayaran.setVisibility(View.GONE);
     }
 }

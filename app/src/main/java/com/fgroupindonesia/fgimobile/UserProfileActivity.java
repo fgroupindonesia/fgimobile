@@ -1,22 +1,20 @@
 package com.fgroupindonesia.fgimobile;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.fgroupindonesia.helper.ImageHelper;
 import com.fgroupindonesia.helper.ErrorLogger;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
@@ -34,8 +32,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -148,32 +144,7 @@ public class UserProfileActivity extends Activity implements Navigator {
 
     }
 
-    public static String getPath(Context context, Uri uri) {
-        String filePath = "";
 
-        Pattern p = Pattern.compile("(\\d+)$");
-        Matcher m = p.matcher(uri.toString());
-        if (!m.find()) {
-            //Log.e(ImageConverter.class.getSimpleName(), "ID for requested image not found: " + uri.toString());
-            return filePath;
-        }
-        String imgId = m.group();
-
-        String[] column = {MediaStore.Images.Media.DATA};
-        String sel = MediaStore.Images.Media._ID + "=?";
-
-        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                column, sel, new String[]{imgId}, null);
-
-        int columnIndex = cursor.getColumnIndex(column[0]);
-
-        if (cursor.moveToFirst()) {
-            filePath = cursor.getString(columnIndex);
-        }
-        cursor.close();
-
-        return filePath;
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -189,68 +160,22 @@ public class UserProfileActivity extends Activity implements Navigator {
                 imageUserProfile.setImageURI(imageURI);
 
                 // this will be sent to server later
-                picturePath = getPath(this.getApplicationContext(), imageURI);
+                picturePath = ImageHelper.getPath(this.getApplicationContext(), imageURI);
                 //ShowDialog.message(UserProfileActivity.this, picturePath);
 
                 // lets convert it to png to make it save for any server
-                picturePath = convertToSmallJPG(picturePath);
+                picturePath = ImageHelper.convertToSmallJPG(this, picturePath,"propic");
 
 
 
             } catch (Exception ex) {
+                ShowDialog.message(this, "Error on choosing picture");
             }
 
         }
     }
 
-    private String convertToSmallJPG(String path1){
 
-
-        String pathEnd = null;
-
-
-        try {
-            // memory saver
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inSampleSize = 5;
-
-            Bitmap bmp = BitmapFactory.decodeFile(path1);
-
-            int width = bmp.getWidth();
-            int height = bmp.getHeight();
-            float scaleWidth = ((float) width/2) / width;
-            float scaleHeight = ((float) height/2) / height;
-            // CREATE A MATRIX FOR THE MANIPULATION
-            Matrix matrix = new Matrix();
-            // RESIZE THE BIT MAP
-            matrix.postScale(scaleWidth, scaleHeight);
-
-            // "RECREATE" THE NEW BITMAP
-            Bitmap resizedBitmap = Bitmap.createBitmap(
-                    bmp, 0, 0, width, height, matrix, false);
-            bmp.recycle();
-
-            String path = Environment.getExternalStorageDirectory()
-                    + "/Android/data/"
-                    + getApplicationContext().getPackageName();
-
-            File photo = new File(path + "/" + String.format("propic_%d.jpeg", System.currentTimeMillis()));
-            FileOutputStream out = new FileOutputStream(photo);
-
-            //ShowDialog.message(this, "first " + path1 + "\nNow become "+ photo);
-
-            resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 65, out); //100-best quality
-            out.close();
-
-            pathEnd = photo.getPath();
-
-        } catch (Exception e) {
-            ShowDialog.message(this, "Error on 223 " + e.getMessage());
-        }
-
-        return pathEnd;
-
-    }
 
     public void getDataAPI() {
 
