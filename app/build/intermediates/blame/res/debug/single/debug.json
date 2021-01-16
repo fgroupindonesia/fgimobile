@@ -96,6 +96,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_tagihan_belum_dibayar.mp3.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_tagihan_belum_dibayar.mp3"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_tint_switch_track.xml"
     },
@@ -218,10 +222,6 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_tagihan_awal_bulan.mp3.flat",
-        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_tagihan_awal_bulan.mp3"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",

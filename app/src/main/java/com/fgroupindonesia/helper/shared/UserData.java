@@ -30,6 +30,13 @@ public class UserData  {
 
     }
 
+    public static void savePreference(String keyName, int valHere) {
+
+        SharedPreferences.Editor editor = sharedPreference.edit();
+        editor.putInt(keyName, valHere);
+        editor.commit();
+
+    }
 
     public static void savePreference(String keyName, boolean valHere) {
 
@@ -42,6 +49,10 @@ public class UserData  {
     public static String getPreferenceString(String keyName){
     	return sharedPreference.getString(keyName, null);
 	}
+
+    public static int getPreferenceInt(String keyName){
+        return sharedPreference.getInt(keyName, -1);
+    }
 
 	public static boolean getPreferenceBoolean(String keyName){
     	return sharedPreference.getBoolean(keyName, false);

@@ -4,6 +4,7 @@
         <item>Danger</item>
         <item>Digital</item>
         <item>Evacuation</item>
+        <item>None</item>
     </string-array>
     <string-array name="class_category">
         <item>-pilih materi-</item>
@@ -738,7 +739,7 @@
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="Animation.AppCompat.Tooltip" parent="Base.Animation.AppCompat.Tooltip"/>
     <style name="AppTheme" parent="Theme.NoTitle">
-        
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
 
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
@@ -1796,6 +1797,13 @@
         <item name="android:background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
+    </style>
+    <style name="HorizontalLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>

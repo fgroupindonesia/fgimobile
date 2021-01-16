@@ -34,19 +34,20 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextSearchDocument"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/text_label_document_search" />
+                android:hint="@string/text_label_document_search"
+                android:inputType="textPersonName" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewSearch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="searchDocument"
                 android:src="@android:drawable/ic_menu_search" />
         </LinearLayout>
     </LinearLayout>

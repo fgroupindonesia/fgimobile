@@ -2,15 +2,19 @@ package com.fgroupindonesia.fgimobile;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Document;
-import com.fgroupindonesia.beans.Schedule;
 import com.fgroupindonesia.helper.ArrayHelper;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.TextChangedListener;
+import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.adapter.DocumentArrayAdapter;
@@ -22,10 +26,12 @@ import java.util.ArrayList;
 
 public class DokumenActivity extends Activity implements Navigator {
 
+    EditText editTextSearchDocument;
     TextView textViewDocumentTotal;
     ListView listViewDocument;
     DocumentArrayAdapter arrayDocAdapter;
     ArrayList<Document> dataDocuments = new ArrayList<Document>();
+    ArrayList<Document> dataTemp = new ArrayList<Document>();
 
     String usName, aToken;
 
@@ -35,6 +41,9 @@ public class DokumenActivity extends Activity implements Navigator {
         setContentView(R.layout.activity_dokumen);
 
         textViewDocumentTotal = (TextView) findViewById(R.id.textViewDocumentTotal);
+        editTextSearchDocument = (EditText) findViewById(R.id.editTextSearchDocument);
+
+        setEditTextEvent(editTextSearchDocument);
 
         listViewDocument = (ListView) findViewById(R.id.listViewDocument);
         arrayDocAdapter = new DocumentArrayAdapter(this, dataDocuments);
@@ -48,6 +57,51 @@ public class DokumenActivity extends Activity implements Navigator {
 
         // calling to Server API for documents
         getDocumentsUser();
+    }
+
+
+
+    private void setEditTextEvent(EditText el) {
+        el.addTextChangedListener(new TextChangedListener<EditText>(el) {
+            @Override
+            public void onTextChanged(EditText target, Editable s) {
+                String dicari = UIHelper.getText(editTextSearchDocument);
+                if (dicari.length() < 1) {
+
+                    // when the search become not available due to empty text
+                    dataDocuments = ArrayHelper.copyBack(dataTemp, dataDocuments);
+                    arrayDocAdapter = new DocumentArrayAdapter(DokumenActivity.this, dataDocuments);
+                    listViewDocument.setAdapter(arrayDocAdapter);
+
+                    arrayDocAdapter.notifyDataSetChanged();
+                }
+            }
+        });
+    }
+
+    public void searchDocument(View v) {
+
+        String dicari = UIHelper.getText(editTextSearchDocument);
+        //ShowDialog.message(this, "berisi temp " + dataTemp.size());
+
+        if (dicari != null) {
+            dataDocuments.clear();
+
+            // search through the arraylist
+            for (Document d : dataTemp) {
+                if (d.getDescription().contains(dicari) || d.getTitle().contains(dicari)) {
+                    dataDocuments.add(d);
+                } else if (d.getFilename() != null) {
+                    if (d.getFilename().contains(dicari)) {
+                        dataDocuments.add(d);
+                    }
+                }
+            }
+
+        }
+
+        arrayDocAdapter.notifyDataSetChanged();
+
     }
 
     public void getDocumentsUser() {
@@ -85,6 +139,8 @@ public class DokumenActivity extends Activity implements Navigator {
 
                     textViewDocumentTotal.setText("Keseluruhan dokumen anda berjumlah : " + dataIn.length + " file.");
                     dataDocuments = ArrayHelper.fillArrayList(dataDocuments, dataIn);
+                    // backup for search purposes
+                    dataTemp = ArrayHelper.fillArrayList(dataTemp, dataIn);
 
                     ShowDialog.message(this, "Documents are " + dataDocuments.size());
 
@@ -92,12 +148,13 @@ public class DokumenActivity extends Activity implements Navigator {
 
                 }
 
-                ShowDialog.message(this, "we got " + respond);
+                //ShowDialog.message(this, "we got " + respond);
 
             }
 
         } catch (Exception ex) {
             ShowDialog.message(this, "error on " + ex.getMessage());
+            ex.printStackTrace();
         }
 
     }

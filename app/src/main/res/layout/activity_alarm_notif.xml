@@ -30,8 +30,14 @@
 
     <Button
         android:id="@+id/buttonStopAlarm"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
         android:onClick="stopAlarm"
-        android:text="@string/text_label_stop_alarm" />
+        android:text="@string/text_label_stop_alarm"
+        android:background="@drawable/round_buttons"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp" />
+
 </LinearLayout>

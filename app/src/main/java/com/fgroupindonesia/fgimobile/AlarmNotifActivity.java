@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.shared.KeyAudio;
 import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
@@ -17,11 +18,8 @@ import com.fgroupindonesia.helper.shared.UserData;
 public class AlarmNotifActivity extends Activity {
 
     MediaPlayer mp;
-    ImageView imageviewGIF;
-    String fileAudio;
-    int ops = -1;
+    String message;
     TextView textViewAlarmMessage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,52 +28,31 @@ public class AlarmNotifActivity extends Activity {
 
         textViewAlarmMessage = (TextView) findViewById(R.id.textViewAlarmMessage);
 
-        fileAudio = UserData.getPreferenceString(KeyPref.NOTIF_KELAS_AUDIO);
-        setSound(fileAudio);
-        play();
+        message = getIntent().getStringExtra(KeyPref.SCHEDULE);
+        textViewAlarmMessage.setText("Kelas anda : " + UIHelper.toIndonesian(message));
 
-        ShowDialog.message(this, "playing alarm audio " + ops);
+        playSound(UserData.getPreferenceInt(KeyPref.NOTIF_KELAS_AUDIO));
 
-        //imageviewGIF = (ImageView) findViewById(R.id.imageviewGIF);
-
-        showGIF();
-
-    }
-
-    private void showGIF() {
-
-        //Ion.with(imageviewGIF)
-        //      .error(R.drawable.error)
-        //      .animateGif(AnimateGifMode.ANIMATE)
-        //      .load("file:///android_asset/alarm_animated.gif");
-
-    }
-
-    private int getSound() {
-        return ops;
-    }
-
-    public void setSound(String fileName) {
-
-        switch (fileName){
-            case "alarm_01.wav":
-                ops = 0;
-                break;
-            case "alarm_02.wav":
-                ops = 1;
-                break;
-            case "alarm_03.wav":
-                ops = 2;
-                break;
-        }
 
     }
 
     public void stopAlarm(View v) {
+
+        if(mp!=null){
+            mp.stop();
+            mp = null;
+        }
+
         finish();
+
     }
 
-    private void play() {
+    @Override
+    public void onBackPressed() {
+            stopAlarm(null);
+    }
+
+        private void playSound(int ops) {
 
         AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
         audioManager.setSpeakerphoneOn(true);
@@ -85,16 +62,19 @@ public class AlarmNotifActivity extends Activity {
             mp = null;
         }
 
-        if (this.getSound() == KeyAudio.ALARM_01) {
+        if (ops == KeyAudio.ALARM_01) {
             mp = MediaPlayer.create(this, R.raw.alarm_01);
-        } else if (this.getSound() == KeyAudio.ALARM_02) {
+        } else if (ops == KeyAudio.ALARM_02) {
             mp = MediaPlayer.create(this, R.raw.alarm_02);
-        } else if (this.getSound() == KeyAudio.ALARM_03) {
+        } else if (ops == KeyAudio.ALARM_03) {
             mp = MediaPlayer.create(this, R.raw.alarm_03);
         }
 
-        mp.setLooping(true);
-        mp.start();
+        // for non silent mode we play the audio
+        if(ops != KeyAudio.ALARM_04){
+            mp.setLooping(true);
+            mp.start();
+        }
 
     }
 }

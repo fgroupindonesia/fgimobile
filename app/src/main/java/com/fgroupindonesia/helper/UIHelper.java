@@ -12,7 +12,11 @@ import java.util.Locale;
 public class UIHelper {
 
     public static String getText(EditText element) {
-        return element.getText().toString();
+        if(element.getText()!=null) {
+            return element.getText().toString();
+        } else {
+            return null;
+        }
     }
 
     private static String dayIndonesia[] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};

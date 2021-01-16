@@ -62,7 +62,7 @@ public final class R {
         public static final int zxing_msg_default_status = 0x7f0d00b3;
     }
     public static final class style {
-        public static final int zxing_CaptureTheme = 0x7f0e015e;
+        public static final int zxing_CaptureTheme = 0x7f0e015f;
     }
     public static final class styleable {
         public static final int[] zxing_camera_preview = { 0x7f030117, 0x7f030118, 0x7f03011a, 0x7f03011d };

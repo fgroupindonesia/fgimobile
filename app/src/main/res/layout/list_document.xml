@@ -60,6 +60,9 @@
             android:text="@string/text_label_document_date"
             android:textSize="14sp" />
 
+        <View
+            style="@style/HorizontalLine" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -16,4 +16,15 @@ public class ArrayHelper {
 
     }
 
+    public static ArrayList<Document> copyBack(ArrayList<Document> arraySource, ArrayList<Document> arrayTarget){
+
+        arrayTarget.clear();
+        for(Document d:arraySource){
+            arrayTarget.add(d);
+        }
+
+        return arrayTarget;
+
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.fgroupindonesia.fgimobile;
 
+import com.fgroupindonesia.helper.AudioPlayer;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.ShowDialog;
 import com.fgroupindonesia.helper.shared.HistoryCall;
@@ -34,18 +35,11 @@ import java.util.Date;
 
 public class OptionActivity extends Activity implements Navigator {
 
-    MediaPlayer mp;
 
-    WebRequest cobaPassing = new WebRequest(WebRequest.POST_METHOD);
-    String passBaru = null;
-
-    final int OPTION_MODE_PASS = 1, OPTION_MODE_CONFIG = 2;
     CheckBox checkboxNotifPayment, checkboxNotifKelas;
 
-    SharedPreferences sharedpreferences;
-    String aToken, audioChosen;
-
-    int ops;
+    String aToken;
+    int audioChosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,61 +70,32 @@ public class OptionActivity extends Activity implements Navigator {
 
     private void playAudioSample(int fileOrder){
 
-        AudioManager audioManager = (AudioManager) getSystemService(this.AUDIO_SERVICE);
-        audioManager.setSpeakerphoneOn(true);
-
-        if(mp!=null){
-            mp.stop();
-            mp = null;
-        }
-
         if (fileOrder == KeyAudio.ALARM_01) {
-            mp = MediaPlayer.create(this, R.raw.alarm_01);
+            audioChosen = 0;
+            AudioPlayer.play(this,AudioPlayer.ALARM_01);
         }else if (fileOrder == KeyAudio.ALARM_02) {
-            mp = MediaPlayer.create(this, R.raw.alarm_02);
+            audioChosen = 1;
+            AudioPlayer.play(this,AudioPlayer.ALARM_02);
         } else if (fileOrder == KeyAudio.ALARM_03) {
-            mp = MediaPlayer.create(this, R.raw.alarm_03);
-        }
-
-        mp.start();
-
-    }
-
-    private void setAudioChosen(int orderAlarm){
-        switch (orderAlarm){
-            case 0:
-                audioChosen = "alarm_01.wav";
-                break;
-            case 1:
-                audioChosen = "alarm_02.wav";
-                break;
-            case 2:
-                audioChosen = "alarm_03.wav";
-                break;
+            audioChosen = 2;
+            AudioPlayer.play(this,AudioPlayer.ALARM_03);
+        }else if(fileOrder==KeyAudio.ALARM_04){
+            // empty none
+            audioChosen = 3;
         }
 
     }
+
+
 
     public void activateNotifPayment(View v) {
 
 		UserData.savePreference(KeyPref.NOTIF_PAYMENT, checkboxNotifPayment.isChecked());
 
-		if(checkboxNotifPayment.isChecked()){
-
-		    // show popup first
-            ops = 2;
-            showPopupChooseSound();
-
-		    //startAlarm(KeyAudio.ALARM_01);
-        }
-
-
     }
 
     private void showPopupChooseSound(){
 
-        // ops 1 for KELAS
-        // ops 2 for PAYMENT
 
         // create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -139,7 +104,6 @@ public class OptionActivity extends Activity implements Navigator {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 playAudioSample(which);
-                setAudioChosen(which);
 
             }
         });
@@ -148,7 +112,7 @@ public class OptionActivity extends Activity implements Navigator {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 playAudioSample(which);
-                setAudioChosen(which);
+
             }
         });*/
 
@@ -158,11 +122,9 @@ public class OptionActivity extends Activity implements Navigator {
             public void onClick(DialogInterface dialog, int which) {
                 // user clicked OK
                 // save it to the sharedPreference
-                if(ops==1){
+
                     UserData.savePreference(KeyPref.NOTIF_KELAS_AUDIO, audioChosen);
-                }else if(ops==2){
-                    UserData.savePreference(KeyPref.NOTIF_PAYMENT_AUDIO, audioChosen);
-                }
+
 
             }
         });
@@ -181,11 +143,8 @@ public class OptionActivity extends Activity implements Navigator {
 
         if(checkboxNotifKelas.isChecked()){
 
-            // show popup first
-            ops = 1;
             showPopupChooseSound();
 
-            //startAlarm(KeyAudio.ALARM_01);
         }
     }
 

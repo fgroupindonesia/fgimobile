@@ -30,6 +30,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.fgroupindonesia.beans.Bill;
 import com.fgroupindonesia.beans.Schedule;
 import com.fgroupindonesia.helper.AudioPlayer;
 import com.fgroupindonesia.helper.Navigator;
@@ -62,7 +63,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomeActivity extends Activity implements Navigator {
 
     ScheduleObserver schedObs = new ScheduleObserver();
-    ;
+    
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer timerSchedule;
@@ -75,7 +76,7 @@ public class HomeActivity extends Activity implements Navigator {
     private final String default_notification_payment_id = "payment";
 
     int TIME_WAIT = 1 * 1000 * 60;// in minutes
-    int FIFTEEN_SECOND = 15 * 1000; // in seconds
+    int SEVEN_SECOND = 15 * 1000; // in seconds
 
     final int ACT_KELAS = 2,
             ACT_OPTIONS = 3,
@@ -148,8 +149,8 @@ public class HomeActivity extends Activity implements Navigator {
         // calling another user data from API Server
         getDataAPI();
 
-
-        notifPaymentFirstMonth();
+        // calling another Bill data from API Server
+        checkBill();
     }
 
     private void createNotification(String title, String message) {
@@ -178,46 +179,34 @@ public class HomeActivity extends Activity implements Navigator {
     }
 
     private void makePaymentNotification(String thisMonth){
-        createNotification("Notif Pembayaran ", "Harap lakukan pembayaran untuk bulan " + thisMonth);
 
         // if the payment notification from option activity is checked true
         // thus we play the audio as well
         if(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)){
             AudioPlayer.play(this, AudioPlayer.VOICE_PAYMENT_EACH_MONTH);
-        }
+            createNotification("Notif Pembayaran ", "Harap lakukan pembayaran untuk bulan " + thisMonth);
 
-        // we saved for this month and popup the voice
-        UserData.savePreference(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED, thisMonth);
-    }
-
-    public void notifPaymentFirstMonth() {
-
-        UserData.savePreference(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED, null);
-        String lastMonth = UserData.getPreferenceString(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED);
-        String thisMonth = schedObs.getThisMonth();
-        if (lastMonth != null) {
-            // but not this month
-            if (!lastMonth.equalsIgnoreCase(thisMonth)) {
-
-                makePaymentNotification(thisMonth);
-
-            }
-        } else {
-            // when there's no notif record we also make the popup
-            makePaymentNotification(thisMonth);
-
+            // we saved for this month and popup the voice
+            UserData.savePreference(KeyPref.NOTIF_PAYMENT_MONTH_LAST_CHECKED, thisMonth);
         }
 
     }
 
-    public void openAlarm() {
-        Intent intent = new Intent(this, AlarmNotifActivity.class);
-        startActivity(intent);
+    public void checkBill() {
+
+        WebRequest httpCall = new WebRequest(this, this);
+        httpCall.addData("username", UserData.getPreferenceString(KeyPref.USERNAME));
+        httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
+
+        httpCall.setWaitState(true);
+        httpCall.setRequestMethod(WebRequest.POST_METHOD);
+        httpCall.setTargetURL(URLReference.BillLast);
+        httpCall.execute();
+
+
     }
 
-    public boolean isNotifClassHourBefore() {
-        return UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS);
-    }
+
 
     // scheduled comes in
     private void prepareAnimation(Date dataIn) {
@@ -432,8 +421,8 @@ public class HomeActivity extends Activity implements Navigator {
         }
 
         if (!firstTime) {
-            // call with delay 15 seconds
-            callScheduleChecking(FIFTEEN_SECOND);
+            // call with delay 7 seconds
+            callScheduleChecking(SEVEN_SECOND);
         } else {
             // direct call
             callScheduleChecking(0);
@@ -650,7 +639,9 @@ public class HomeActivity extends Activity implements Navigator {
                                 "hour to play notif " + Arrays.toString(dateTimeSetDekat) + "\n" +
                                 "waiting to " + minToGoSet[indexTime]); */
 
-                        startNotifChecker(dateTimeSetDekat, minToGoSet, indexTime, schedTextNear);
+                       if(UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS)) {
+                           startNotifChecker(dateTimeSetDekat, minToGoSet, indexTime, schedTextNear);
+                       }
 
                     } else {
                         //ShowDialog.message(this, "the scheduled will be not today!" );
@@ -675,6 +666,23 @@ public class HomeActivity extends Activity implements Navigator {
 
                     // calling another process to show the images
                     downloadPictureAPI();
+
+                } else if (urlTarget.contains(URLReference.BillLast)){
+
+                    String innerData = RespondHelper.getValue(respond, "multi_data");
+
+                    Bill dataBillIn = objectG.fromJson(innerData, Bill.class);
+
+                    if(dataBillIn.getStatus().equalsIgnoreCase("unpaid")){
+
+                        // and notification will be shown only if he checked the notif option
+                        if(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)) {
+                            String thisMonth = schedObs.getThisMonth();
+                            makePaymentNotification(thisMonth);
+                        }
+
+                    }
+
 
                 }
                 //} else if (UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USERPROFILE_DOWNLOAD_PICTURE) {

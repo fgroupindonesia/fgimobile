@@ -86,7 +86,8 @@ public class NotifCheckerService extends Service {
 
                 prepareText();
                 createNotification();
-                //sendToHome();
+                // open the UI
+                openAlarm();
 
                 if(indexDate+1<dateTimeSetText.length) {
                     // run for the next date
@@ -112,7 +113,6 @@ public class NotifCheckerService extends Service {
         }
     }
 
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -130,16 +130,10 @@ public class NotifCheckerService extends Service {
         minToGo = minToGoSetInt[indexDate];
     }
 
-
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         //Log. e ( TAG , "onStartCommand" ) ;
         super.onStartCommand(intent, flags, startId);
-
-        // incase the service is called
-
-
 
         Bundle bundle = intent.getExtras();
 
@@ -160,14 +154,19 @@ public class NotifCheckerService extends Service {
             audioDate = new Date();
         }
 
-
-
         // will recreate service after killed
         //return START_STICKY;
 
         // will not recreate service after killed
         return START_NOT_STICKY;
 
+    }
+
+    public void openAlarm() {
+        Intent dialogIntent = new Intent(this, AlarmNotifActivity.class);
+        dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        dialogIntent.putExtra(KeyPref.SCHEDULE, scheduleText);
+        startActivity(dialogIntent);
     }
 
     private String textMuncul = null, textJudul = null;
@@ -182,6 +181,14 @@ public class NotifCheckerService extends Service {
         mBuilder.setTicker(textMuncul);
         mBuilder.setSmallIcon(R.drawable.fg_logo);
         mBuilder.setAutoCancel(true);
+
+        // once the notification is clicked
+        // user may go to KelasActivity
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                new Intent(this, KelasActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
+
+        mBuilder.setContentIntent(contentIntent);
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", importance);
