@@ -14,8 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.ScheduleObserver;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.URLReference;
+import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -25,7 +28,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-public class KelasActivity extends Activity {
+public class KelasActivity extends Activity implements Navigator {
 
     LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature,
             linearKelasBerlangsung, linearKelasRating;
@@ -35,6 +38,7 @@ public class KelasActivity extends Activity {
     // in miliseconds
     int PERIOD_OF_TIME = 2000;
     boolean statusStartedClass = true;
+    String statusAttendance, fileSignaturePath;
 
     final int STATUS_RATE_NORMAL = 1, STATUS_RATE_CONFUSED = 0, STATUS_RATE_EXCITED = 2;
 
@@ -57,8 +61,6 @@ public class KelasActivity extends Activity {
         linearKelasNoEntry = (LinearLayout) findViewById(R.id.linearKelasNoEntry);
         linearKelasSignature = (LinearLayout) findViewById(R.id.linearKelasSignature);
         linearKelasBerlangsung = (LinearLayout) findViewById(R.id.linearKelasBerlangsung);
-
-
 
 
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
@@ -113,7 +115,7 @@ public class KelasActivity extends Activity {
             public void run() {
                 //showLoading(false);
                 // if else here
-                if(statusStartedClass){
+                if(checkClassStarted()){
                     //showRating();
                     showClassStarted();
                 }else{
@@ -126,6 +128,7 @@ public class KelasActivity extends Activity {
     }
 
     public void idzinKelas(View v){
+        statusAttendance = "idzin";
         ShowDialog.message(this,"kelas cancelled -idzin");
         finish();
     }
@@ -224,10 +227,36 @@ public class KelasActivity extends Activity {
             saveBitmapToJPG(signature, photo);
             scanMediaFile(photo);
             result = true;
+
+            // stored for updating file to be sent on Server
+            fileSignaturePath = photo.getAbsolutePath();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public void saveDataAttendance() {
+
+
+        // the web request executed by httcall
+        // preparing the httpcall
+        WebRequest httpCall = new WebRequest(this, this);
+        httpCall.addData("token", UserData.getPreferenceString(KeyPref.TOKEN));
+        httpCall.addData("username", UserData.getPreferenceString(KeyPref.USERNAME));
+        httpCall.addData("status", statusAttendance);
+        httpCall.addData("class_registered", UserData.getPreferenceString(KeyPref.CLASS_REGISTERED));
+        httpCall.setWaitState(true);
+        httpCall.setMultipartform(true);
+
+        if(fileSignaturePath!=null){
+            httpCall.addFile("signature", new File(fileSignaturePath));
+        }
+
+        httpCall.setRequestMethod(WebRequest.POST_METHOD);
+        httpCall.setTargetURL(URLReference.AttendanceAdd);
+        httpCall.execute();
+
     }
 
     public void saveSignature(View v){
@@ -235,8 +264,9 @@ public class KelasActivity extends Activity {
         if (addJpgSignatureToGallery(signatureBitmap))
         {
             ShowDialog.message(this, "signature saved!");
-            //finish();
-            showRating();
+            statusAttendance = "hadir";
+            // calling to API Server
+            saveDataAttendance();
         }
     }
 
@@ -244,7 +274,9 @@ public class KelasActivity extends Activity {
         mSignaturePad.clear();
     }
 
-    private void checkClassStarted() {
+    private boolean checkClassStarted() {
+
+        boolean stat = false;
 
         ScheduleObserver schedObs = new ScheduleObserver();
 
@@ -252,17 +284,28 @@ public class KelasActivity extends Activity {
         String sched2 = UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2);
 
         schedObs.setDates(sched1, sched2);
+        
 
-        if (!schedObs.isScheduleStarted()) {
+        if (!schedObs.isScheduleToday() && !schedObs.isScheduleThisHour()) {
             // when not started
-            showNoEntry();
+           stat = false;
 
         } else {
             // when it is time for class
-            showClassStarted();
+            stat = true;
         }
+        return stat;
 
     }
 
 
+    @Override
+    public void nextActivity() {
+
+    }
+
+    @Override
+    public void onSuccess(String urlTarget, String result) {
+
+    }
 }

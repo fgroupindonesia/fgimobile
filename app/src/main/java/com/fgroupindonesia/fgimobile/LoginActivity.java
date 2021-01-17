@@ -92,7 +92,13 @@ public class LoginActivity extends Activity implements Navigator {
     public void verifyUser(View view) {
 
         showLoading(true);
-        periksaFormulir();
+
+        if(WebRequest.checkConnection(this)) {
+            periksaFormulir();
+        }else{
+            ShowDialog.message(this, "Internet anda tidak aktif?");
+            showLoading(false);
+        }
 
     }
 

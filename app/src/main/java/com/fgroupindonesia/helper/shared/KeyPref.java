@@ -14,7 +14,7 @@ public class KeyPref {
             NOTIF_AUDIO_DATE_INDEX = "notif_audio_date_index",
             NOTIF_AUDIO_SCHEDULE = "notif_audio_schedule",
             NOTIF_PAYMENT_MONTH_LAST_CHECKED = "notif_payment_month_last_checked",
-            MIN_TO_GO = "min_to_go",
+            MIN_TO_GO = "min_to_go", CLASS_REGISTERED = "class_registered",
             SCHEDULE = "schedule";
 
 

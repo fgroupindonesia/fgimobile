@@ -29,8 +29,8 @@ public class UIHelper {
         String newName = null;
         for (String dName : dayEnglish) {
 
-            if (dayName.contains(dName.toLowerCase())) {
-                newName = dayName.replace(dName.toLowerCase(), dayIndonesia[indexFound]);
+            if (dayName.toLowerCase().contains(dName.toLowerCase())) {
+                newName = dayName.replace(dName, dayIndonesia[indexFound]);
                 break;
             }
             indexFound++;
@@ -46,8 +46,8 @@ public class UIHelper {
         String newName = null;
         for (String dName : dayIndonesia) {
 
-            if (dayName.contains(dName.toLowerCase())) {
-                newName = dayName.replace(dName.toLowerCase(), dayEnglish[indexFound]);
+            if (dayName.toLowerCase().contains(dName.toLowerCase())) {
+                newName = dayName.replace(dName, dayEnglish[indexFound]);
                 break;
             }
 
@@ -90,7 +90,17 @@ public class UIHelper {
         return formatRupiah.format(number);
     }
 
-    public static String convertDayName(String computerDate, int langCode) {
+    public static boolean isEnglish(String dayName){
+        for(String day:dayEnglish){
+            if(day.toLowerCase().equalsIgnoreCase(dayName.toLowerCase())){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static String convertDayName(String computerDate) {
 
         String res = null;
         try {
@@ -100,15 +110,15 @@ public class UIHelper {
             String finalDay = format2.format(dt1);
             res = finalDay;
 
-            if (langCode == 1) {
-                res = toEnglish(finalDay);
-            } else {
+            if(isEnglish(finalDay)){
                 res = toIndonesian(finalDay);
+            } else {
+                res = toEnglish(finalDay);
             }
 
 
         } catch (Exception ex) {
-
+            res = "";
         }
 
         return res;

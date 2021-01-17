@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -38,6 +40,9 @@ public class AttendanceActivity extends Activity implements Navigator {
     TableLayout tableLayoutAttendance;
     String aToken, userName;
     ArrayList <Attendance> dataAttendance = new ArrayList<Attendance>();
+    TextView textViewKeseluruhanDataAbsensi;
+    ProgressBar progressBarAttendance;
+    Button buttonAttendanceRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +58,34 @@ public class AttendanceActivity extends Activity implements Navigator {
         // for History API call
         HistoryCall.setReference(this, this, aToken);
 
+        textViewKeseluruhanDataAbsensi = (TextView) findViewById(R.id.textViewKeseluruhanDataAbsensi);
         tableLayoutAttendance = (TableLayout) findViewById(R.id.tableLayoutAttendance);
 
-        ShowDialog.message(this, "pencarian data " + userName);
+        progressBarAttendance = (ProgressBar) findViewById(R.id.progressBarAttendance);
+        buttonAttendanceRefresh = (Button) findViewById(R.id.buttonAttendanceRefresh);
 
+        //ShowDialog.message(this, "pencarian data " + userName);
+
+        // calling to Server API for this username
         callDataAttendance(userName);
+    }
+
+    public void refreshData(View v){
+        showLoading(true);
+        clearAllRows();
+        dataAttendance.clear();
+        // calling to Server API for this username
+        callDataAttendance(userName);
+    }
+
+    private void showLoading(boolean b){
+        if(b) {
+            progressBarAttendance.setVisibility(View.VISIBLE);
+            buttonAttendanceRefresh.setVisibility(View.GONE);
+        }else{
+            progressBarAttendance.setVisibility(View.GONE);
+            buttonAttendanceRefresh.setVisibility(View.VISIBLE);
+        }
     }
 
     public  void callDataAttendance(String userName){
@@ -95,7 +123,12 @@ public class AttendanceActivity extends Activity implements Navigator {
                 Gson gson = new Gson();
                 Attendance object [] = gson.fromJson(mJson, Attendance[].class);
 
+                textViewKeseluruhanDataAbsensi.setText("Keseluruhan data absensi : " + object.length +" data.");
+
                 //ShowDialog.message(this, "we got " + jsons.toString());
+                showLoading(false);
+
+
                 for (Attendance single:object){
                     addingDataRow(single);
                     dataAttendance.add(single);
@@ -215,7 +248,7 @@ public class AttendanceActivity extends Activity implements Navigator {
 
         TextView dataText1 = createTextView(dataIn.getClass_registered());
         TextView dataText2 = createTextView(dataIn.getStatus());
-        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created(), UIHelper.LANG_CODE_ID));
+        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created()));
         TextView dataText4 = createTextView(dataIn.getDate_created());
 
         tr.addView(dataText1, trLayout );

@@ -1,4 +1,4 @@
 git add .
-git commit -m "DocumentActivity for opening, downloading, and browsing features are ready!"
+git commit -m "KelasActivity bugs in action."
 git push origin master
 git gc --prune

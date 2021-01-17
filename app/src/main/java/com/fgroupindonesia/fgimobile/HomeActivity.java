@@ -604,8 +604,13 @@ public class HomeActivity extends Activity implements Navigator {
                     String schedText2 = dataIn[1].getDay_schedule() + " " + dataIn[1].getTime_schedule();
 
                     // store it inside the shared reference
+                    // value is using the following format :
+                    // day HH:mm
+                    // for example
+                    // sunday 13:00
                     UserData.savePreference(KeyPref.SCHEDULE_DAY_1, schedText1);
                     UserData.savePreference(KeyPref.SCHEDULE_DAY_2, schedText2);
+                    UserData.savePreference(KeyPref.CLASS_REGISTERED, className);
 
                     // schedule helper to calculate and animate time interval before class started
                     //schedObs = new ScheduleObserver();

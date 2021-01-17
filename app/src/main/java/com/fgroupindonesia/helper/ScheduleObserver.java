@@ -17,10 +17,10 @@ public class ScheduleObserver {
     int indexFound = -1;
     int manyDays = 0;
     String timeSet;
-    String nowDaySet, daySet, nowDayTimeSet, estimatedNextDate;
+    String nowDaySet,nowHourSet, daySet, nowDayTimeSet, estimatedNextDate;
     int hour, minute;
     String hourText, minuteText;
-    Date realDate, nowDate, date1, date2;
+    Date nowDate, date1, date2;
     String date1Text, date2Text,
             a60MinBefore, a30MinBefore,
             a15MinBefore, a5MinBefore;
@@ -178,6 +178,32 @@ public class ScheduleObserver {
 
         return x;
 
+    }
+
+    public boolean isScheduleThisHour(){
+        // nearest is using this format :
+        // day HH:mm
+        String nearest = getScheduleNearest();
+        nowDate = new Date();
+        nowHourSet = hourOnlyFormatter.format(nowDate).toLowerCase();
+
+        if(nearest.contains(nowHourSet)){
+            return true;
+        } else {
+            String data [] = nowHourSet.split(":");
+            int jam = Integer.parseInt(data[0]);
+
+            String jadwal = nearest.split(" ")[1];
+            String jadwalData [] = jadwal.split(":");
+            int jamJadwal = Integer.parseInt(jadwalData[0]);
+
+            if(jam == jamJadwal){
+                return true;
+            }
+
+        }
+
+        return false;
     }
 
     public boolean isScheduleToday(){

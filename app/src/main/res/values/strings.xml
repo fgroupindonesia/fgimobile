@@ -128,6 +128,9 @@
     <string name="text_label_class_attendance_hadir">Ya, Hadir</string>
     <string name="text_label_class_attendance_idzin">Idzin</string>
 
+    <string name="text_label_attendance_total">Keseluruhan data absensi : 0 data.</string>
+    <string name="text_label_payment_total">Keseluruhan data payment : 0 data.</string>
+
     <string name="text_label_document_description_total">Keseluruhan dokumen anda berjumlah : 0 file.</string>
     <string name="text_label_document_search">Ketik pencarian...</string>
     <string name="text_label_document_size">Size :</string>

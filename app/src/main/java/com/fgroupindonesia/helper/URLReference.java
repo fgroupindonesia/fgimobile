@@ -15,6 +15,8 @@ public class URLReference {
     public static String DocumentAll = Remote + "/document/all";
     public static String ScheduleAll = Remote + "/schedule/all";
 
+    public static String AttendanceAdd = Remote + "/attendance/add";
+
     public static String BillLast = Remote + "/bill/last";
     public static String BillPaid = Remote + "/bill/paid";
 

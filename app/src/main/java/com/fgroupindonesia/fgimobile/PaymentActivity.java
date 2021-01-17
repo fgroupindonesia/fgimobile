@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -38,12 +40,16 @@ public class PaymentActivity extends Activity  implements Navigator  {
     TableLayout tableLayoutPayment;
     String aToken, userName;
     ArrayList<Payment> dataPayment = new ArrayList<Payment>();
+    TextView textViewKeseluruhanDataPayment;
+    ProgressBar progressBarPayment;
+    Button buttonPaymentRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        textViewKeseluruhanDataPayment = (TextView) findViewById(R.id.textViewKeseluruhanDataPayment);
 
         // for shared preference usage
         UserData.setPreference(this);
@@ -56,10 +62,33 @@ public class PaymentActivity extends Activity  implements Navigator  {
 
         tableLayoutPayment = (TableLayout) findViewById(R.id.tableLayoutPayment);
 
-        ShowDialog.message(this, "pencarian data " + userName);
+        progressBarPayment = (ProgressBar) findViewById(R.id.progressBarPayment);
+        buttonPaymentRefresh = (Button) findViewById(R.id.buttonPaymentRefresh);
 
+        //ShowDialog.message(this, "pencarian data " + userName);
+
+        // calling to Server API for this username
         callDataPayment(userName);
 
+    }
+
+    public void refreshData(View v){
+
+        showLoading(true);
+        clearAllRows();
+        dataPayment.clear();
+        // calling to Server API for this username
+        callDataPayment(userName);
+    }
+
+    private void showLoading(boolean b){
+        if(b) {
+            progressBarPayment.setVisibility(View.VISIBLE);
+            buttonPaymentRefresh.setVisibility(View.GONE);
+        }else{
+            progressBarPayment.setVisibility(View.GONE);
+            buttonPaymentRefresh.setVisibility(View.VISIBLE);
+        }
     }
 
     public  void callDataPayment(String userName){
@@ -93,7 +122,7 @@ public class PaymentActivity extends Activity  implements Navigator  {
 
         TextView dataText1 = createTextView(""+dataIn.getAmount());
         TextView dataText2 = createTextView(dataIn.getMethod());
-        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created(), UIHelper.LANG_CODE_ID));
+        TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created()));
         TextView dataText4 = createTextView(dataIn.getDate_created());
 
         tr.addView(dataText1, trLayout );
@@ -119,7 +148,12 @@ public class PaymentActivity extends Activity  implements Navigator  {
                 Gson gson = new Gson();
                 Payment object [] = gson.fromJson(mJson, Payment[].class);
 
+                textViewKeseluruhanDataPayment.setText("Keseluruhan data pembayaran : " + object.length + " data.");
                 //ShowDialog.message(this, "we got " + jsons.toString());
+
+                showLoading(false);
+
+
                 for (Payment single:object){
                     addingDataRow(single);
                     dataPayment.add(single);
