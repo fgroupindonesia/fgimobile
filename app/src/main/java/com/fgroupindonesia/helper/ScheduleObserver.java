@@ -5,9 +5,13 @@ package com.fgroupindonesia.helper;
  *  (c) FGroupIndonesia, 2020.
  */
 
+import com.fgroupindonesia.beans.Schedule;
+import com.fgroupindonesia.beans.ScheduleObsData;
+
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 
 
@@ -17,21 +21,22 @@ public class ScheduleObserver {
     int indexFound = -1;
     int manyDays = 0;
     String timeSet;
-    String nowDaySet,nowHourSet, daySet, nowDayTimeSet, estimatedNextDate;
-    int hour, minute;
+    String nowDaySet, nowHourSet, daySet, nowDayTimeSet, estimatedNextDate;
+    int hour, minute, post;
     String hourText, minuteText;
-    Date nowDate, date1, date2;
-    String date1Text, date2Text,
-            a60MinBefore, a30MinBefore,
+    Date nowDate;
+    String a60MinBefore, a30MinBefore,
             a15MinBefore, a5MinBefore;
 
+    /* replaced with array scheduleObsData object
+    int diffDay[] = null;
+    Date dateObjects[] = null;
+    String scheduleTextEntries[] = null;
+     */
 
-    int dayToSched1 = 0;
-    int dayToSched2 = 0;
+    ScheduleObsData schedeObjectsData [] = null;
 
     String stat;
-
-    boolean day1Passed, day2Passed;
 
     // using mysql format
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -44,20 +49,10 @@ public class ScheduleObserver {
 
     }
 
-    public String getThisMonth(){
+    public String getThisMonth() {
         nowDate = new Date();
         String mNumber = monthOnlyFormatter.format(nowDate);
         return mNumber;
-    }
-
-    public boolean isScheduleStarted() {
-
-        boolean startNow = true;
-        // check whether for day1 or day2 is now?
-
-
-        return startNow;
-
     }
 
     public String getStat() {
@@ -69,14 +64,61 @@ public class ScheduleObserver {
 
     }
 
-    public int getDay1ToSched() {
-        return dayToSched1;
-    }
+    public boolean isHourPassed() {
 
-    public int getDay2ToSched() {
-        return dayToSched2;
-    }
+        // nearest is using this format :
+        // day HH:mm for example
+        // monday 12:00
+        boolean stat = false;
 
+        // we calculate the hour if only the day name is now
+        if (isScheduleToday()) {
+
+            String nearest = getScheduleNearest();
+            String nearestData[] = nearest.split(" ");
+            String nearestHourData[] = nearestData[1].split(":");
+
+            nowDate = new Date();
+            nowHourSet = hourOnlyFormatter.format(nowDate);
+
+            // HH:mm for example 12:00
+            String data[] = nowHourSet.split(":");
+            int jamSkarang = Integer.parseInt(data[0]);
+            int menitSkarang = Integer.parseInt(data[1]);
+
+            int jamNearest = Integer.parseInt(nearestHourData[0]);
+            int menitNearest = Integer.parseInt(nearestHourData[1]);
+
+            // we say now is on schedule time
+            // when : 12:00-14:00 (2 hours only)
+
+            if (menitNearest == 0 && jamNearest == jamSkarang && menitSkarang == menitNearest) {
+                // when now is the hour time, and minute is exactly 0
+                // so it is not passed yet
+                stat = false;
+            } else if (jamSkarang >= jamNearest && jamSkarang <= jamNearest + 2) {
+                // when the hour now is two hour less
+                if (jamSkarang == jamNearest + 2 && menitSkarang == 0) {
+                    // when the hour is reach 2 hour exactly
+                    // so it is not passed yet
+                    stat = false;
+                } else if (jamSkarang <= jamNearest + 1 && menitSkarang != 0) {
+                    // when the hour is not more than 1 hour
+                    // and the minute is whatever
+                    // so it is not passed yet
+                    stat = false;
+                } else {
+                    // when the hour now is more than 2 hours
+                    // so it is passed precisely
+                    stat = true;
+                }
+            }
+
+        }
+
+        return stat;
+
+    }
 
     private boolean checkPassedTime(int diffDay) {
 
@@ -112,6 +154,35 @@ public class ScheduleObserver {
         return passedBy;
     }
 
+    // the next means the next from matched one
+    public String getScheduleNext() {
+        String text = null;
+
+        // get the scheduleNearest but not passed yet
+        // and will get the next one if any
+        nowDate = new Date();
+
+        if(post < schedeObjectsData.length-1) {
+            post++;
+        }else{
+            post = 0;
+        }
+
+        // we retrieve the text only
+        text = schedeObjectsData[post].getScheduleText();
+        /*if (date2.before(date1)) {
+
+            text = date1Text;
+
+        } else {
+
+            text = date2Text;
+
+        }*/
+
+        return text;
+    }
+
     public String getScheduleNearest() {
         String text = null;
 
@@ -119,11 +190,15 @@ public class ScheduleObserver {
         // and will get the next one if any
         nowDate = new Date();
 
-        if(date2.before(date1)){
+        /*if (date2.before(date1)) {
             text = date2Text;
-        }else {
+        } else {
             text = date1Text;
-        }
+        }*/
+
+        // get the first one because it is sorted so it is the nearest
+        text = schedeObjectsData[0].getScheduleText();
+
 
         return text;
     }
@@ -133,46 +208,49 @@ public class ScheduleObserver {
 
         nowDate = new Date();
 
-        if(date2.before(date1)){
+        /*if (date2.before(date1)) {
             foundDate = date2;
-        }else {
+        } else {
             foundDate = date1;
-        }
+        }*/
+
+        // get the first one which is the nearest
+        foundDate = schedeObjectsData[0].getDate();
 
         return foundDate;
 
     }
 
-    public int convertIndexToMinToGo(int val){
+    public int convertIndexToMinToGo(int val) {
 
-        int min=0;
+        int min = 0;
 
         // based upon array position
         // 60min,30min,15min,5min
-        if(val==0){
+        if (val == 0) {
             min = 60;
-        }else if(val==1){
+        } else if (val == 1) {
             min = 30;
-        }else if(val==2){
+        } else if (val == 2) {
             min = 15;
-        }else if(val==3){
+        } else if (val == 3) {
             min = 5;
         }
 
         return min;
     }
 
-    public int getIndexOfSmallestNonNegative(long[] entry){
+    public int getIndexOfSmallestNonNegative(long[] entry) {
 
-        int x=0;
-        for(long data: entry){
-            if(data>-1){
+        int x = 0;
+        for (long data : entry) {
+            if (data > -1) {
                 return x;
             }
             x++;
         }
 
-        if(x==entry.length){
+        if (x == entry.length) {
             x = -1;
         }
 
@@ -180,25 +258,42 @@ public class ScheduleObserver {
 
     }
 
-    public boolean isScheduleThisHour(){
+    public boolean isScheduleThisHour() {
         // nearest is using this format :
-        // day HH:mm
+        // day HH:mm for example
+        // monday 12:00
         String nearest = getScheduleNearest();
-        nowDate = new Date();
-        nowHourSet = hourOnlyFormatter.format(nowDate).toLowerCase();
+        String nearestData[] = nearest.split(" ");
+        String nearestHourData[] = nearestData[1].split(":");
 
-        if(nearest.contains(nowHourSet)){
+        nowDate = new Date();
+        nowHourSet = hourOnlyFormatter.format(nowDate);
+
+        if (nearest.contains(nowHourSet)) {
             return true;
         } else {
-            String data [] = nowHourSet.split(":");
-            int jam = Integer.parseInt(data[0]);
+            // HH:mm for example 12:00
+            String data[] = nowHourSet.split(":");
+            int jamSkarang = Integer.parseInt(data[0]);
+            int menitSkarang = Integer.parseInt(data[1]);
 
-            String jadwal = nearest.split(" ")[1];
-            String jadwalData [] = jadwal.split(":");
-            int jamJadwal = Integer.parseInt(jadwalData[0]);
+            int jamNearest = Integer.parseInt(nearestHourData[0]);
+            int menitNearest = Integer.parseInt(nearestHourData[1]);
 
-            if(jam == jamJadwal){
+            // we say now is on schedule time
+            // when : 12:00-14:00 (2 hours only)
+
+
+            if (menitNearest == 0 && jamNearest == jamSkarang && menitSkarang == menitNearest) {
+                // when now is the hour time, and minute is exactly 0
                 return true;
+            } else if (jamSkarang >= jamNearest && jamSkarang <= jamNearest + 2) {
+                // when the hour now is two hour less
+                if (jamSkarang == jamNearest + 2 && menitSkarang == 0) {
+                    return true;
+                } else if (jamSkarang <= jamNearest + 1 && menitSkarang != 0) {
+                    return true;
+                }
             }
 
         }
@@ -206,14 +301,14 @@ public class ScheduleObserver {
         return false;
     }
 
-    public boolean isScheduleToday(){
+    public boolean isScheduleToday() {
         // this has : day HH:mm pattern
         String nearest = getScheduleNearest();
 
         nowDate = new Date();
         nowDaySet = dayOnlyFormatter.format(nowDate).toLowerCase();
 
-        if(nearest.contains(nowDaySet)){
+        if (nearest.contains(nowDaySet)) {
             return true;
         }
 
@@ -221,11 +316,11 @@ public class ScheduleObserver {
 
     }
 
-    public int getIndexOfSmallest(long val, long[] entry){
+    public int getIndexOfSmallest(long val, long[] entry) {
 
-        int x=0;
-        for(long data: entry){
-            if(data == val){
+        int x = 0;
+        for (long data : entry) {
+            if (data == val) {
                 return x;
             }
             x++;
@@ -272,14 +367,14 @@ public class ScheduleObserver {
     }
 
     // for audio purposes
-    public int [] generateMinSet(){
+    public int[] generateMinSet() {
         // 60min, 30min, 15min, 5min
-        int minSet [] = {60, 30, 15, 5};
+        int minSet[] = {60, 30, 15, 5};
         return minSet;
 
     }
 
-    public String generateDateNotif(String hourText){
+    public String generateDateNotif(String hourText) {
 
         nowDate = new Date();
         nowDaySet = formatter.format(nowDate).toLowerCase();
@@ -289,11 +384,11 @@ public class ScheduleObserver {
 
     }
 
-    public String [] generateDateSetNotif(String [] hourSetText){
-        String newData [] = new String[hourSetText.length];
+    public String[] generateDateSetNotif(String[] hourSetText) {
+        String newData[] = new String[hourSetText.length];
 
         int i = 0;
-        for(String timeNa: hourSetText){
+        for (String timeNa : hourSetText) {
             newData[i] = generateDateNotif(timeNa);
             i++;
         }
@@ -382,17 +477,60 @@ public class ScheduleObserver {
         return n;
     }
 
-    public void setDates(String... formatted) {
-        setDate(formatted[0]);
-        dayToSched1 = getDifferenceDay();
-        date1 = getDate();
-        date1Text = formatted[0];
+    // public void setDates(String... formatted) {
+    public void setDates(Schedule... raw) {
 
-        if (formatted.length > 1) {
-            setDate(formatted[1]);
-            dayToSched2 = getDifferenceDay();
-            date2 = getDate();
-            date2Text = formatted[1];
+
+        // arrays preparation
+        schedeObjectsData = new ScheduleObsData[raw.length];
+        /*diffDay = new int[raw.length];
+        dateObjects = new Date[raw.length];
+        scheduleTextEntries = new String[raw.length];*/
+
+        String val = null;
+        int i = 0;
+
+        for (Schedule dat : raw) {
+            val = dat.getDay_schedule() + " " + dat.getTime_schedule();
+
+            setDate(val);
+            /* earlier stage are :
+            dayToSched1 = getDifferenceDay();
+            date1 = getDate();
+            date1Text = val;
+             */
+            // current stage data are stored in array
+            //diffDay[i] = getDifferenceDay();
+            //dateObjects[i] = getDate();
+            //scheduleTextEntries[i] = val;
+
+            // implementing object
+            ScheduleObsData obj = new ScheduleObsData();
+            obj.setDifferentDay(getDifferenceDay());
+            obj.setDate(getDate());
+            obj.setScheduleText(val);
+
+            schedeObjectsData[i] = obj;
+
+            val = null;
+            i++;
+        }
+
+        if (i != 0) {
+            // lets sort them all
+            /*Arrays.sort(diffDay);
+            Arrays.sort(dateObjects);
+            Arrays.sort(scheduleTextEntries);*/
+
+            // this is comparing based upon the difference day
+            Arrays.sort(schedeObjectsData, new Comparator<ScheduleObsData>(){
+
+                public int compare(ScheduleObsData o1, ScheduleObsData o2)
+                {
+                    return new Integer(o1.getDifferentDay()).compareTo(new Integer(o2.getDifferentDay()));
+                }
+            });
+
         }
 
     }
@@ -452,8 +590,8 @@ public class ScheduleObserver {
         int val = 0;
         int indexToday = 0, indexNextDay = 0;
 
-        indexNextDay = getIndexOf(nextDay);
-        indexToday = getIndexOf(todayDay);
+        indexNextDay = getIndexOf(nextDay.toLowerCase());
+        indexToday = getIndexOf(todayDay.toLowerCase());
 
         // if they're in the same position
         // no difference day

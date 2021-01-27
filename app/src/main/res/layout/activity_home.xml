@@ -343,7 +343,9 @@
             android:id="@+id/textViewSample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:padding="5dp"
+            android:text=""
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

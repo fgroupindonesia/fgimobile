@@ -30,7 +30,7 @@ public class UIHelper {
         for (String dName : dayEnglish) {
 
             if (dayName.toLowerCase().contains(dName.toLowerCase())) {
-                newName = dayName.replace(dName, dayIndonesia[indexFound]);
+                newName = dayName.replace(dName.toLowerCase(), dayIndonesia[indexFound]);
                 break;
             }
             indexFound++;

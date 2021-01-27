@@ -77,11 +77,14 @@ public class TimerAnimate implements Runnable {
                             + diffMinutes + " Minute, "
                             + diffSeconds + " Second.");
 
-                } else if (diffDays == 0 && diffHours < 0) {
+                } else if (diffDays == 0 && diffHours <= 2 && diffHours >= 0) {
                     // here when the class is already passed
 
-                    textView.setText("Class was ended");
+                    textView.setText("Kelas hari ini sedang berlangsung.");
+                    stopTimer();
 
+                }else if(diffDays == 0 && diffHours < 0){
+                    textView.setText("Kelas hari ini sudah selesai.");
                     stopTimer();
                 }
 
@@ -91,9 +94,8 @@ public class TimerAnimate implements Runnable {
 
         } else if (diffDays < 0) {
 
-            stopTimer();
-
             textView.setText("");
+            stopTimer();
 
         }
 

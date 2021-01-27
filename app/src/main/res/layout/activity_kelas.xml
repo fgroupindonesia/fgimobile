@@ -144,6 +144,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/textViewApakahKamuHadir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_label_class_attendance_description"
@@ -268,6 +269,7 @@
             android:src="@drawable/stop" />
 
         <TextView
+            android:id="@+id/textViewKelasNoEntry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

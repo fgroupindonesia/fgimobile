@@ -13,23 +13,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.fgroupindonesia.beans.Schedule;
+import com.fgroupindonesia.helper.ImageHelper;
 import com.fgroupindonesia.helper.Navigator;
+import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ScheduleObserver;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
 import com.fgroupindonesia.helper.shared.KeyPref;
 import com.fgroupindonesia.helper.shared.UserData;
 import com.github.gcacace.signaturepad.views.SignaturePad;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class KelasActivity extends Activity implements Navigator {
 
+    TextView textViewKelasNoEntry, textViewApakahKamuHadir;
     LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature,
             linearKelasBerlangsung, linearKelasRating;
     SignaturePad mSignaturePad;
@@ -38,7 +49,7 @@ public class KelasActivity extends Activity implements Navigator {
     // in miliseconds
     int PERIOD_OF_TIME = 2000;
     boolean statusStartedClass = true;
-    String statusAttendance, fileSignaturePath;
+    String statusAttendance, fileSignaturePath, statusKelas;
 
     final int STATUS_RATE_NORMAL = 1, STATUS_RATE_CONFUSED = 0, STATUS_RATE_EXCITED = 2;
 
@@ -46,6 +57,12 @@ public class KelasActivity extends Activity implements Navigator {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kelas);
+
+        // for shared preference
+        UserData.setPreference(this);
+
+        textViewKelasNoEntry = (TextView) findViewById(R.id.textViewKelasNoEntry);
+        textViewApakahKamuHadir = (TextView) findViewById(R.id.textViewApakahKamuHadir);
 
         buttonRatingNormal = (Button) findViewById(R.id.buttonRatingNormal);
         buttonRatingConfused = (Button) findViewById(R.id.buttonRatingConfused);
@@ -61,7 +78,6 @@ public class KelasActivity extends Activity implements Navigator {
         linearKelasNoEntry = (LinearLayout) findViewById(R.id.linearKelasNoEntry);
         linearKelasSignature = (LinearLayout) findViewById(R.id.linearKelasSignature);
         linearKelasBerlangsung = (LinearLayout) findViewById(R.id.linearKelasBerlangsung);
-
 
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -92,6 +108,54 @@ public class KelasActivity extends Activity implements Navigator {
 
     }
 
+    private void showButtonKehadiran(boolean b){
+
+        if(b){
+            buttonIdzin.setVisibility(View.VISIBLE);
+            buttonHadir.setVisibility(View.VISIBLE);
+            textViewApakahKamuHadir.setVisibility(View.VISIBLE);
+        }else{
+            buttonIdzin.setVisibility(View.GONE);
+            buttonHadir.setVisibility(View.GONE);
+            textViewApakahKamuHadir.setVisibility(View.GONE);
+        }
+    }
+
+    private String getTodayDateTime(){
+        Date tgl = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        return sdf.format(tgl);
+    }
+
+    private String getTodayDate(){
+        Date tgl = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(tgl);
+    }
+
+    public boolean isSignedToday(){
+
+        boolean stat = false;
+        // time format is using computer based
+        // yyyy-MM-dd
+        String dateSigned = UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_DATE);
+        String timeSigned = UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_DATETIME);
+        String statSigned= UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_STATUS);
+
+        String dateNow = getTodayDate();
+
+        ShowDialog.message(this, "terakhir " + dateSigned + " jam " + timeSigned + "\nstatusNya " + statSigned);
+
+        if(dateSigned==null){
+            stat = false;
+        }else if(dateSigned.equalsIgnoreCase(dateNow)){
+            stat = true;
+        }
+
+        return stat;
+
+    }
+
     public void ratingNormal(View v){
         postRating(STATUS_RATE_NORMAL);
     }
@@ -105,6 +169,9 @@ public class KelasActivity extends Activity implements Navigator {
     }
 
     private  void postRating(int stat){
+
+
+
         finish();
     }
 
@@ -113,11 +180,19 @@ public class KelasActivity extends Activity implements Navigator {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //showLoading(false);
+                // showLoading(false);
                 // if else here
                 if(checkClassStarted()){
                     //showRating();
+
+                    if(isSignedToday()) {
+                        showButtonKehadiran(false);
+                    }else{
+                        showButtonKehadiran(true);
+                    }
+
                     showClassStarted();
+
                 }else{
                     showNoEntry();
                 }
@@ -129,9 +204,15 @@ public class KelasActivity extends Activity implements Navigator {
 
     public void idzinKelas(View v){
         statusAttendance = "idzin";
+
+        // save by calling API
+        saveDataAttendance();
+
         ShowDialog.message(this,"kelas cancelled -idzin");
-        finish();
+        //finish();
     }
+
+
 
     public void showClassStarted(){
         linearKelasSignature.setVisibility(View.GONE);
@@ -200,17 +281,6 @@ public class KelasActivity extends Activity implements Navigator {
         sendBroadcast(mediaScanIntent);
     }
 
-    public void saveBitmapToJPG(Bitmap bitmap, File photo) throws Exception {
-        Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(newBitmap);
-        canvas.drawColor(Color.WHITE);
-        canvas.drawBitmap(bitmap, 0, 0, null);
-        OutputStream stream = new FileOutputStream(photo);
-        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream);
-        stream.close();
-    }
-
-
     public boolean addJpgSignatureToGallery(Bitmap signature) {
         boolean result = false;
         try {
@@ -224,7 +294,7 @@ public class KelasActivity extends Activity implements Navigator {
                 dir.mkdirs();
 
             File photo = new File(path + "/" + String.format("Signature_%d.jpg", System.currentTimeMillis()));
-            saveBitmapToJPG(signature, photo);
+            ImageHelper.saveBitmapToJPG(signature, photo);
             scanMediaFile(photo);
             result = true;
 
@@ -238,6 +308,11 @@ public class KelasActivity extends Activity implements Navigator {
 
     public void saveDataAttendance() {
 
+        String tglSkrg = getTodayDate();
+        String jamSkrg = getTodayDateTime();
+        UserData.savePreference(KeyPref.LAST_SIGNATURE_DATE, tglSkrg);
+        UserData.savePreference(KeyPref.LAST_SIGNATURE_DATETIME, jamSkrg);
+        UserData.savePreference(KeyPref.LAST_SIGNATURE_STATUS, statusAttendance);
 
         // the web request executed by httcall
         // preparing the httpcall
@@ -247,9 +322,9 @@ public class KelasActivity extends Activity implements Navigator {
         httpCall.addData("status", statusAttendance);
         httpCall.addData("class_registered", UserData.getPreferenceString(KeyPref.CLASS_REGISTERED));
         httpCall.setWaitState(true);
-        httpCall.setMultipartform(true);
 
         if(fileSignaturePath!=null){
+            httpCall.setMultipartform(true);
             httpCall.addFile("signature", new File(fileSignaturePath));
         }
 
@@ -280,17 +355,35 @@ public class KelasActivity extends Activity implements Navigator {
 
         ScheduleObserver schedObs = new ScheduleObserver();
 
-        String sched1 = UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_1);
-        String sched2 = UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2);
+       // String sched1 = UserData.getPreferenceString(KeyPref.
+       // String sched2 = UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2);
 
-        schedObs.setDates(sched1, sched2);
-        
+        // lets take the all data schedules from json array object
+        Gson objectG = new Gson();
+        String innerData = UserData.getPreferenceString(KeyPref.ALL_SCHEDULES);
+        Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
+        // String className = dataIn[0].getClass_registered();
+        // String schedText1 = dataIn[0].getDay_schedule() + " " + dataIn[0].getTime_schedule();
 
-        if (!schedObs.isScheduleToday() && !schedObs.isScheduleThisHour()) {
+        // the schedules are in array variable
+        schedObs.setDates(dataIn);
+
+       /* ShowDialog.message(this,"nearest is " + schedObs.getScheduleNearest());
+        ShowDialog.message(this, "hari ini " + schedObs.isScheduleToday());
+        ShowDialog.message(this, "jam ini " + schedObs.isScheduleThisHour());
+        ShowDialog.message(this, "jam lewat " + schedObs.isHourPassed());
+        */
+
+        if(schedObs.isScheduleToday() == true && schedObs.isHourPassed() == true){
+            statusKelas = "Kelas hari ini sudah usai.";
+            textViewKelasNoEntry.setText(statusKelas);
+        }
+
+        if (schedObs.isScheduleToday() != true && schedObs.isScheduleThisHour() != true) {
             // when not started
            stat = false;
 
-        } else {
+        } else if(schedObs.isScheduleToday() == true && schedObs.isScheduleThisHour() == true) {
             // when it is time for class
             stat = true;
         }
@@ -307,5 +400,24 @@ public class KelasActivity extends Activity implements Navigator {
     @Override
     public void onSuccess(String urlTarget, String result) {
 
+        try {
+
+            if (RespondHelper.isValidRespond(result)) {
+
+                if (urlTarget.contains(URLReference.AttendanceAdd)) {
+                    // means its attendance is valid
+                    // thus we remove the signature and the buttons
+                    showButtonKehadiran(false);
+                }else{
+                    ShowDialog.message(this, "Terjadi kesalahan pada saat absensi.");
+                    showButtonKehadiran(true);
+                }
+
+                showClassStarted();
+
+            }
+        } catch(Exception ex){
+            ShowDialog.message(this, "Terjadi kesalahan pada Server. Harap close aplikasi.");
+        }
     }
 }

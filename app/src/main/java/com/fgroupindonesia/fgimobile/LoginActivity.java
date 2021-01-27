@@ -120,7 +120,8 @@ public class LoginActivity extends Activity implements Navigator {
 
             if (RespondHelper.isValidRespond(respond)) {
 
-                if(UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USER_LOGIN) {
+                //if(UIAction.ACT_API_CURRENT_CALL == OPSAction.ACT_API_USER_LOGIN) {
+                if(urlTarget.contains(URLReference.UserLogin)) {
 
                     JSONObject json = RespondHelper.getObject(respond, "multi_data");
 

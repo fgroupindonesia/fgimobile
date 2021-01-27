@@ -63,12 +63,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomeActivity extends Activity implements Navigator {
 
     ScheduleObserver schedObs = new ScheduleObserver();
-    
+
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
     private Timer timerSchedule;
-    TextView textViewLogout, textviewUsername, textViewNextClass, textViewNextSchedule,
-            textViewSample;
+    TextView textViewLogout, textviewUsername, textViewNextTimer, textViewNextSchedule,
+            textViewInfo;
     WebRequest httpCall;
     String filePropicName;
 
@@ -106,13 +106,14 @@ public class HomeActivity extends Activity implements Navigator {
 
         textviewUsername = (TextView) findViewById(R.id.textviewUsername);
         textViewLogout = (TextView) findViewById(R.id.textViewLogout);
-        textViewNextClass = (TextView) findViewById(R.id.textViewNextClass);
+        textViewNextTimer = (TextView) findViewById(R.id.textViewNextClass);
         textViewNextSchedule = (TextView) findViewById(R.id.textViewNextSchedule);
 
-        textViewSample = (TextView) findViewById(R.id.textViewSample);
+        textViewInfo = (TextView) findViewById(R.id.textViewSample);
 
-        textViewNextClass.setBackgroundResource(R.color.yellow);
+        textViewNextTimer.setBackgroundResource(R.color.yellow);
         textViewNextSchedule.setBackgroundResource(R.color.yellow);
+        textViewInfo.setBackgroundResource(R.color.yellow);
 
         imageUserProfileHome = (CircleImageView) findViewById(R.id.imageUserProfileHome);
 
@@ -178,11 +179,11 @@ public class HomeActivity extends Activity implements Navigator {
         mNotificationManager.notify((int) System.currentTimeMillis(), mBuilder.build());
     }
 
-    private void makePaymentNotification(String thisMonth){
+    private void makePaymentNotification(String thisMonth) {
 
         // if the payment notification from option activity is checked true
         // thus we play the audio as well
-        if(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)){
+        if (UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)) {
             AudioPlayer.play(this, AudioPlayer.VOICE_PAYMENT_EACH_MONTH);
             createNotification("Notif Pembayaran ", "Harap lakukan pembayaran untuk bulan " + thisMonth);
 
@@ -207,12 +208,11 @@ public class HomeActivity extends Activity implements Navigator {
     }
 
 
-
     // scheduled comes in
     private void prepareAnimation(Date dataIn) {
 
         animWorks.setActivity(this);
-        animWorks.setTextView(textViewNextClass);
+        animWorks.setTextView(textViewNextTimer);
         animWorks.setScheduleDate(dataIn);
 
         timerSchedule = new Timer();
@@ -417,7 +417,7 @@ public class HomeActivity extends Activity implements Navigator {
         if (animWorks.isWorking()) {
             animWorks.stopTimer();
             animWorks = null;
-            textViewNextClass.setText("Loading...");
+            textViewNextTimer.setText("Loading...");
         }
 
         if (!firstTime) {
@@ -600,33 +600,54 @@ public class HomeActivity extends Activity implements Navigator {
                     String innerData = RespondHelper.getValue(respond, "multi_data");
                     Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
                     String className = dataIn[0].getClass_registered();
-                    String schedText1 = dataIn[0].getDay_schedule() + " " + dataIn[0].getTime_schedule();
-                    String schedText2 = dataIn[1].getDay_schedule() + " " + dataIn[1].getTime_schedule();
 
-                    // store it inside the shared reference
-                    // value is using the following format :
-                    // day HH:mm
-                    // for example
-                    // sunday 13:00
-                    UserData.savePreference(KeyPref.SCHEDULE_DAY_1, schedText1);
-                    UserData.savePreference(KeyPref.SCHEDULE_DAY_2, schedText2);
+                    // the Array json is used temporarily
+                    String allScheds = innerData;
+
+
+                    //ShowDialog.message(this, "all sched are " + allScheds);
+                    // the value stored are json object (array) convertable to array Java Object
+                    UserData.savePreference(KeyPref.ALL_SCHEDULES, allScheds);
+
+                    //UserData.savePreference(KeyPref.SCHEDULE_DAY_1, schedText1);
+                    //UserData.savePreference(KeyPref.SCHEDULE_DAY_2, schedText2);
+
                     UserData.savePreference(KeyPref.CLASS_REGISTERED, className);
 
                     // schedule helper to calculate and animate time interval before class started
                     //schedObs = new ScheduleObserver();
 
-                    schedObs.setDates(schedText1, schedText2);
+                    //schedObs.setDates(schedText1, schedText2);
+                    // we set the array of schedule objects
+                    schedObs.setDates(dataIn);
 
                     // String schedIndo = UIHelper.toIndonesian(schedObs.getScheduleNearest());
 
                     textViewNextSchedule.setSelected(true);
-                    textViewNextSchedule.setText("Jadwal Kelas " + className + " : " + UIHelper.toIndonesian(schedText1) + " & " + UIHelper.toIndonesian(schedText2));
+                    String textScheduleLabel = "Jadwal Kelas " + className + " : ";
 
+                    String temp = null;
+                    StringBuffer stb = new StringBuffer();
+                    for (Schedule schedObj : dataIn) {
+                        temp = schedObj.getDay_schedule() + " " + schedObj.getTime_schedule();
+                        stb.append(UIHelper.toIndonesian(temp));
+                        stb.append(" & ");
+                        temp = null;
+                    }
+
+                    // lastly combine the text
+                    temp = stb.substring(0, stb.toString().length()-3);
+                    textScheduleLabel += temp;
+
+                    textViewNextSchedule.setText(textScheduleLabel);
+
+                    ShowDialog.message(this, "nearest nya " + schedObs.getDateNearest());
                     prepareAnimation(schedObs.getDateNearest());
 
                     String schedTextNear = schedObs.getScheduleNearest();
+                    String schedTextNext = schedObs.getScheduleNext();
 
-                    if (schedObs.isScheduleToday()) {
+                    if (schedObs.isScheduleToday() == true) {
 
                         // now executing the Android Services
 
@@ -639,19 +660,18 @@ public class HomeActivity extends Activity implements Navigator {
                         String[] dateTimeSetDekat = schedObs.generateDateSetNotif(dataJam);
                         int[] minToGoSet = schedObs.generateMinSet();
 
-                       /* textViewSample.setText("data jam " + Arrays.toString(dataJam) + "\n" +
+                       /* textViewInfo.setText("data jam " + Arrays.toString(dataJam) + "\n" +
                                 "data second " + Arrays.toString(dataDetik) + "\n"+
                                 "hour to play notif " + Arrays.toString(dateTimeSetDekat) + "\n" +
                                 "waiting to " + minToGoSet[indexTime]); */
 
-                       if(UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS)) {
-                           startNotifChecker(dateTimeSetDekat, minToGoSet, indexTime, schedTextNear);
-                       }
+                        if (UserData.getPreferenceBoolean(KeyPref.NOTIF_KELAS)) {
+                            startNotifChecker(dateTimeSetDekat, minToGoSet, indexTime, schedTextNear);
+                        }
 
-                    } else {
-                        //ShowDialog.message(this, "the scheduled will be not today!" );
                     }
-                    textViewSample.setText("next is " + schedTextNear);
+
+                    textViewInfo.setText("Kelas berikutnya " + UIHelper.toIndonesian(schedTextNext));
 
                     //ShowDialog.message(this, "data jam " + Arrays.toString(dataJam));
                     //ShowDialog.message(this, "data " + Arrays.toString(dataDetik));
@@ -672,16 +692,16 @@ public class HomeActivity extends Activity implements Navigator {
                     // calling another process to show the images
                     downloadPictureAPI();
 
-                } else if (urlTarget.contains(URLReference.BillLast)){
+                } else if (urlTarget.contains(URLReference.BillLast)) {
 
                     String innerData = RespondHelper.getValue(respond, "multi_data");
 
                     Bill dataBillIn = objectG.fromJson(innerData, Bill.class);
 
-                    if(dataBillIn.getStatus().equalsIgnoreCase("unpaid")){
+                    if (dataBillIn.getStatus().equalsIgnoreCase("unpaid")) {
 
                         // and notification will be shown only if he checked the notif option
-                        if(UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)) {
+                        if (UserData.getPreferenceBoolean(KeyPref.NOTIF_PAYMENT)) {
                             String thisMonth = schedObs.getThisMonth();
                             makePaymentNotification(thisMonth);
                         }

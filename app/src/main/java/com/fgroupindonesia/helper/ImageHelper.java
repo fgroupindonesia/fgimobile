@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Environment;
@@ -13,6 +15,7 @@ import android.provider.MediaStore;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -113,6 +116,16 @@ public class ImageHelper {
         cursor.close();
 
         return filePath;
+    }
+
+    public static void saveBitmapToJPG(Bitmap bitmap, File photo) throws Exception {
+        Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(newBitmap);
+        canvas.drawColor(Color.WHITE);
+        canvas.drawBitmap(bitmap, 0, 0, null);
+        OutputStream stream = new FileOutputStream(photo);
+        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream);
+        stream.close();
     }
 
 }
