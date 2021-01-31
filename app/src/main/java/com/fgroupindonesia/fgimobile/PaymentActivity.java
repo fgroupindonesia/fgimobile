@@ -77,6 +77,9 @@ public class PaymentActivity extends Activity  implements Navigator  {
         showLoading(true);
         clearAllRows();
         dataPayment.clear();
+
+        textViewKeseluruhanDataPayment.setText("Keseluruhan data pembayaran : 0 data.");
+
         // calling to Server API for this username
         callDataPayment(userName);
     }
@@ -120,10 +123,10 @@ public class PaymentActivity extends Activity  implements Navigator  {
 
         TableRow.LayoutParams trLayout = new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f);
 
-        TextView dataText1 = createTextView(""+dataIn.getAmount());
+        TextView dataText1 = createTextView(UIHelper.formatRupiah(dataIn.getAmount()));
         TextView dataText2 = createTextView(dataIn.getMethod());
         TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created()));
-        TextView dataText4 = createTextView(dataIn.getDate_created());
+        TextView dataText4 = createTextView(UIHelper.convertDateToIndonesia(dataIn.getDate_created()));
 
         tr.addView(dataText1, trLayout );
         tr.addView(dataText2, trLayout);

@@ -436,7 +436,7 @@ public class HomeActivity extends Activity implements Navigator {
 
         if (firstTime) {
             // quick post
-            checkScheduleOnServer();
+            checkScheduleOnServerWithInternet();
             firstTime = false;
         } else {
             new Handler().postDelayed(new Runnable() {
@@ -444,12 +444,24 @@ public class HomeActivity extends Activity implements Navigator {
                 public void run() {
                     // the web request executed by httcall
                     // preparing the httpcall
-                    checkScheduleOnServer();
+
+                    checkScheduleOnServerWithInternet();
 
                 }
             }, TIME_WAIT);
 
         }
+    }
+
+    private void checkScheduleOnServerWithInternet(){
+
+        if(WebRequest.checkConnection(HomeActivity.this)) {
+            checkScheduleOnServer();
+        }else{
+            // when he doesn't have the internet we show the warning
+            textViewNextTimer.setText("No Internet, harap relogin kembali!!!");
+        }
+
     }
 
     private boolean requestPermission() {

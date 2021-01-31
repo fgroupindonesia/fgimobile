@@ -21,8 +21,17 @@ public class UIHelper {
 
     private static String dayIndonesia[] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
     private static String dayEnglish[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    private static String monthIndonesia[] = {"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"};
 
     public static final int LANG_CODE_ID = 0, LANG_CODE_EN = 1;
+
+    public static String convertMonthToIndonesia(int numMOnth){
+        if(numMOnth<=12) {
+            return monthIndonesia[numMOnth - 1];
+        }
+
+        return null;
+    }
 
     public static String toIndonesian(String dayName) {
         int indexFound = 0;
@@ -30,7 +39,7 @@ public class UIHelper {
         for (String dName : dayEnglish) {
 
             if (dayName.toLowerCase().contains(dName.toLowerCase())) {
-                newName = dayName.replace(dName.toLowerCase(), dayIndonesia[indexFound]);
+                newName = dayName.toLowerCase().replace(dName.toLowerCase(), dayIndonesia[indexFound].toLowerCase());
                 break;
             }
             indexFound++;
@@ -47,7 +56,7 @@ public class UIHelper {
         for (String dName : dayIndonesia) {
 
             if (dayName.toLowerCase().contains(dName.toLowerCase())) {
-                newName = dayName.replace(dName, dayEnglish[indexFound]);
+                newName = dayName.toLowerCase().replace(dName.toLowerCase(), dayEnglish[indexFound].toLowerCase());
                 break;
             }
 
@@ -60,9 +69,10 @@ public class UIHelper {
 
     public static String convertDateToIndonesia(String dateSet) {
         // yyyy-MM-dd HH:mm:ss
+        // converted become dd-MMMM-yyyy
         String dataMentah[] = dateSet.split(" ");
         String tanggalOnly[] = dataMentah[0].split("-");
-        String tanggalIndo = tanggalOnly[2] + "-" + tanggalOnly[1] + "-" + tanggalOnly[0];
+        String tanggalIndo = tanggalOnly[2] + "-" + convertMonthToIndonesia(Integer.parseInt(tanggalOnly[1])) + "-" + tanggalOnly[0];
 
         return tanggalIndo;
     }

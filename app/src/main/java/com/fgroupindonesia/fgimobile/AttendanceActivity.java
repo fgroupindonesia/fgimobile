@@ -74,6 +74,8 @@ public class AttendanceActivity extends Activity implements Navigator {
         showLoading(true);
         clearAllRows();
         dataAttendance.clear();
+
+        textViewKeseluruhanDataAbsensi.setText("Keseluruhan data absensi : 0 data.");
         // calling to Server API for this username
         callDataAttendance(userName);
     }
@@ -249,7 +251,7 @@ public class AttendanceActivity extends Activity implements Navigator {
         TextView dataText1 = createTextView(dataIn.getClass_registered());
         TextView dataText2 = createTextView(dataIn.getStatus());
         TextView dataText3 = createTextView(UIHelper.convertDayName(dataIn.getDate_created()));
-        TextView dataText4 = createTextView(dataIn.getDate_created());
+        TextView dataText4 = createTextView(UIHelper.convertDateToIndonesia(dataIn.getDate_created()));
 
         tr.addView(dataText1, trLayout );
         tr.addView(dataText2, trLayout);

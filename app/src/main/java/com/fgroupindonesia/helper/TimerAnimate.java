@@ -1,9 +1,11 @@
 package com.fgroupindonesia.helper;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.widget.TextView;
 
 import com.fgroupindonesia.fgimobile.HomeActivity;
+import com.fgroupindonesia.fgimobile.R;
 
 import java.util.Date;
 import java.util.Timer;
@@ -60,31 +62,47 @@ public class TimerAnimate implements Runnable {
                 if (diffDays > 0) {
 
                     //labelInterval.setText("Next Class : " + diffDays + " hari, " + diffHours + " jam, " + diffMinutes + " menit, " + diffSeconds + " detik.");
-                    textView.setText("next : " + diffDays + " Day, "
-                            + diffHours + " Hour, "
-                            + diffMinutes + " Minute, "
-                            + diffSeconds + " Second.");
+                    textView.setText("next : " + diffDays + " Hari, "
+                            + diffHours + " Jam, "
+                            + diffMinutes + " Menit, "
+                            + diffSeconds + " Detik.");
+
+                    textView.setTextColor(Color.BLACK);
+                    textView.setBackgroundResource(R.color.yellow);
 
                 } else if (diffHours > 0) {
 
-                    textView.setText("next : Today, "
-                            + diffHours + " Hour, "
-                            + diffMinutes + " Minute, "
-                            + diffSeconds + " Second.");
-                } else if (diffHours == 0 && diffMinutes>-1) {
+                    textView.setText("next : Hari ini, "
+                            + diffHours + " Jam, "
+                            + diffMinutes + " Menit, "
+                            + diffSeconds + " Detik.");
 
-                    textView.setText("next : Today, "
-                            + diffMinutes + " Minute, "
-                            + diffSeconds + " Second.");
+                    textView.setTextColor(Color.BLACK);
+                    textView.setBackgroundResource(R.color.yellow);
+
+                } else if (diffHours == 0 && diffMinutes>-1 && diffSeconds>-1) {
+
+                    textView.setText("next : Hari ini, "
+                            + diffMinutes + " Menit, "
+                            + diffSeconds + " Detik.");
+
+                    textView.setTextColor(Color.BLACK);
+                    textView.setBackgroundResource(R.color.yellow);
 
                 } else if (diffDays == 0 && diffHours <= 2 && diffHours >= 0) {
                     // here when the class is already passed
 
                     textView.setText("Kelas hari ini sedang berlangsung.");
+
+                    textView.setTextColor(Color.BLACK);
+                    textView.setBackgroundResource(R.color.white);
                     stopTimer();
 
                 }else if(diffDays == 0 && diffHours < 0){
                     textView.setText("Kelas hari ini sudah selesai.");
+
+                    textView.setTextColor(Color.WHITE);
+                    textView.setBackgroundResource(R.color.green);
                     stopTimer();
                 }
 
