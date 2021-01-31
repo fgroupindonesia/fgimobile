@@ -81,6 +81,11 @@
     <string name="text_title_user_profile">User Profile</string>
     <string name="text_title_kelas">Kelas</string>
     <string name="text_title_desktop">Desktop</string>
+    <string name="text_title_desktop_clients">Berikut ini desktop (client) yang sedang login.</string>
+    <string name="text_title_desktop_country">Negara : </string>
+    <string name="text_title_desktop_ipaddress">IP Address : </string>
+    <string name="text_title_desktop_status">Status : </string>
+    <string name="text_title_desktop_macid">Machine ID : </string>
     <string name="text_title_document">Dokumen</string>
     <string name="text_title_opsi">Options</string>
     <string name="text_title_history">History</string>

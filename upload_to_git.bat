@@ -1,4 +1,4 @@
 git add .
-git commit -m "HomeActivity timer animation with indonesian ui"
+git commit -m "DesktopActivity for Client Login now showing all data nicely."
 git push origin master
 git gc --prune

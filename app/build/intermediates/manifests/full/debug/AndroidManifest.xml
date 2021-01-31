@@ -49,11 +49,22 @@
         android:largeHeap="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.fgroupindonesia.fgimobile.DokumenActivity" />
-        <activity android:name="com.fgroupindonesia.fgimobile.KelasActivity" />
-        <activity android:name="com.fgroupindonesia.fgimobile.AlarmNotifActivity" />
-        <activity android:name="com.fgroupindonesia.fgimobile.PaymentActivity" />
-        <activity android:name="com.fgroupindonesia.fgimobile.AttendanceActivity" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.DokumenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.KelasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.AlarmNotifActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.PaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.fgroupindonesia.fgimobile.AttendanceActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.fgroupindonesia.fgimobile.BillActivity"
             android:screenOrientation="portrait" />

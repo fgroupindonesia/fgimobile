@@ -4,8 +4,28 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\checklist.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_kitts_and_nevis.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_kitts_and_nevis.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shutdown64.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\shutdown64.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_costa_rica.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_costa_rica.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_camera.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xxhdpi\\camera.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_armenia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_armenia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_ghana.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_ghana.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -20,6 +40,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_united_nations.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_united_nations.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -32,16 +56,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_lithuania.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_lithuania.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_latvia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_latvia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sudan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sudan.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_syria.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_syria.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_venezuela.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_venezuela.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
@@ -52,36 +96,60 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_french_polynesia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_french_polynesia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_madagascar.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_madagascar.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_kelas_dimulai_1jam.mp3.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_kelas_dimulai_1jam.mp3"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_ireland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_ireland.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mali.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mali.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sweden.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sweden.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cameroon.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cameroon.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -90,6 +158,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_zip.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\zip.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_marshall_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_marshall_islands.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -108,12 +180,12 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_user_profile.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\activity_user_profile.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_attendance.xml.flat",
@@ -122,6 +194,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nauru.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nauru.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -140,6 +216,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_seychelles.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_seychelles.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -152,12 +232,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_slovenia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_slovenia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_kelas_dimulai_5menit.mp3.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_kelas_dimulai_5menit.mp3"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_serbia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_serbia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guernsey.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guernsey.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view.xml.flat",
@@ -172,6 +264,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_european_union.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_european_union.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_secondary_text_material_light.xml"
     },
@@ -180,8 +276,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_tint_edittext.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_barbados.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_barbados.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_jordan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_jordan.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nato.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nato.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_libya.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_libya.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\menu_menus_absensi.xml.flat",
@@ -200,12 +312,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_liberia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_liberia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_bottom.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tuvalu.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tuvalu.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -222,6 +342,22 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_helena.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_helena.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_denmark.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_denmark.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_republic_of_the_congo.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_republic_of_the_congo.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tonga.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tonga.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_check_material.xml.flat",
@@ -260,16 +396,28 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saudi_arabia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saudi_arabia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_equatorial_guinea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_equatorial_guinea.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_lucia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_lucia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
@@ -288,8 +436,32 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nigeria.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nigeria.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tajikistan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tajikistan.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_vietnam.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_vietnam.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cash_lunas.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\cash_lunas.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bulgaria.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bulgaria.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_macau.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_macau.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mauritania.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mauritania.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_cab_background_internal_bg.xml.flat",
@@ -304,12 +476,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_iran.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_iran.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
@@ -320,12 +496,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_commonwealth.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_commonwealth.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_namibia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_namibia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_gabon.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_gabon.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_san_marino.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_san_marino.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_solomon_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_solomon_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_croatia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_croatia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
@@ -336,6 +536,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\ding.mp3"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_peru.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_peru.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cash.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\cash.png"
     },
@@ -344,20 +548,32 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\stop.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_suriname.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_suriname.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_honduras.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_honduras.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_israel.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_israel.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_close_item_material.xml.flat",
@@ -372,8 +588,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_palau.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_palau.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_uruguay.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_uruguay.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_error.png.flat",
@@ -384,16 +608,24 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-mdpi\\loading.gif"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_senegal.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_senegal.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kenya.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kenya.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_nonavailable.png.flat",
@@ -408,8 +640,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_austria.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_austria.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_antarctica.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_antarctica.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_curacao.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_curacao.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_small_material.xml.flat",
@@ -420,8 +664,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_anguilla.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_anguilla.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guatemala.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guatemala.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_taiwan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_taiwan.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bahamas.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bahamas.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
@@ -432,12 +692,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\2c6c76c72df7ed7e7ed365b8a9e5f358\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tanzania.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tanzania.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_nonavailable.png.flat",
@@ -448,8 +712,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\layout\\notification_action.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_andorra.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_andorra.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_laos.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_laos.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_somalia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_somalia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
@@ -460,12 +736,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_papua_new_guinea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_papua_new_guinea.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_democratic_republic_of_the_congo.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_democratic_republic_of_the_congo.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_spacing.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\spacing.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_jersey.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_jersey.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -496,6 +784,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_turkey.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_turkey.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -512,8 +804,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cocos_keeling_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cocos_keeling_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_turkmenistan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_turkmenistan.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -528,12 +828,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_western_sahara.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_western_sahara.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bolivia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bolivia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_niger.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_niger.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_czech_republic.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_czech_republic.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sri_lanka.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sri_lanka.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_united_states.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_united_states.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -546,6 +870,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_filter_payment.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\filter_payment.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_swaziland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_swaziland.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -572,6 +900,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_france.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_france.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -588,12 +920,20 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\board.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guinea_bissau.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guinea_bissau.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_india.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_india.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
@@ -618,6 +958,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kiribati.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kiribati.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
@@ -656,6 +1000,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_finland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_finland.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_loading.gif.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xhdpi\\loading.gif"
     },
@@ -664,12 +1012,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_british_virgin_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_british_virgin_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_dark.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_azerbaijan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_azerbaijan.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_dokumen.xml.flat",
@@ -688,6 +1044,14 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\history.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_martinique.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_martinique.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_palestine.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_palestine.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_borderless_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_btn_borderless_material.xml"
     },
@@ -704,6 +1068,14 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_greenland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_greenland.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_maldives.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_maldives.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_fg_logo.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xxhdpi\\fg_logo.png"
     },
@@ -712,12 +1084,44 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_comoros.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_comoros.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mayotte.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mayotte.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_yemen.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_yemen.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_aruba.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_aruba.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_thailand.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_thailand.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_iraq.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_iraq.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cote_divoire.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cote_divoire.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_zxing_barcode_scanner.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\zxing-android-embedded-3.6.0.aar\\62279df8cc85862b8abecb014f3b5f5e\\res\\layout\\zxing_barcode_scanner.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bahrain.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bahrain.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -744,6 +1148,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_rwanda.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_rwanda.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_bottom.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_slide_out_bottom.xml"
     },
@@ -764,6 +1172,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_united_arab_emirates.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_united_arab_emirates.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -772,20 +1184,32 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kosovo.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kosovo.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_emo_ok.gif.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\emo_ok.gif"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\menu_menus_check_status.xml.flat",
-        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\menu\\menus_check_status.xml"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_monaco.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_monaco.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\menu_menus_check_status.xml.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\menu\\menus_check_status.xml"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_panama.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_panama.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",
@@ -804,8 +1228,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nagorno_karabakh.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nagorno_karabakh.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cuba.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cuba.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -816,12 +1248,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_vector_test.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_ukraine.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_ukraine.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_luxembourg.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_luxembourg.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
@@ -840,8 +1280,20 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\bg_rainbow.jpg"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_colombia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_colombia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cyprus.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cyprus.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_eritrea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_eritrea.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -860,6 +1312,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_vincent_and_the_grenadines.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_vincent_and_the_grenadines.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
@@ -870,6 +1326,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mauritius.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mauritius.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -884,12 +1344,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_belarus.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_belarus.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sint_maarten.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sint_maarten.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_pakistan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_pakistan.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -910,6 +1382,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bangladesh.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bangladesh.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
@@ -940,8 +1416,20 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\circular_dark.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_montenegro.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_montenegro.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_brunei.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_brunei.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_algeria.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_algeria.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -952,8 +1440,24 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\billing.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_macedonia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_macedonia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_british_antarctic_territory.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_british_antarctic_territory.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_uganda.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_uganda.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_montserrat.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_montserrat.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_message.xml.flat",
@@ -972,16 +1476,20 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_req_sent.mp3"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tokelau.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tokelau.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
-        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_timeout.mp3.flat",
@@ -1004,6 +1512,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\activity_desktop.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_antigua_and_barbuda.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_antigua_and_barbuda.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_multichoice_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\select_dialog_multichoice_material.xml"
     },
@@ -1018,6 +1530,26 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\2c6c76c72df7ed7e7ed365b8a9e5f358\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_american_samoa.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_american_samoa.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_myanmar.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_myanmar.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_new_caledonia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_new_caledonia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_morocco.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_morocco.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_samoa.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_samoa.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dollar.png.flat",
@@ -1036,12 +1568,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_netherlands_antilles.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_netherlands_antilles.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_zimbabwe.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_zimbabwe.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_gibraltar.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_gibraltar.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_estonia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_estonia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_egypt.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_egypt.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\2c6c76c72df7ed7e7ed365b8a9e5f358\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_angola.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_angola.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1052,6 +1608,14 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_malta.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_malta.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_hungary.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_hungary.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1060,8 +1624,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_pitcairn_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_pitcairn_islands.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_russia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_russia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nepal.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nepal.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_youtube.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\youtube.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ok.png.flat",
@@ -1072,8 +1652,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_youtube.png.flat",
-        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\youtube.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_switzerland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_switzerland.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_oman.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_oman.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_christmas_island.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_christmas_island.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_martin.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_martin.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
@@ -1096,12 +1688,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_fiji.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_fiji.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_search_api_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_out.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_somaliland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_somaliland.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -1124,6 +1724,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\user.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_new_zealand.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_new_zealand.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1144,6 +1748,18 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_tunisia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_tunisia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mongolia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mongolia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_botswana.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_botswana.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_exit.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_tooltip_exit.xml"
     },
@@ -1152,8 +1768,20 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_kelas_dimulai_15menit.mp3"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_netherlands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_netherlands.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_norway.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_norway.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_south_africa.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_south_africa.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -1168,12 +1796,40 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_central_african_republic.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_central_african_republic.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_catalonia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_catalonia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_lebanon.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_lebanon.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bosnia_and_herzegovina.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bosnia_and_herzegovina.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_south_sudan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_south_sudan.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_greece.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_greece.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_wales.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_wales.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_document.png.flat",
@@ -1186,6 +1842,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_fg_logo.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-mdpi\\fg_logo.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_east_timor.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_east_timor.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -1204,6 +1864,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_wallis_and_futuna.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_wallis_and_futuna.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
@@ -1220,8 +1884,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_desktop.xml.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\list_desktop.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guyana.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guyana.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_home.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\bg_home.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_zambia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_zambia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_jamaica.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_jamaica.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_canary_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_canary_islands.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_china.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_china.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_unknown.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_unknown.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -1248,12 +1940,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\tooltip_frame_dark.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_vatican_city.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_vatican_city.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_spain.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_spain.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_trinidad_and_tobago.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_trinidad_and_tobago.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_malaysia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_malaysia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_grenada.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_grenada.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cayman_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cayman_islands.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bank.png.flat",
@@ -1264,24 +1980,40 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sao_tome_and_principe.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sao_tome_and_principe.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_south_ossetia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_south_ossetia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mozambique.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mozambique.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kuwait.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kuwait.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_title_material.xml.flat",
@@ -1304,6 +2036,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_el_salvador.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_el_salvador.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -1312,12 +2048,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_updated.mp3.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_updated.mp3"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_voice_updated.mp3.flat",
-        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\voice_updated.mp3"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_germany.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_germany.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
@@ -1326,6 +2066,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_puerto_rico.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_puerto_rico.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_audio.png.flat",
@@ -1344,6 +2088,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_faroes.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_faroes.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1352,8 +2100,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bhutan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bhutan.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_item_layout.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kyrgyzstan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kyrgyzstan.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1372,16 +2128,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_sierra_leone.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_sierra_leone.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -1396,8 +2156,32 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\list_document.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_georgia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_georgia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_north_korea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_north_korea.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_fg_logo.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-hdpi\\fg_logo.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_portugal.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_portugal.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_reunion.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_reunion.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_england.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_england.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_gosquared.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_gosquared.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -1408,8 +2192,16 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xxhdpi\\nonavailable.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_northern_cyprus.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_northern_cyprus.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_absensi.jpg.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\bg_absensi.jpg"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guam.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guam.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_word.png.flat",
@@ -1456,8 +2248,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_djibouti.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_djibouti.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_chad.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_chad.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1472,12 +2272,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable\\notification_icon_background.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_afghanistan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_afghanistan.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_alarm_01.wav.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\alarm_01.wav"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_haiti.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_haiti.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_belgium.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_belgium.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -1500,12 +2312,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_bermuda.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_bermuda.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mexico.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mexico.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -1528,8 +2348,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_south_korea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_south_korea.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_lesotho.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_lesotho.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_chrome.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\chrome.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_hong_kong.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_hong_kong.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_philippines.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_philippines.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -1552,6 +2388,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_saint_barthelemy.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_saint_barthelemy.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_slide_in_top.xml"
     },
@@ -1572,8 +2412,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_red_cross.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_red_cross.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_italy.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_italy.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_niue.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_niue.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -1592,12 +2444,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\2c6c76c72df7ed7e7ed365b8a9e5f358\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_united_kingdom.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_united_kingdom.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_french_southern_territories.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_french_southern_territories.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_dominican_republic.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_dominican_republic.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_attendance.png.flat",
@@ -1608,8 +2472,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_liechtenstein.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_liechtenstein.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_isle_of_man.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_isle_of_man.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_dark.xml.flat",
@@ -1620,12 +2492,36 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_ethiopia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_ethiopia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_singapore.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_singapore.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_buttons.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\round_buttons.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cape_verde.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cape_verde.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_vanuatu.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_vanuatu.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_slovakia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_slovakia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_poland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_poland.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1644,8 +2540,24 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_burundi.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_burundi.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_albania.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_albania.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_logo.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\default_logo.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_micronesia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_micronesia.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_moldova.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_moldova.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
@@ -1664,8 +2576,16 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-mdpi\\question.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_malawi.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_malawi.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_alarm_02.wav.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\alarm_02.wav"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_ecuador.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_ecuador.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -1684,8 +2604,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_tint_default.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_romania.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_romania.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_japan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_japan.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -1704,24 +2632,32 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_filter_attendance.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\filter_attendance.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_brazil.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_brazil.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_abkhazia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_abkhazia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -1732,8 +2668,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-v23\\abc_control_background_material.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_canada.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_canada.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_south_georgia_and_the_south_sandwich_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_south_georgia_and_the_south_sandwich_islands.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_belize.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_belize.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rar.png.flat",
@@ -1748,6 +2696,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\ppoint.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_us_virgin_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_us_virgin_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
@@ -1760,6 +2712,14 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-watch-v20\\abc_dialog_material_background.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_dominica.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_dominica.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_mars.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_mars.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable\\notification_bg.xml"
     },
@@ -1768,12 +2728,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_benin.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_benin.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_camera.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable-xhdpi\\camera.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_guinea.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_guinea.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ps.png.flat",
@@ -1788,6 +2756,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_paraguay.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_paraguay.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circular.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\circular.png"
     },
@@ -1800,8 +2772,16 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\emo_wait.gif"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_iceland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_iceland.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_indonesia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_indonesia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -1820,6 +2800,10 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_falkland_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_falkland_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1832,8 +2816,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\2c6c76c72df7ed7e7ed365b8a9e5f358\\res\\layout\\notification_template_lines_media.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_nicaragua.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_nicaragua.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_argentina.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_argentina.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -1868,6 +2860,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\logout.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_turks_and_caicos_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_turks_and_caicos_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5cab5f7a34549cabd90534d1fec0bf17\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
@@ -1876,8 +2872,20 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_norfolk_island.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_norfolk_island.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cambodia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cambodia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_northern_mariana_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_northern_mariana_islands.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
@@ -1892,12 +2900,28 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\jpg.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_scotland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_scotland.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_aland.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_aland.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\anim\\abc_slide_out_top.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_uzbekistan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_uzbekistan.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_gambia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_gambia.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
@@ -1920,16 +2944,28 @@
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_png.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\png.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_togo.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_togo.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_australia.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_australia.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_olympics.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_olympics.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -1944,6 +2980,10 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\refresh.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_basque_country.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_basque_country.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
@@ -1956,12 +2996,24 @@
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\border_edit_text.xml"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_kazakhstan.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_kazakhstan.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_excel.png.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\excel.png"
     },
     {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_cook_islands.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_cook_islands.png"
+    },
+    {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_burkina_faso.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_burkina_faso.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
@@ -1970,6 +3022,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\858859b9b8f5bb1e0e2ae1b1ff11a7d9\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_chile.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_chile.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -1990,6 +3046,10 @@
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\raw_alarm_03.wav.flat",
         "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\raw\\alarm_03.wav"
+    },
+    {
+        "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_countryflag_qatar.png.flat",
+        "source": "D:\\java\\android\\FGIMobile\\app\\src\\main\\res\\drawable\\countryflag_qatar.png"
     },
     {
         "merged": "D:\\java\\android\\FGIMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable_payment.png.flat",

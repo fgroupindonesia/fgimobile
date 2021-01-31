@@ -3,10 +3,13 @@ package com.fgroupindonesia.fgimobile;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Document;
@@ -66,13 +69,17 @@ public class DokumenActivity extends Activity implements Navigator {
         getDocumentsUser();
     }
 
-    public void downloadFile(String fileName, String alamatTujuan ){
+    public void downloadFile(ProgressBar prgBar, String fileName, String alamatTujuan ){
 
         //ShowDialog.message(this, "testing download " + alamatTujuan);
 
         WebRequest httpCall = new WebRequest(this, this);
         httpCall.setTargetURL(alamatTujuan);
         httpCall.setDownloadState(true);
+
+        prgBar.setVisibility(View.VISIBLE);
+
+        httpCall.setProgressBar(prgBar);
         httpCall.setWaitState(true);
         // we should put the filename over here
         // to make android know what filename to be saved
@@ -100,6 +107,18 @@ public class DokumenActivity extends Activity implements Navigator {
     }
 
     private void setEditTextEvent(EditText el) {
+
+        el.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    searchDocument(null);
+                    return true;
+                }
+                return false;
+            }
+        });
+
         el.addTextChangedListener(new TextChangedListener<EditText>(el) {
             @Override
             public void onTextChanged(EditText target, Editable s) {
@@ -107,7 +126,9 @@ public class DokumenActivity extends Activity implements Navigator {
                 if (dicari.length() < 1) {
 
                     // when the search become not available due to empty text
-                    dataDocuments = ArrayHelper.copyBack(dataTemp, dataDocuments);
+
+                    textViewDocumentTotal.setText("Keseluruhan dokumen anda berjumlah : " + dataTemp.size()+ " file.");
+                    dataDocuments = ArrayHelper.copyBackDocument(dataTemp, dataDocuments);
                     arrayDocAdapter = new DocumentArrayAdapter(DokumenActivity.this, dataDocuments);
                     listViewDocument.setAdapter(arrayDocAdapter);
 
@@ -119,18 +140,22 @@ public class DokumenActivity extends Activity implements Navigator {
 
     public void searchDocument(View v) {
 
-        String dicari = UIHelper.getText(editTextSearchDocument);
+        String dicari = UIHelper.getText(editTextSearchDocument).toLowerCase();
         //ShowDialog.message(this, "berisi temp " + dataTemp.size());
+
+        // before updated
+
 
         if (dicari != null) {
             dataDocuments.clear();
+            textViewDocumentTotal.setText("Keseluruhan dokumen anda berjumlah : 0 file.");
 
             // search through the arraylist
             for (Document d : dataTemp) {
-                if (d.getDescription().contains(dicari) || d.getTitle().contains(dicari)) {
+                if (d.getDescription().toLowerCase().contains(dicari) || d.getTitle().toLowerCase().contains(dicari)) {
                     dataDocuments.add(d);
                 } else if (d.getFilename() != null) {
-                    if (d.getFilename().contains(dicari)) {
+                    if (d.getFilename().toLowerCase().contains(dicari)) {
                         dataDocuments.add(d);
                     }
                 }
@@ -184,7 +209,7 @@ public class DokumenActivity extends Activity implements Navigator {
                     // backup for search purposes
                     dataTemp = ArrayHelper.fillArrayList(dataTemp, dataIn);
 
-                    ShowDialog.message(this, "Documents are " + dataDocuments.size());
+                  //  ShowDialog.message(this, "Documents are " + dataDocuments.size());
 
                     arrayDocAdapter.notifyDataSetChanged();
 

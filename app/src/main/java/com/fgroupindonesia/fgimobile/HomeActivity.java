@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -76,7 +77,10 @@ public class HomeActivity extends Activity implements Navigator {
     private final String default_notification_payment_id = "payment";
 
     int TIME_WAIT = 1 * 1000 * 60;// in minutes
-    int SEVEN_SECOND = 15 * 1000; // in seconds
+    int SEVEN_SECOND = 7 * 1000; // in miliseconds
+    int ONE_SECOND = 1 * 1000; // in miliseconds
+
+    int iRemaining = (SEVEN_SECOND / 1000)-1; // in second
 
     final int ACT_KELAS = 2,
             ACT_OPTIONS = 3,
@@ -310,8 +314,10 @@ public class HomeActivity extends Activity implements Navigator {
         Intent intent = new Intent(this, NotifCheckerService.class);
         stopService(intent);
 
+        // clearing several data
         UserData.savePreference(KeyPref.USERNAME, null);
         UserData.savePreference(KeyPref.PASSWORD, null);
+        UserData.savePreference(KeyPref.TOKEN, null);
 
         ActivityCompat.finishAffinity(this);
 
@@ -320,7 +326,6 @@ public class HomeActivity extends Activity implements Navigator {
     public void openDocument(View v) {
         nextActivity(ACT_DOCUMENT);
     }
-
 
     public void openTagihan(View v) {
         nextActivity(ACT_TAGIHAN);
@@ -413,11 +418,32 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
+    private void countLoadingTime(){
+
+        if(iRemaining>=0) {
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    textViewNextTimer.setText("Loading... (" + iRemaining + ") menunggu.");
+                    iRemaining--;
+                    countLoadingTime();
+                }
+            }, ONE_SECOND);
+
+        }else{
+            // return back to 7
+            iRemaining = (SEVEN_SECOND/1000)-1;
+        }
+    }
+
     private void checkScheduleOnServer() {
         if (animWorks.isWorking()) {
             animWorks.stopTimer();
             animWorks = null;
-            textViewNextTimer.setText("Loading...");
+            // animated time seconds wait shown below
+            countLoadingTime();
         }
 
         if (!firstTime) {
@@ -455,11 +481,13 @@ public class HomeActivity extends Activity implements Navigator {
 
     private void checkScheduleOnServerWithInternet(){
 
+        // if any internet available we do our work...
+        // otherwise show the error
         if(WebRequest.checkConnection(HomeActivity.this)) {
             checkScheduleOnServer();
         }else{
             // when he doesn't have the internet we show the warning
-            textViewNextTimer.setText("No Internet, harap relogin kembali!!!");
+            warningNoInternet();
         }
 
     }
@@ -491,42 +519,25 @@ public class HomeActivity extends Activity implements Navigator {
 
     }
 
-    private void startAlarm(int codeUsage) {
 
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
-        Date date = new Date();
-
-        String dataJam = dateFormat.format(date);
-        String dataJamMentah[] = dataJam.split(":");
-
-        int jam = Integer.parseInt(dataJamMentah[0]), menit = Integer.parseInt(dataJamMentah[1]);
-
-        ShowDialog.message(this, "notif siap jalan ...\n" + dataJam);
-
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.SECOND, 5);
-
-        //Create a new PendingIntent and add it to the AlarmManager
-        Intent intent = new Intent(this, AlarmNotifActivity.class);
-
-        intent.putExtra("sound", KeyAudio.ALARM_01);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,
-                12345, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager am =
-                (AlarmManager) getSystemService(Activity.ALARM_SERVICE);
-        am.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(),
-                pendingIntent);
-
-
-    }
 
     @Override
     public void onResume() {
         super.onResume();
 
         // refreshing the picture
-        getDataAPI();
+        if(WebRequest.checkConnection(this)) {
+            getDataAPI();
+        }else{
+            // when he doesn't have the internet we show the warning
+            warningNoInternet();
+        }
+    }
+
+    private void warningNoInternet(){
+        textViewNextTimer.setText("No Internet, harap relogin kembali!!!");
+        textViewNextTimer.setTextColor(Color.WHITE);
+        textViewNextTimer.setBackgroundResource(R.color.red);
     }
 
     @Override
@@ -580,7 +591,8 @@ public class HomeActivity extends Activity implements Navigator {
 
                             //super.onBackPressed();
                             //Or used finish();
-                            ActivityCompat.finishAffinity(HomeActivity.this);
+                            //ActivityCompat.finishAffinity(HomeActivity.this);
+                            logout(null);
                         }
 
                     })

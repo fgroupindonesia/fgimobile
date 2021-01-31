@@ -2,6 +2,7 @@ package com.fgroupindonesia.helper;
 
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -12,6 +13,14 @@ import java.util.Locale;
 public class UIHelper {
 
     public static String getText(EditText element) {
+        if(element.getText()!=null) {
+            return element.getText().toString();
+        } else {
+            return null;
+        }
+    }
+
+    public static String getText(TextView element) {
         if(element.getText()!=null) {
             return element.getText().toString();
         } else {

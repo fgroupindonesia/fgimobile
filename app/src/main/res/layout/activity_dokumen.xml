@@ -40,7 +40,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/text_label_document_search"
-                android:inputType="textPersonName" />
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
 
             <ImageView
                 android:id="@+id/imageViewSearch"

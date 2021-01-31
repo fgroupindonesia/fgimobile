@@ -21,11 +21,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import static android.content.ContentValues.TAG;
 
 // url comes in the last parameter
-public class WebRequest extends AsyncTask<String, Void, String> {
+public class WebRequest extends AsyncTask<String, Integer, String> {
 
 	 URL url;
 	 String response = "";
@@ -34,6 +36,7 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 	 boolean verifiedCodeStat=false;
 	 boolean downloadStat = false;
 	 public Navigator webcall;
+	 private ProgressBar mPDialog;
 	 // private static final String URL_ROOT_API = "http://api.fgroupindonesia.com/fgimobile";
 
 	 // for production purposes call below URL
@@ -96,6 +99,10 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 		keysFiles = new ArrayList();
 		fileStreams = new ArrayList();
 		fileNames = new ArrayList();
+	}
+
+	public void setProgressBar(ProgressBar progBar){
+		mPDialog = progBar;
 	}
 
 	public static boolean isWaitState(){
@@ -344,6 +351,9 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 							}
 							total += count;
 
+							if (length > 0) // only if total length is known
+								publishProgress((int) (total * 100 / length));
+
 							os.write(data, 0, count);
 						}
 
@@ -379,6 +389,16 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 	}
 
 	@Override
+	protected void onProgressUpdate(Integer... progress) {
+		super.onProgressUpdate(progress);
+		// if we get here, length is known, now set indeterminate to false
+
+		if(mPDialog!=null)
+		mPDialog.setProgress(progress[0]);
+
+	}
+
+	@Override
 	protected void onPostExecute(String result) {
 
 		if (endResult != null && statusCode != SERVER_ERROR) {
@@ -386,6 +406,12 @@ public class WebRequest extends AsyncTask<String, Void, String> {
 			if (isWaitState() != true) {
 				webcall.nextActivity();
 			}else{
+
+				// progressbar removal if the work is done
+				if(mPDialog!=null){
+					mPDialog.setVisibility(View.INVISIBLE);
+				}
+
 				webcall.onSuccess(targetURL, endResult);
 			}
 		} else {

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Document;
@@ -35,6 +36,8 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
         TextView txtDate;
         ImageView imageAccess;
         ImageView imageDoc;
+        ProgressBar progressBarDokumen;
+        ProgressBar progressBarPercentage;
     }
 
     public void setActivity(Activity actIn) {
@@ -90,8 +93,8 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
         FileOpener.openFile(getActivity(), new File(getPath(), alamatMasuk));
     }
 
-    private void downloadFile(String fileNa, String urlNa) {
-        ((DokumenActivity) getActivity()).downloadFile(fileNa, urlNa);
+    private void downloadFile(ProgressBar prgBar, String fileNa, String urlNa) {
+        ((DokumenActivity) getActivity()).downloadFile(prgBar, fileNa, urlNa);
         ShowDialog.message(getActivity(),"downloading...");
     }
 
@@ -104,7 +107,9 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
         if (jenisIcon.contains("download")) {
             // downloading...
             //ShowDialog.message(getActivity(), "trying to download " + d.getUrl());
-            downloadFile(d.getFilename(), d.getUrl());
+            // with progressbar shown
+            downloadFile(vh.progressBarPercentage, d.getFilename(), d.getUrl());
+            showAnimatedDownload(vh,true);
         } else if (jenisIcon.contains("checklist")) {
             // opening
             openingFile(d.getFilename());
@@ -131,7 +136,7 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final Document dataModel = getItem(position);
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         View result;
 
         if (convertView == null) {
@@ -144,6 +149,8 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
             viewHolder.txtDate = (TextView) convertView.findViewById(R.id.textViewDateDoc);
             viewHolder.imageDoc = (ImageView) convertView.findViewById(R.id.imageViewDocument);
             viewHolder.imageAccess = (ImageView) convertView.findViewById(R.id.imageViewAccessDocument);
+            viewHolder.progressBarDokumen = (ProgressBar) convertView.findViewById(R.id.progressBarDokumen);
+            viewHolder.progressBarPercentage = (ProgressBar) convertView.findViewById(R.id.progressBarPercentage);
 
             result = convertView;
 
@@ -160,7 +167,8 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
                 String tag = String.valueOf(img.getTag());
                 if (tag.contains("download")) {
                     // we are required to download
-                    downloadFile(dataModel.getFilename(), dataModel.getUrl());
+                    downloadFile(viewHolder.progressBarPercentage, dataModel.getFilename(), dataModel.getUrl());
+                    showAnimatedDownload(viewHolder,true);
                 } else if (tag.contains("checklist")) {
                     // we may directly open the file locally
                     openingFile(dataModel.getFilename());
@@ -177,6 +185,7 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
             viewHolder.imageAccess.setImageResource(R.drawable.checklist);
             viewHolder.imageAccess.setTag("checklist");
             viewHolder.txtSize.setText(getFileSize(dataModel.getFilename()));
+            showAnimatedDownload(viewHolder,false);
         } else if (dataModel.getUrl().contains("tube")) {
             viewHolder.imageAccess.setImageResource(R.drawable.chrome);
             viewHolder.imageAccess.setTag("browser");
@@ -186,6 +195,7 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
             viewHolder.imageAccess.setTag("download");
             viewHolder.txtSize.setText("size : not available");
         }
+
 
         viewHolder.txtTitle.setText(dataModel.getTitle());
         viewHolder.txtDate.setText(dataModel.getDate_created());
@@ -226,6 +236,16 @@ public class DocumentArrayAdapter extends ArrayAdapter<Document> {
 
 
         return convertView;
+    }
+
+    private void showAnimatedDownload(ViewHolder vhold, boolean b){
+        if(b) {
+            vhold.progressBarDokumen.setVisibility(View.VISIBLE);
+            vhold.imageAccess.setVisibility(View.GONE);
+        }else{
+            vhold.progressBarDokumen.setVisibility(View.GONE);
+            vhold.imageAccess.setVisibility(View.VISIBLE);
+        }
     }
 
 
