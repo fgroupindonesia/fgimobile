@@ -34,7 +34,7 @@ public class ScheduleObserver {
     String scheduleTextEntries[] = null;
      */
 
-    ScheduleObsData schedeObjectsData [] = null;
+    ScheduleObsData schedeObjectsData[] = null;
 
     String stat;
 
@@ -61,6 +61,57 @@ public class ScheduleObserver {
 
     public int getDifferenceDay() {
         return manyDays;
+
+    }
+
+    public boolean isHourPassed(String dateTimeIn, int hourPassedLimit) {
+
+        // dateTimeIn is using this format :
+        // HH:mm for example
+        // 12:00
+        boolean stat = false;
+
+        // we calculate the hour if only the day name is now
+
+        String nearestHourData[] = dateTimeIn.split(":");
+
+        nowDate = new Date();
+        nowHourSet = hourOnlyFormatter.format(nowDate);
+
+        // HH:mm for example 12:00
+        String data[] = nowHourSet.split(":");
+        int jamSkarang = Integer.parseInt(data[0]);
+        int menitSkarang = Integer.parseInt(data[1]);
+
+        int jamNearest = Integer.parseInt(nearestHourData[0]);
+        int menitNearest = Integer.parseInt(nearestHourData[1]);
+
+        // we say now is on schedule time
+        // when : 12:00-14:00 (2 hours only)
+
+        if (menitNearest == 0 && jamNearest == jamSkarang && menitSkarang == menitNearest) {
+            // when now is the hour time, and minute is exactly 0
+            // so it is not passed yet
+            stat = false;
+        } else if (jamSkarang >= jamNearest ) {
+            // when the hour now is Matched with Limit hour less
+            if (jamSkarang == jamNearest + hourPassedLimit && menitSkarang == 0) {
+                // when the hour is reach Limit hour exactly
+                // so it is not passed yet
+                stat = false;
+            } else if (jamSkarang <= jamNearest + (hourPassedLimit - 1) && menitSkarang != 0) {
+                // when the hour is not more than 1 hour before
+                // and the minute is whatever
+                // so it is not passed yet
+                stat = false;
+            } else {
+                // when the hour now is more than Limit hours
+                // so it is passed precisely
+                stat = true;
+            }
+        }
+
+        return stat;
 
     }
 
@@ -162,9 +213,9 @@ public class ScheduleObserver {
         // and will get the next one if any
         nowDate = new Date();
 
-        if(post < schedeObjectsData.length-1) {
+        if (post < schedeObjectsData.length - 1) {
             post++;
-        }else{
+        } else {
             post = 0;
         }
 
@@ -183,22 +234,49 @@ public class ScheduleObserver {
         return text;
     }
 
+    public String getAllSchedules(){
+        String data = "";
+
+        for(ScheduleObsData scd : schedeObjectsData){
+           data += scd.getScheduleText() + " hour passed - " +  isHourPassed(scd.getTime(), 2) +"\n";
+        }
+
+        return data;
+    }
+
+    // nearest before
+    // but not nearest after
     public String getScheduleNearest() {
         String text = null;
 
         // get the scheduleNearest but not passed yet
         // and will get the next one if any
         nowDate = new Date();
+        // what day is it now?
+        daySet = dayOnlyFormatter.format(nowDate).toLowerCase();
 
-        /*if (date2.before(date1)) {
-            text = date2Text;
-        } else {
-            text = date1Text;
-        }*/
+        ScheduleObsData sod = null;
+        boolean missing = true;
 
-        // get the first one because it is sorted so it is the nearest
-        text = schedeObjectsData[0].getScheduleText();
+        for (int i = 0; i < schedeObjectsData.length; i++) {
 
+            sod = schedeObjectsData[i];
+
+            // is it same day name?
+            if(sod.getScheduleText().toLowerCase().contains(daySet)){
+                // is the time is passed or not reached yet?
+                if(!sod.getDate().before(nowDate)){
+                    text = sod.getScheduleText();
+                    missing = false;
+                    break;
+                }
+            }
+
+        }
+
+        if(missing){
+            text = schedeObjectsData[0].getScheduleText();
+        }
 
         return text;
     }
@@ -208,14 +286,36 @@ public class ScheduleObserver {
 
         nowDate = new Date();
 
-        /*if (date2.before(date1)) {
-            foundDate = date2;
-        } else {
-            foundDate = date1;
-        }*/
+        String text = null;
 
-        // get the first one which is the nearest
-        foundDate = schedeObjectsData[0].getDate();
+        // get the scheduleNearest but not passed yet
+        // and will get the next one if any
+        nowDate = new Date();
+        // what day is it now?
+        daySet = dayOnlyFormatter.format(nowDate).toLowerCase();
+
+        ScheduleObsData sod = null;
+        boolean missing = true;
+
+        for (int i = 0; i < schedeObjectsData.length; i++) {
+
+            sod = schedeObjectsData[i];
+
+            // is it same day name?
+            if(sod.getScheduleText().toLowerCase().contains(daySet)){
+                // is the time is passed or not reached yet?
+                if(!sod.getDate().before(nowDate)){
+                    foundDate = sod.getDate();
+                    missing = false;
+                    break;
+                }
+            }
+
+        }
+
+        if(missing){
+            foundDate = schedeObjectsData[0].getDate();
+        }
 
         return foundDate;
 
@@ -259,60 +359,66 @@ public class ScheduleObserver {
     }
 
     public boolean isScheduleThisHour() {
-        // nearest is using this format :
-        // day HH:mm for example
-        // monday 12:00
-        String nearest = getScheduleNearest();
-        String nearestData[] = nearest.split(" ");
-        String nearestHourData[] = nearestData[1].split(":");
 
+        boolean found = false;
+
+        // we should check any of the data given
         nowDate = new Date();
-        nowHourSet = hourOnlyFormatter.format(nowDate);
+        nowDaySet = dayOnlyFormatter.format(nowDate).toLowerCase();
 
-        if (nearest.contains(nowHourSet)) {
-            return true;
-        } else {
-            // HH:mm for example 12:00
-            String data[] = nowHourSet.split(":");
-            int jamSkarang = Integer.parseInt(data[0]);
-            int menitSkarang = Integer.parseInt(data[1]);
+        for(ScheduleObsData scd: schedeObjectsData){
 
-            int jamNearest = Integer.parseInt(nearestHourData[0]);
-            int menitNearest = Integer.parseInt(nearestHourData[1]);
+            // is it same day?
+            if(scd.getScheduleText().toLowerCase().contains(nowDaySet)){
 
-            // we say now is on schedule time
-            // when : 12:00-14:00 (2 hours only)
-
-
-            if (menitNearest == 0 && jamNearest == jamSkarang && menitSkarang == menitNearest) {
-                // when now is the hour time, and minute is exactly 0
-                return true;
-            } else if (jamSkarang >= jamNearest && jamSkarang <= jamNearest + 2) {
-                // when the hour now is two hour less
-                if (jamSkarang == jamNearest + 2 && menitSkarang == 0) {
-                    return true;
-                } else if (jamSkarang <= jamNearest + 1 && menitSkarang != 0) {
-                    return true;
+                // let check the time
+                // is it time passed?
+                if(scd.getDate().before(nowDate)){
+                    // lets check the time is it passed yet by 2 hours?
+                    if(!isHourPassed(scd.getTime(), 2)){
+                        found = true;
+                        break;
+                    }
                 }
+
             }
 
         }
 
-        return false;
+        return found;
     }
+
+
 
     public boolean isScheduleToday() {
         // this has : day HH:mm pattern
-        String nearest = getScheduleNearest();
+        boolean found = false;
 
+        // we should check any of the data given
         nowDate = new Date();
         nowDaySet = dayOnlyFormatter.format(nowDate).toLowerCase();
 
-        if (nearest.contains(nowDaySet)) {
-            return true;
+        for(ScheduleObsData scd: schedeObjectsData){
+
+            // is it same day?
+            if(scd.getScheduleText().toLowerCase().contains(nowDaySet)){
+
+                // let check the time
+                // is it time passed?
+                if(scd.getDate().before(nowDate)){
+                    // lets check the time is it passed yet by 2 hours?
+                    if(!isHourPassed(scd.getTime(), 2)){
+                        found = true;
+                        break;
+                    }
+                }
+
+            }
+
         }
 
-        return false;
+
+        return found;
 
     }
 
@@ -523,10 +629,9 @@ public class ScheduleObserver {
             Arrays.sort(scheduleTextEntries);*/
 
             // this is comparing based upon the difference day
-            Arrays.sort(schedeObjectsData, new Comparator<ScheduleObsData>(){
+            Arrays.sort(schedeObjectsData, new Comparator<ScheduleObsData>() {
 
-                public int compare(ScheduleObsData o1, ScheduleObsData o2)
-                {
+                public int compare(ScheduleObsData o1, ScheduleObsData o2) {
                     return new Integer(o1.getDifferentDay()).compareTo(new Integer(o2.getDifferentDay()));
                 }
             });

@@ -127,9 +127,10 @@
     <string name="text_label_class_absen">Absen Kehadiran</string>
     <string name="text_label_class_beri_tanda_paraf">Berilah tanda paraf (tanda tangan) kehadiran ditengah bagian ini  : </string>
     <string name="text_label_class_started">Kelas Sedang Berlangsung</string>
+    <string name="text_label_class_time_elapsed">Sejak : </string>
     <string name="text_label_class_ended">Kelas Telah Usai</string>
     <string name="text_label_class_rating_description">Bagaimana kondisi pembelajaran tadi?</string>
-    <string name="text_label_class_attendance_description">Apakah kamu hadir di kelas saat ini?</string>
+    <string name="text_label_class_attendance_description"> # Apakah kamu hadir di kelas saat ini?</string>
     <string name="text_label_class_attendance_hadir">Ya, Hadir</string>
     <string name="text_label_class_attendance_idzin">Idzin</string>
 

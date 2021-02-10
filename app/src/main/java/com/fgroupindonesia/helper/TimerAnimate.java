@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.fgroupindonesia.fgimobile.HomeActivity;
 import com.fgroupindonesia.fgimobile.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 
@@ -39,6 +40,11 @@ public class TimerAnimate implements Runnable {
 
     public void setScheduleDate(Date dataIn){
         scheduleDate = dataIn;
+    }
+
+    public String getTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        return sdf.format(scheduleDate);
     }
 
     @Override
@@ -99,7 +105,7 @@ public class TimerAnimate implements Runnable {
                     stopTimer();
 
                 }else if(diffDays == 0 && diffHours < 0){
-                    textView.setText("Kelas hari ini sudah selesai.");
+                    textView.setText("Kelas jam " + getTime() +" sudah selesai.");
 
                     textView.setTextColor(Color.WHITE);
                     textView.setBackgroundResource(R.color.green);

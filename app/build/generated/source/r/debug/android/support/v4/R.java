@@ -111,9 +111,9 @@ public final class R {
         public static final int tag_transition_group = 0x7f0800d0;
         public static final int text = 0x7f0800d1;
         public static final int text2 = 0x7f0800d2;
-        public static final int time = 0x7f0800f8;
-        public static final int title = 0x7f0800f9;
-        public static final int top = 0x7f0800fc;
+        public static final int time = 0x7f0800f9;
+        public static final int title = 0x7f0800fa;
+        public static final int top = 0x7f0800fd;
     }
     public static final class integer {
         public static final int cancel_button_image_alpha = 0x7f090002;

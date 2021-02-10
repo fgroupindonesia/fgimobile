@@ -67,7 +67,7 @@ public class HomeActivity extends Activity implements Navigator {
 
     CircleImageView imageUserProfileHome;
     TimerAnimate animWorks = new TimerAnimate();
-    private Timer timerSchedule;
+     Timer timerSchedule;
     TextView textViewLogout, textviewUsername, textViewNextTimer, textViewNextSchedule,
             textViewInfo;
     WebRequest httpCall;
@@ -665,7 +665,7 @@ public class HomeActivity extends Activity implements Navigator {
 
                     textViewNextSchedule.setText(textScheduleLabel);
 
-                    ShowDialog.message(this, "nearest nya " + schedObs.getDateNearest());
+                    //ShowDialog.message(this, "nearest nya " + schedObs.getDateNearest());
                     prepareAnimation(schedObs.getDateNearest());
 
                     String schedTextNear = schedObs.getScheduleNearest();
@@ -695,7 +695,8 @@ public class HomeActivity extends Activity implements Navigator {
 
                     }
 
-                    textViewInfo.setText("Kelas berikutnya " + UIHelper.toIndonesian(schedTextNext));
+                    //textViewInfo.setText("Kelas berikutnya " + UIHelper.toIndonesian(schedTextNear));
+                    textViewInfo.setText("datanya \n" + schedObs.getAllSchedules());
 
                     //ShowDialog.message(this, "data jam " + Arrays.toString(dataJam));
                     //ShowDialog.message(this, "data " + Arrays.toString(dataDetik));

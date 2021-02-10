@@ -3,7 +3,7 @@ package com.fgroupindonesia.helper;
 public class URLReference {
 
     //public static String Remote = "http://api.portal.fgroupindonesia.com";
-    public static String Remote = "http://192.168.0.8";
+    public static String Remote = "http://192.168.0.9";
     public static String RemoteLoginVerify = Remote + "/remotelogin/verify";
     public static String RemoteLoginDisconnect = Remote + "/remotelogin/disconnect";
     public static String RemoteLoginShow = Remote + "/remotelogin/show";

@@ -1,5 +1,6 @@
 package com.fgroupindonesia.beans;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScheduleObsData {
@@ -7,6 +8,11 @@ public class ScheduleObsData {
     private int differentDay;
     private Date date;
     private String scheduleText;
+
+    public String getTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        return sdf.format(getDate());
+    }
 
     public int getDifferentDay() {
         return differentDay;

@@ -9,7 +9,7 @@ MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\ASUS\.gradle\cach
 MERGED from [com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.6.0.aar\62279df8cc85862b8abecb014f3b5f5e\AndroidManifest.xml:17:1-56:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\4e5e9f1fb8e207a023ed01ddc5288e38\AndroidManifest.xml:17:1-22:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\circleimageview-3.1.0.aar\a4015058af43d4fe246e98f3a396758e\AndroidManifest.xml:2:1-11:12
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.21] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.21.aar\9b1f13053cd2e271eb6456d6c12b3bd4\AndroidManifest.xml:2:1-9:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.22.aar\b835a4b1986fcc18415c0cc3e09cd488\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.gcacace:signature-pad:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\signature-pad-1.3.1.aar\63909d109db632b04efa98bb8cdf2485\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\4d846357ed151d3c72fcda5aebbb4289\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\cc725ea9cf8f9155a7809b30e7b39983\AndroidManifest.xml:17:1-22:12
@@ -18,7 +18,7 @@ MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\ASUS\.gradl
 MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\291c96a4100aa95f59206c3db5c15e03\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\2c6c76c72df7ed7e7ed365b8a9e5f358\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5cab5f7a34549cabd90534d1fec0bf17\AndroidManifest.xml:17:1-22:12
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.3.1.aar\0e9628a49482feb44a3e0735f9ff7a1f\AndroidManifest.xml:2:1-7:12
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.4.1.aar\772f03bbc5b073c27c1184616785f1a5\AndroidManifest.xml:2:1-7:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ee1ee50848f9cf9e6f55efaa86269105\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e4c4762d317d6082b5703296a5e01829\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\626205ff1227a975f90448a42e976625\AndroidManifest.xml:17:1-22:12
@@ -56,8 +56,8 @@ MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ASUS\.gradle\caches
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\4e5e9f1fb8e207a023ed01ddc5288e38\AndroidManifest.xml:20:5-44
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\circleimageview-3.1.0.aar\a4015058af43d4fe246e98f3a396758e\AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\circleimageview-3.1.0.aar\a4015058af43d4fe246e98f3a396758e\AndroidManifest.xml:5:5-7:41
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.21] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.21.aar\9b1f13053cd2e271eb6456d6c12b3bd4\AndroidManifest.xml:5:5-7:41
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.21] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.21.aar\9b1f13053cd2e271eb6456d6c12b3bd4\AndroidManifest.xml:5:5-7:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.22.aar\b835a4b1986fcc18415c0cc3e09cd488\AndroidManifest.xml:5:5-7:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\android-gif-drawable-1.2.22.aar\b835a4b1986fcc18415c0cc3e09cd488\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.gcacace:signature-pad:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\signature-pad-1.3.1.aar\63909d109db632b04efa98bb8cdf2485\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.gcacace:signature-pad:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\signature-pad-1.3.1.aar\63909d109db632b04efa98bb8cdf2485\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\4d846357ed151d3c72fcda5aebbb4289\AndroidManifest.xml:20:5-44
@@ -74,8 +74,8 @@ MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ASUS\.gra
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\2c6c76c72df7ed7e7ed365b8a9e5f358\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5cab5f7a34549cabd90534d1fec0bf17\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5cab5f7a34549cabd90534d1fec0bf17\AndroidManifest.xml:20:5-44
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.3.1.aar\0e9628a49482feb44a3e0735f9ff7a1f\AndroidManifest.xml:5:5-43
-MERGED from [pl.droidsonroids:relinker:1.3.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.3.1.aar\0e9628a49482feb44a3e0735f9ff7a1f\AndroidManifest.xml:5:5-43
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.4.1.aar\772f03bbc5b073c27c1184616785f1a5\AndroidManifest.xml:5:5-43
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\relinker-1.4.1.aar\772f03bbc5b073c27c1184616785f1a5\AndroidManifest.xml:5:5-43
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ee1ee50848f9cf9e6f55efaa86269105\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ee1ee50848f9cf9e6f55efaa86269105\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ASUS\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e4c4762d317d6082b5703296a5e01829\AndroidManifest.xml:20:5-44

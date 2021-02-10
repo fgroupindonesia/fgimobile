@@ -16,11 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fgroupindonesia.beans.Schedule;
+import com.fgroupindonesia.helper.ElapsedAnimate;
 import com.fgroupindonesia.helper.ImageHelper;
 import com.fgroupindonesia.helper.Navigator;
 import com.fgroupindonesia.helper.RespondHelper;
 import com.fgroupindonesia.helper.ScheduleObserver;
 import com.fgroupindonesia.helper.ShowDialog;
+import com.fgroupindonesia.helper.TimerAnimate;
 import com.fgroupindonesia.helper.UIHelper;
 import com.fgroupindonesia.helper.URLReference;
 import com.fgroupindonesia.helper.WebRequest;
@@ -37,10 +39,15 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class KelasActivity extends Activity implements Navigator {
 
-    TextView textViewKelasNoEntry, textViewApakahKamuHadir;
+    ElapsedAnimate animWorks = new ElapsedAnimate();
+    Timer timerSchedule;
+
+    TextView textViewKelasNoEntry, textViewApakahKamuHadir, textViewTimeElapsed;
     LinearLayout linearKelasNoEntry, linearKelasLoading, linearKelasSignature,
             linearKelasBerlangsung, linearKelasRating;
     SignaturePad mSignaturePad;
@@ -53,6 +60,9 @@ public class KelasActivity extends Activity implements Navigator {
 
     final int STATUS_RATE_NORMAL = 1, STATUS_RATE_CONFUSED = 0, STATUS_RATE_EXCITED = 2;
 
+    ScheduleObserver schedObs = new ScheduleObserver();
+    Gson objectG = new Gson();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +71,7 @@ public class KelasActivity extends Activity implements Navigator {
         // for shared preference
         UserData.setPreference(this);
 
+        textViewTimeElapsed= (TextView) findViewById(R.id.textViewTimeElapsed);
         textViewKelasNoEntry = (TextView) findViewById(R.id.textViewKelasNoEntry);
         textViewApakahKamuHadir = (TextView) findViewById(R.id.textViewApakahKamuHadir);
 
@@ -108,6 +119,33 @@ public class KelasActivity extends Activity implements Navigator {
 
     }
 
+    private void prepareAnimation(Date dataIn) {
+
+        animWorks.setTextView(textViewTimeElapsed);
+        animWorks.setScheduleDate(dataIn);
+
+        timerSchedule = new Timer();
+        timerSchedule.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                startAnimate();
+            }
+
+        }, 0, 1000);
+
+        animWorks.setTimer(timerSchedule);
+
+    }
+
+    private void startAnimate() {
+        //This method is called directly by the timer
+        //and runs in the same thread as the timer.
+
+        //We call the method that will work with the UI
+        //through the runOnUiThread method.
+        this.runOnUiThread(animWorks);
+    }
+
     private void showButtonKehadiran(boolean b){
 
         if(b){
@@ -136,8 +174,13 @@ public class KelasActivity extends Activity implements Navigator {
     public boolean isSignedToday(){
 
         boolean stat = false;
-        // time format is using computer based
+        // date format is using computer based
         // yyyy-MM-dd
+
+        // time format is using user based
+        // HH:mm
+
+        // status format is either hadir / idzin
         String dateSigned = UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_DATE);
         String timeSigned = UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_DATETIME);
         String statSigned= UserData.getPreferenceString(KeyPref.LAST_SIGNATURE_STATUS);
@@ -149,7 +192,19 @@ public class KelasActivity extends Activity implements Navigator {
         if(dateSigned==null){
             stat = false;
         }else if(dateSigned.equalsIgnoreCase(dateNow)){
-            stat = true;
+
+            // check again, is the signed time elapsed is less than 2 hours?
+            // if so, it is SIGNED already
+            // otherwise it is not SIGNED yet
+
+            if(schedObs.isHourPassed(timeSigned, 2)){
+                stat = false;
+                ShowDialog.message(this, " tanda tangannya sudah lewat jadwal.");
+            }else{
+                stat = true;
+                ShowDialog.message(this, " tanda tangannya udah pernah di jam ini.");
+            }
+
         }
 
         return stat;
@@ -169,8 +224,6 @@ public class KelasActivity extends Activity implements Navigator {
     }
 
     private  void postRating(int stat){
-
-
 
         finish();
     }
@@ -193,6 +246,9 @@ public class KelasActivity extends Activity implements Navigator {
 
                     showClassStarted();
 
+                    // start the animate elapsed time
+                    startAnimateElapsedTime();
+
                 }else{
                     showNoEntry();
                 }
@@ -200,6 +256,16 @@ public class KelasActivity extends Activity implements Navigator {
             }
         }, PERIOD_OF_TIME);
 
+    }
+
+    private void startAnimateElapsedTime(){
+
+        // schedule observer is already prepared when
+        // checking in earlier method
+
+       if(schedObs !=null) {
+           prepareAnimation(schedObs.getDateNearest());
+       }
     }
 
     public void idzinKelas(View v){
@@ -220,6 +286,9 @@ public class KelasActivity extends Activity implements Navigator {
         linearKelasBerlangsung.setVisibility(View.VISIBLE);
         linearKelasLoading.setVisibility(View.GONE);
         linearKelasRating.setVisibility(View.GONE);
+
+
+
     }
 
     public void showNoEntry(){
@@ -353,13 +422,11 @@ public class KelasActivity extends Activity implements Navigator {
 
         boolean stat = false;
 
-        ScheduleObserver schedObs = new ScheduleObserver();
-
        // String sched1 = UserData.getPreferenceString(KeyPref.
        // String sched2 = UserData.getPreferenceString(KeyPref.SCHEDULE_DAY_2);
 
         // lets take the all data schedules from json array object
-        Gson objectG = new Gson();
+
         String innerData = UserData.getPreferenceString(KeyPref.ALL_SCHEDULES);
         Schedule[] dataIn = objectG.fromJson(innerData, Schedule[].class);
         // String className = dataIn[0].getClass_registered();
@@ -374,9 +441,12 @@ public class KelasActivity extends Activity implements Navigator {
         ShowDialog.message(this, "jam lewat " + schedObs.isHourPassed());
         */
 
+        ShowDialog.message(this, "Checking kelas schedule ini... " + schedObs.getScheduleNearest());
+
         if(schedObs.isScheduleToday() == true && schedObs.isHourPassed() == true){
             statusKelas = "Kelas hari ini sudah usai.";
             textViewKelasNoEntry.setText(statusKelas);
+            ShowDialog.message(this, "ternyata ada kelas hari ini... tapi kelewat.");
         }
 
         if (schedObs.isScheduleToday() != true && schedObs.isScheduleThisHour() != true) {

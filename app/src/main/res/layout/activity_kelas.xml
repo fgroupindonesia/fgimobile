@@ -144,6 +144,13 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/textViewTimeElapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_label_class_time_elapsed"
+            android:textColor="@color/white" />
+
+        <TextView
             android:id="@+id/textViewApakahKamuHadir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
